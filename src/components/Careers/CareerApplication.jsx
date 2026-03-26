@@ -90,7 +90,7 @@ const CareerApplication = () => {
               name="coverLetter"
               rows="4"
               maxLength="200"
-              placeholder="Explain how you can contribute to ICIEOS culture."
+              placeholder="Explain how you can contribute to AXSTAR culture."
               onChange={handleChange}
               className="w-full mt-1 text-neutral-400 p-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] resize-none"
             />

@@ -1,9 +1,9 @@
 import React from "react";
-import { FaArrowDown, FaPlay } from "react-icons/fa";
 
-const DigitalConsulting = () => {
+
+const DigitalServicesPage = () => {
   return (
-    <section id="about-hero" className="relative w-full bg-black text-white overflow-hidden">
+    <section id="digital-services-page" className="relative w-full bg-black text-white overflow-hidden">
 
       {/* Top spacing */}
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 text-center">
@@ -18,7 +18,7 @@ const DigitalConsulting = () => {
 
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-Digital Transformation Consulting
+            Digital Services
         </h1>
 
         {/* Subtitle */}
@@ -49,4 +49,4 @@ Digital Transformation Consulting
   );
 };
 
-export default DigitalConsulting;
+export default DigitalServicesPage;

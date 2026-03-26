@@ -1,117 +1,74 @@
-import { useState } from "react";
-import { FiArrowUpRight, FiX } from "react-icons/fi";
+import React from 'react';
 
-export default function WhatWeDo() {
-  const [activeService, setActiveService] = useState(null);
-
+const WhatWeDo = () => {
   const services = [
     {
-      title: "Tailored IT & Software Solutions",
-      desc: "Crafting custom technology solutions that address your unique business needs.",
-      full: "We design and develop fully customized IT and software solutions tailored specifically to your business processes. Our team ensures scalable, secure, and high-performance applications that grow with your company.",
-      bg: "bg-gradient-to-br from-[var(--primary-color)] to-[black]",
+      id: "01",
+      title: "Engineering & Technology",
+      description: "We build high-performance software, web & mobile applications, AI-driven solutions, and custom platforms that solve complex business challenges."
     },
     {
-      title: "Digital Strategy",
-      desc: "Creating impactful digital strategies that strategic growth and efficiency.",
-      full: "Our digital strategy services help businesses identify the right technologies, marketing channels, and digital experiences needed to stay competitive and achieve long-term growth.",
-      bg: "bg-gradient-to-br from-[var(--primary-color)] to-[black]",
+      id: "02",
+      title: "Digital & Marketing Solutions",
+      description: "From digital transformation strategy to data-driven marketing, we help businesses engage customers and achieve measurable results."
     },
     {
-      title: "Business Consulting",
-      desc: "Providing strategic consulting to streamline processes and efficiency.",
-      full: "We provide expert consulting to analyze business workflows, identify inefficiencies, and implement technology-driven improvements that enhance productivity and operational success.",
-      bg: "bg-gradient-to-br from-[var(--primary-color)] to-[black]",
-    },
+      id: "03",
+      title: "Business Strategy & Consulting",
+      description: "We provide business model design, startup advisory, and go-to-market strategies to help companies scale sustainably."
+    }
   ];
 
   return (
-    <section className="w-full py-30 px-6 bg-[#000000]">
-
+    <div className="min-h-screen bg-[#0a0a0a] text-white px-6 py-20 lg:py-32">
+      <div className="max-w-6xl mx-auto">
         
-      <div className="max-w-7xl mx-auto">
-
-        {/* Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white">
+        {/* Header Section */}
+        <header className="mb-20 text-center">
+          {/*<h2 className="text-[2rem] uppercase tracking-[0.4em] text-gray-500 mb-4">
             What We Do
+          </h2>*/}
+
+           {/* Heading */}
+        <h2 className="text-4xl md:text-6xl text-white mb-8 ">
+          What We Do
           </h2>
-         
-        </div>
+          
+          <p className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed">
+            At Axstar, we help businesses innovate, grow, and scale through a 
+            combination of technology, digital expertise, and strategic guidance.
+          </p>
+        </header>
 
-        {/* Cards */}
-        <div className="grid py-5 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((item, index) => (
-            <div
-              key={index}
-              className={`${item.bg} text-white rounded-2xl p-6 relative overflow-hidden transition-transform duration-300 hover:scale-[1.03]`}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div 
+              key={service.id}
+              className="group relative p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-white/20 transition-all duration-500 ease-out"
             >
-              {/* Decorative shape */}
-              <div className="absolute w-40 h-40 bg-white/10 rounded-full blur-2xl -bottom-10 -right-10"></div>
 
-              {/* Content */}
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-sm text-white/90 mb-6">{item.desc}</p>
+              <h3 className="text-2xl font-medium mb-4 text-center group-hover:text-[var(--primary-color)] transition-colors duration-300">
+                {service.title}
+              </h3>
+              
+              <div className="w-12 h-[1px] bg-neutral-700 mx-auto mb-6 group-hover:w-24 transition-all duration-500"></div>
 
-              {/* Button */}
-              <button
-                onClick={() => setActiveService(item)}
-                className="cursor-pointer group flex items-center gap-2 bg-white text-black text-sm px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition"
-              >
-                Learn More
-                <FiArrowUpRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </button>
+              <p className="text-neutral-400 leading-relaxed text-center font-light">
+                {service.description}
+              </p>
+
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[var(--primary-color)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
           ))}
         </div>
 
-        {/* Modal */}
-        {activeService && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-
-            {/* Overlay */}
-            <div
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-              onClick={() => setActiveService(null)}
-            ></div>
-
-            {/* Modal Box */}
-            <div className="relative bg-neutral-800 rounded-2xl max-w-lg w-full p-8 shadow-xl">
-
-              {/* Close Button */}
-              <button
-                onClick={() => setActiveService(null)}
-                className="cursor-pointer absolute top-4 right-4 text-neutral-300 hover:text-[var(--primary-color)]"
-              >
-                <FiX size={22} />
-              </button>
-
-              {/* Modal Content */}
-              <h3 className="text-2xl font-semibold mb-4 text-neutral-100">
-                {activeService.title}
-              </h3>
-
-              <p className="text-neutral-300 leading-relaxed">
-                {activeService.full}
-              </p>
-
-              <div className="mt-6">
-                <button
-                  onClick={() => setActiveService(null)}
-                  className="cursor-pointer bg-[var(--primary-color)] text-black px-6 py-2 rounded-full hover:bg-[var(--primary-color)]/40 transition"
-                >
-                  Close
-                </button>
-              </div>
-
-            </div>
-          </div>
-        )}
+      
 
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default WhatWeDo;

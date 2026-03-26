@@ -12,27 +12,27 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     icon: User,
-    title: "Discovery",
+    title: "Understand, Analysis & Explore",
     description:
-      "We start by deeply understanding your business, target audience, and project requirements to ensure every decision aligns with your goals.",
+      "We begin by thoroughly understanding your business, target audience, and project requirements. This ensures every decision aligns with your goals and sets a solid foundation for success.",
   },
   {
     icon: MessageCircle,
-    title: "Strategy",
+    title: "Plan & Strategize",
     description:
-      "Based on insights from discovery, we create a detailed roadmap and plan, focusing on the best approach to achieve your digital objectives efficiently.",
+      "Using insights from the discovery phase, we develop a clear roadmap and plan, focusing on the most effective approach to achieve your objectives efficiently.",
   },
   {
     icon: Layout,
     title: "Development & Progress Updates",
     description:
-      "Our team develops your solution using the latest technologies, providing regular progress updates to keep you informed at every stage.",
+      "Our team builds your solution using the latest technologies, while providing regular progress updates to keep you informed at every stage.",
   },
   {
     icon: CheckCircle,
-    title: "Deliver, Launch & Support",
+    title: "Launch, Deliver & Support",
     description:
-      "We ensure a smooth launch of your product and continue to offer reliable support, maintenance, and improvements for long-term success.",
+      "We ensure a smooth product launch and provide ongoing support, maintenance, and enhancements to ensure long-term success.",
   },
 ];
 
@@ -114,7 +114,7 @@ const Process = () => {
                       <h3 className="text-white font-semibold text-base md:text-lg">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-[var(--primary-color)]/40 mt-1 leading-snug">
+                      <p className="text-sm text-[var(--primary-color)]/60 mt-1 leading-snug">
                         {step.description}
                       </p>
                     </div>
@@ -133,7 +133,9 @@ const Process = () => {
           <div className="flex flex-col items-center text-center mt-4">
             <CheckCircle className="w-8 h-8 text-[var(--primary-color)] mb-2" />
             <p className="text-sm md:text-base text-[var(--primary-color)] max-w-xs">
-              Your website is ready to launch! 🚀
+                                                          “Your solution is ready to go live! 🚀 
+We ensure a smooth launch and continued support for long-term success.”
+
             </p>
           </div>
         </div>

@@ -8,17 +8,11 @@ const ProjectsHero = () => {
       {/* Top spacing */}
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 text-center">
 
-        {/* Small badge */}
-        <div className="flex justify-center mb-6">
-          <div className="flex items-center gap-2 bg-white/10 text-sm px-4 py-2 rounded-full border border-white/20">
-            <span>Our Projects</span>
-            
-          </div>
-        </div>
+        
 
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-         Projects
+         Our Portfolio
         </h1>
 
         {/* Subtitle */}

@@ -29,11 +29,15 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why" className="w-full bg-[#000000] py-16 px-6 md:px-12 lg:px-20">
+    <section id="why" className="w-full bg-[#000000] pb-30 pt-25 px-6 md:px-12 lg:px-20">
+
+
+      
+
       
       {/* TITLE */}
       <h2 className="text-3xl md:text-4xl font-semibold text-gray-100 text-center mb-10">
-        Why Choose AXSTAR
+        The Axstar Advantage
       </h2>
 
       <div className="max-w-6xl mx-auto">

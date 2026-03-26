@@ -61,49 +61,60 @@ const Hero = () => {
     <section
       ref={container}
       id="home-hero"
-      className="relative w-full text-white flex items-center overflow-hidden"
+      className="relative w-full text-white h-screen flex items-center overflow-hidden"
     >
-      {/* ===== Overlay (above bg image, below content) ===== */}
+     
+
+      {/* ===== BOTTOM FOG OVERLAY ===== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1117]/40 via-[#0b1117]/60 to-[#000000]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              linear-gradient(
+                to top,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.9) 7%,
+                rgba(0,0,0,0.7) 23%,
+                rgba(0,0,0,0.4) 40%,
+                rgba(0,0,0,0.15) 70%,
+                rgba(0,0,0,0) 100%
+              )
+            `,
+          }}
+        />
       </div>
 
-      {/* ===== CONTENT WRAPPER ===== */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 flex flex-col justify-center min-h-[calc(100vh-4rem)]">
-        {/* TOP CONTENT */}
-        <div className="space-y-6 max-w-3xl mt-12 md:mt-20">
-
-          <h1 className="h-animate text-[2.8rem] sm:text-6xl md:text-7xl lg:text-[3.2rem] font-bold tracking-wide">
-            Transforming Ideas Into Scalable Digital Solutions
+      {/* ===== HERO CONTENT ===== */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 flex flex-col justify-center items-center">
+        <div className="space-y-6 w-full max-w-7xl mt-12 md:mt-1 text-center mx-auto">
+          <h1 className="h-animate text-neutral-100 text-[2.5rem] sm:text-5xl md:text-[3.3rem] lg:text-[4.1rem] font-medium tracking-w[1rem] leading-tight">
+            Transforming Ideas Into
+            <span className="bg-gradient-to-r from-[#ffffff] via-[#ffffff] to-[#ffffff] bg-clip-text text-transparent block mt-4 md:mt-6 lg:mt-5">
+              Scalable Digital Solutions
+            </span>
           </h1>
-          <p className="p-animate text-sm md:text-[.8rem] md:w-[95%] text-[white] leading-relaxed flex">
-            AXSTAR helps businesses grow through smart technology solutions, business consulting, and digital transformation services.
-          </p>
-          <p className="p-animate text-sm md:text-[.8rem] md:w-[95%] text-[white] leading-relaxed flex">
-            AXSTAR delivers integrated IT and business consulting services designed to scale your enterprise. From strategic planning to full-scale deployment, we build high-performance solutions that align your technology with your business goals.
+
+          <p className="p-animate text-sm sm:text-base md:text-[.9rem] text-white leading-relaxed max-w-2xl mx-auto">
+            Axstar drives business growth through smart technology, strategic consulting, and digital transformation. We deliver scalable, high-performance solutions that align technology with your business goals—from strategy to full deployment.
           </p>
 
-          
-
-          <div className="buttons-animate flex flex-wrap gap-4 pt-4">
+          <div className="buttons-animate flex flex-wrap justify-center gap-4 pt-4">
             <a href="#about">
-              <button className="cursor-pointer px-6 py-3 
-                bg-gradient-to-r from-[var(--primary-color)] to-white/30
-                text-black rounded-full text-sm font-medium transition hover:scale-105">
+              <button className="cursor-pointer px-10 py-2 text-sm rounded-lg 
+                bg-gradient-to-r from-[#02ffdd] to-[#02ffdd]
+                text-black transition">
                 Discover ↓
               </button>
             </a>
 
-            <a href="/services#services-hero">
-              <button className="cursor-pointer px-6 py-3 border border-[var(--primary-color)]/40 rounded-full text-sm transition hover:bg-white/10 text-[var(--primary-color)]/40">
-                View Services
+            <a href="/projects#projects-hero">
+              <button className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-green-800">
+                View Portfolio
               </button>
             </a>
           </div>
         </div>
-
-        
       </div>
     </section>
   );

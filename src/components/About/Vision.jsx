@@ -2,7 +2,7 @@ import React from "react";
 
 const Vision = () => {
   return (
-    <section className="w-full bg-[#e9e7e2] py-10 px-6 md:px-16 lg:px-24">
+    <section className="w-full bg-[#e9e7e2] py-15 px-6 md:px-16 lg:px-24">
       
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center lg:items-center md:justify-between gap-8">
 

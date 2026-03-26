@@ -47,7 +47,7 @@ const Technologies = () => {
 
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-gray-100 text-center">
-          Technologies We Use
+          Empowered by Global Standards <br/> & Cutting-Edge Tech
         </h2>
 
         {/* Carousel */}
@@ -66,7 +66,9 @@ const Technologies = () => {
                   h-24 md:h-28
                   bg-black/10
                   backdrop-blur-md
-                  
+                  border-[1px]
+                  rounded-[1rem]
+                  border-emerald-500/20
                   flex flex-col items-center justify-center
                   transition duration-300
                   "

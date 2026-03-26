@@ -7,9 +7,9 @@ import {
   FiPhone,
   FiGrid,
   FiChevronDown,
-  FiChevronRight,
   FiMenu,
   FiX,
+  FiChevronRight,
 } from "react-icons/fi";
 import logo from "../assets/c1.png";
 
@@ -19,19 +19,11 @@ const navItems = [
   { id: "services", label: "Services", icon: <FiGrid size={20} />, path: "/services" },
   { id: "about", label: "About Us", icon: <FiUser size={20} />, path: "/about" },
   { id: "careers", label: "Careers", icon: <FiUser size={20} />, path: "/careers" },
-  
-  { id: "projects", label: "Projects", icon: <FiFolder size={20} />, path: "/projects" },
+  { id: "projects", label: "Portfolio", icon: <FiFolder size={20} />, path: "/projects" },
   { id: "contact", label: "Contact Us", icon: <FiPhone size={20} />, path: "/contact" },
 ];
 
 /* ---------------- SERVICES ---------------- */
-const servicesLinks = [
-  { id: "services-hero", label: "All Services", path: "/services#services-hero" },
-  { id: "it-tech", label: "IT & Technology Services", path: "/services#it-tech" },
-  { id: "digital", label: "Digital Services", path: "/services#digital" },
-  { id: "it-business", label: "IT & Business Consulting", path: "/services#it-business" },
-];
-
 const itTechSubServices = [
   { label: "Web Development", path: "/web-development" },
   { label: "Mobile App Development", path: "/mobile-app-development" },
@@ -55,25 +47,11 @@ const businessSubServices = [
 
 export default function Navbar() {
   const location = useLocation();
-  const [active, setActive] = useState(location.pathname);
+
   const [scrolled, setScrolled] = useState(false);
-
-  /* ---------- DESKTOP DROPDOWN STATES ---------- */
   const [openServices, setOpenServices] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState(false);
-  const [openDigitalSubmenu, setOpenDigitalSubmenu] = useState(false);
-  const [openBusinessSubmenu, setOpenBusinessSubmenu] = useState(false);
-
-  const [submenuLeft, setSubmenuLeft] = useState(false);
-  const [digitalSubmenuLeft, setDigitalSubmenuLeft] = useState(false);
-  const [businessSubmenuLeft, setBusinessSubmenuLeft] = useState(false);
-
   const desktopDropdownRef = useRef(null);
-  const itTechRef = useRef(null);
-  const digitalRef = useRef(null);
-  const businessRef = useRef(null);
 
-  /* ---------- MOBILE STATES ---------- */
   const [mobileMenu, setMobileMenu] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({
     services: false,
@@ -82,15 +60,41 @@ export default function Navbar() {
     business: false,
   });
 
-  /* ===================================================
-  RESET MENU WHEN PAGE CHANGES
-  =================================================== */
+  /* ---------------- HERO MAP ---------------- */
+  const heroMap = {
+    "/": "home-hero",
+    "/about": "about-hero",
+    "/contact": "contact-hero",
+    "/careers": "career-hero",
+    "/projects": "projects-hero",
+    "/services": "services-hero",
+  };
+
+  /* ---------------- HANDLE NAV CLICK ---------------- */
+  const handleNavClick = (path, heroId) => (e) => {
+    if (location.pathname === path && heroId) {
+      e.preventDefault();
+      const section = document.getElementById(heroId);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      if (heroId) sessionStorage.setItem("scrollTarget", heroId);
+    }
+  };
+
+  /* ---------------- AUTO SCROLL AFTER NAVIGATION ---------------- */
   useEffect(() => {
-    setActive(location.pathname);
+    const targetId = sessionStorage.getItem("scrollTarget");
+    if (targetId) {
+      setTimeout(() => {
+        const section = document.getElementById(targetId);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+        sessionStorage.removeItem("scrollTarget");
+      }, 200);
+    }
+  }, [location]);
+
+  useEffect(() => {
     setOpenServices(false);
-    setOpenSubmenu(false);
-    setOpenDigitalSubmenu(false);
-    setOpenBusinessSubmenu(false);
     setMobileMenu(false);
     setMobileDropdowns({
       services: false,
@@ -100,40 +104,22 @@ export default function Navbar() {
     });
   }, [location]);
 
-  /* ===================================================
-  SCROLL EFFECT
-  =================================================== */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ===================================================
-  CLOSE DESKTOP DROPDOWN ON OUTSIDE CLICK
-  =================================================== */
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (desktopDropdownRef.current && !desktopDropdownRef.current.contains(event.target)) {
         setOpenServices(false);
-        setOpenSubmenu(false);
-        setOpenDigitalSubmenu(false);
-        setOpenBusinessSubmenu(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const checkPosition = (ref, setState) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const spaceRight = window.innerWidth - rect.right;
-    setState(spaceRight < 280);
-  };
-
-  /* ============ MOBILE DROPDOWN TOGGLE ============ */
   const toggleMobileDropdown = (key) => {
     setMobileDropdowns((prev) => ({ ...prev, [key]: !prev[key] }));
   };
@@ -141,278 +127,246 @@ export default function Navbar() {
   return (
     <>
       {/* ================= MOBILE NAVBAR ================= */}
-      <nav className="md:hidden fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-lg px-6 py-4 flex justify-between items-center">
-        <Link to="/">
-          <img src={logo} className="w-[4rem]" />
+      <nav className="lg:hidden fixed top-2 left-1/2 -translate-x-1/2 w-[95%] rounded-[2rem] z-50 bg-white/10 backdrop-blur-xl shadow-lg px-4 sm:px-6 py-4 flex justify-between items-center">
+        <Link to="/" onClick={handleNavClick("/", heroMap["/"])}>
+          <img src={logo} className="w-[3.5rem] sm:w-[4rem]" />
         </Link>
+
         <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-2xl">
           {mobileMenu ? <FiX /> : <FiMenu />}
         </button>
       </nav>
 
       {/* ================= MOBILE MENU ================= */}
-      <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-black text-white z-40 transition-all duration-300 ${
-          mobileMenu ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="pt-24 px-6 space-y-4">
-          {navItems.map((item) => {
-            if (item.id !== "services") {
-              return (
+      {/* ================= MOBILE MENU ================= */}
+<div
+  className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-black text-white z-40 transition-all duration-300 ${
+    mobileMenu ? "translate-x-0" : "-translate-x-full"
+  }`}
+>
+  <div className="pt-24 px-5 sm:px-6 space-y-4 overflow-y-auto h-full">
+    {navItems.map((item) => {
+      if (item.id !== "services") {
+        return (
+          <Link
+            key={item.id}
+            to={item.path}
+            onClick={handleNavClick(item.path, heroMap[item.path])}
+            className={`block py-3 border-b border-white/10 text-base sm:text-lg transition-colors duration-300 ${
+              location.pathname === item.path
+                ? "text-[var(--primary-color)] font-medium"
+                : "text-white"
+            }`}
+          >
+            {item.label}
+          </Link>
+        );
+      }
+
+      // Services dropdown
+      return (
+        <div key={item.id}>
+          <button
+            onClick={() => toggleMobileDropdown("services")}
+            className="flex justify-between w-full py-3 border-b border-white/10 text-base sm:text-lg font-bold"
+          >
+            {item.label}
+            <FiChevronDown className={`transition-transform duration-300 ${mobileDropdowns.services ? "rotate-180" : ""}`} />
+          </button>
+
+          {mobileDropdowns.services && (
+            <div className="pl-0 mt-4 space-y-6">
+              {/* IT & Technology */}
+              <div>
                 <Link
-                  key={item.id}
-                  to={item.path}
-                  className="block py-3 border-b border-white/10"
+                  to="/it&technology"
+                  onClick={handleNavClick("/it&technology", heroMap["/it&technology"])}
+                  className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
                 >
-                  {item.label}
+                  IT & Technology Services <FiChevronRight />
                 </Link>
-              );
-            }
-
-            // SERVICES MOBILE MENU
-            return (
-              <div key={item.id}>
-                <button
-                  onClick={() => toggleMobileDropdown("services")}
-                  className="flex justify-between w-full py-3 border-b border-white/10"
-                >
-                  {item.label}
-                  <FiChevronDown />
-                </button>
-
-                {mobileDropdowns.services && (
-                  <div className="pl-4 space-y-2">
-                    {servicesLinks.map((service) => {
-                      let subServices = [];
-                      if (service.id === "it-tech") subServices = itTechSubServices;
-                      if (service.id === "digital") subServices = digitalSubServices;
-                      if (service.id === "it-business") subServices = businessSubServices;
-
-                      if (subServices.length > 0) {
-                        return (
-                          <div key={service.id}>
-                            <button
-                              onClick={() =>
-                                toggleMobileDropdown(
-                                  service.id === "it-tech"
-                                    ? "itTech"
-                                    : service.id === "digital"
-                                    ? "digital"
-                                    : "business"
-                                )
-                              }
-                              className="flex justify-between w-full py-2"
-                            >
-                              {service.label}
-                              <FiChevronDown />
-                            </button>
-                            {mobileDropdowns[
-                              service.id === "it-tech"
-                                ? "itTech"
-                                : service.id === "digital"
-                                ? "digital"
-                                : "business"
-                            ] && (
-                              <div className="pl-4 space-y-1">
-                                {subServices.map((s, i) => (
-                                  <Link
-                                    key={i}
-                                    to={s.path}
-                                    className="block text-[var(--primary-color)]/50 py-1"
-                                  >
-                                    {s.label}
-                                  </Link>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        );
-                      }
-
-                      // Top-level services without sub-services
-                      return (
-                        <Link
-                          key={service.id}
-                          to={service.path}
-                          className="block py-1 text-white/80"
-                        >
-                          {service.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
+                <div className="pl-4 space-y-1">
+                  {itTechSubServices.map((s, i) => (
+                    <Link
+                      key={i}
+                      to={s.path}
+                      onClick={handleNavClick(s.path, heroMap[s.path])}
+                      className="block text-white/80 text-base hover:text-[var(--primary-color)] transition-colors duration-300"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            );
-          })}
+
+              {/* Business Consulting */}
+              <div>
+                <Link
+                  to="/it&business"
+                  onClick={handleNavClick("/it&business", heroMap["/it&business"])}
+                  className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
+                >
+                  Business Consulting <FiChevronRight />
+                </Link>
+                <div className="pl-4 space-y-1">
+                  {businessSubServices.map((s, i) => (
+                    <Link
+                      key={i}
+                      to={s.path}
+                      onClick={handleNavClick(s.path, heroMap[s.path])}
+                      className="block text-white/80 text-base hover:text-[var(--primary-color)] transition-colors duration-300"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Digital Services */}
+              <div>
+                <Link
+                  to="/digital-services"
+                  onClick={handleNavClick("/digital-services", heroMap["/digital-services"])}
+                  className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
+                >
+                  Digital Services <FiChevronRight />
+                </Link>
+                <div className="pl-4 space-y-1">
+                  {digitalSubServices.map((s, i) => (
+                    <Link
+                      key={i}
+                      to={s.path}
+                      onClick={handleNavClick(s.path, heroMap[s.path])}
+                      className="block text-white/80 text-base hover:text-[var(--primary-color)] transition-colors duration-300"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
+      );
+    })}
+  </div>
+</div>
 
       {/* ================= DESKTOP NAVBAR ================= */}
       <nav
-        className={`hidden md:flex fixed top-0 left-1/2 -translate-x-1/2 w-full px-14 py-5 justify-between items-center z-50 transition-all duration-300 ${
-          scrolled ? "bg-white/10 backdrop-blur-xl" : "bg-white/0"
+        className={`hidden lg:flex fixed top-5 rounded-[2.5rem] border border-[1px] border-neutral-700 left-1/2 -translate-x-1/2 w-[90%] px-6 xl:px-10 py-3 justify-between items-center z-50 transition-all duration-300 ${
+          scrolled || openServices
+            ? "bg-white/10 backdrop-blur-xl shadow-lg"
+            : "bg-white/10 backdrop-blur-xl shadow-lg"
         }`}
       >
-        <Link to="/">
-          <img src={logo} className="w-[5rem]" />
+        <Link to="/" onClick={handleNavClick("/", heroMap["/"])}>
+          <img src={logo} className="w-[4rem] xl:w-[5rem]" />
         </Link>
-        <ul className="flex gap-12 items-center">
-          {navItems.map((item) => (
+
+        <ul className="flex gap-6 xl:gap-12 items-center">
+          {navItems.filter((item) => item.id !== "contact").map((item) => (
             <li key={item.id} className="relative">
               {item.id === "services" ? (
                 <div ref={desktopDropdownRef}>
                   <button
                     onClick={() => setOpenServices(!openServices)}
-                    className={`flex items-center cursor-pointer gap-2 ${
-                      active.includes("/services") ? "text-[var(--primary-color)]" : "text-white hover:text-white/70"
+                    className={`flex cursor-pointer items-center gap-2 text-sm xl:text-base transition-colors duration-300 ${
+                      location.pathname.startsWith("/services") ||
+                      itTechSubServices.some((s) => s.path === location.pathname) ||
+                      digitalSubServices.some((s) => s.path === location.pathname) ||
+                      businessSubServices.some((s) => s.path === location.pathname)
+                        ? "text-[var(--primary-color)]"
+                        : "text-white"
                     }`}
                   >
                     {item.label}
-                    <FiChevronDown />
+                    <FiChevronDown className={`transition-transform duration-300 ${openServices ? "rotate-180" : ""}`} />
                   </button>
 
-                  {/* ================= SERVICES DROPDOWN ================= */}
                   <div
-                    className={`absolute top-8 left-0 w-64 bg-black border border-white/10 py-3 shadow-xl transition-all duration-300 ${
-                      openServices ? "opacity-100 translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"
+                    className={`fixed left-0 rounded-[2rem] top-[67px] w-full bg-gradient-to-br from-[#010505] to-[#00251f] backdrop-blur-xl transition-all duration-300 ${
+                      openServices ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
                     }`}
                   >
-                    {servicesLinks.map((service) => {
-                      if (service.id === "services-hero") {
-                        return (
-                          <Link
-                            key={service.id}
-                            to={service.path}
-                            className="block px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                          >
-                            {service.label}
+                    <div className="max-w-7xl mx-auto px-6 xl:px-12 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-20">
+                      <div>
+                        <h3 className="text-xl text-[var(--primary-color)] font-semibold mb-7">
+                          <Link to="/it&technology" className="flex items-center gap-1">
+                            IT & Technology Services <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
                           </Link>
-                        );
-                      }
-                      if (service.id === "it-tech") {
-                        return (
-                          <div
-                            key={service.id}
-                            ref={itTechRef}
-                            className="relative"
-                            onMouseEnter={() => {
-                              setOpenSubmenu(true);
-                              checkPosition(itTechRef, setSubmenuLeft);
-                            }}
-                            onMouseLeave={() => setOpenSubmenu(false)}
+                        </h3>
+                        {itTechSubServices.map((s, i) => (
+                          <Link
+                            key={i}
+                            to={s.path}
+                            onClick={handleNavClick(s.path, heroMap[s.path])}
+                            className={`block mb-4 transition-colors duration-300 ${
+                              location.pathname === s.path
+                                ? "text-[var(--primary-color)] font-medium"
+                                : "text-neutral-300 hover:text-[var(--primary-color)]"
+                            }`}
                           >
-                            <Link
-                              to={service.path}
-                              className="flex justify-between px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                            >
-                              {service.label} <FiChevronRight />
-                            </Link>
-                            <div
-                              className={`absolute top-0 ${
-                                submenuLeft ? "right-full" : "left-full"
-                              } w-64 bg-black border border-white/10 shadow-xl ${
-                                openSubmenu ? "opacity-100" : "opacity-0 pointer-events-none"
-                              }`}
-                            >
-                              {itTechSubServices.map((sub, i) => (
-                                <Link
-                                  key={i}
-                                  to={sub.path}
-                                  className="block px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      }
-                      if (service.id === "digital") {
-                        return (
-                          <div
-                            key={service.id}
-                            ref={digitalRef}
-                            className="relative"
-                            onMouseEnter={() => {
-                              setOpenDigitalSubmenu(true);
-                              checkPosition(digitalRef, setDigitalSubmenuLeft);
-                            }}
-                            onMouseLeave={() => setOpenDigitalSubmenu(false)}
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl text-[var(--primary-color)] font-semibold mb-7">
+                          <Link to="/it&business" className="flex items-center gap-1">
+                            IT & Business Consulting <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
+                          </Link>
+                        </h3>
+                        {businessSubServices.map((s, i) => (
+                          <Link
+                            key={i}
+                            to={s.path}
+                            onClick={handleNavClick(s.path, heroMap[s.path])}
+                            className={`block mb-4 transition-colors duration-300 ${
+                              location.pathname === s.path
+                                ? "text-[var(--primary-color)] font-medium"
+                                : "text-neutral-300 hover:text-[var(--primary-color)]"
+                            }`}
                           >
-                            <Link
-                              to={service.path}
-                              className="flex justify-between px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                            >
-                              {service.label} <FiChevronRight />
-                            </Link>
-                            <div
-                              className={`absolute top-0 ${
-                                digitalSubmenuLeft ? "right-full" : "left-full"
-                              } w-72 bg-black border border-white/10 shadow-xl ${
-                                openDigitalSubmenu ? "opacity-100" : "opacity-0 pointer-events-none"
-                              }`}
-                            >
-                              {digitalSubServices.map((sub, i) => (
-                                <Link
-                                  key={i}
-                                  to={sub.path}
-                                  className="block px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      }
-                      if (service.id === "it-business") {
-                        return (
-                          <div
-                            key={service.id}
-                            ref={businessRef}
-                            className="relative"
-                            onMouseEnter={() => {
-                              setOpenBusinessSubmenu(true);
-                              checkPosition(businessRef, setBusinessSubmenuLeft);
-                            }}
-                            onMouseLeave={() => setOpenBusinessSubmenu(false)}
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl text-[var(--primary-color)] font-semibold mb-7">
+                          <Link to="/digital-services" className="flex items-center gap-1">
+                            Digital Services <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
+                          </Link>
+                        </h3>
+                        {digitalSubServices.map((s, i) => (
+                          <Link
+                            key={i}
+                            to={s.path}
+                            onClick={handleNavClick(s.path, heroMap[s.path])}
+                            className={`block mb-4 transition-colors duration-300 ${
+                              location.pathname === s.path
+                                ? "text-[var(--primary-color)] font-medium"
+                                : "text-neutral-300 hover:text-[var(--primary-color)]"
+                            }`}
                           >
-                            <Link
-                              to={service.path}
-                              className="flex justify-between px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                            >
-                              {service.label} <FiChevronRight />
-                            </Link>
-                            <div
-                              className={`absolute top-0 ${
-                                businessSubmenuLeft ? "right-full" : "left-full"
-                              } w-72 bg-black border border-white/10 shadow-xl ${
-                                openBusinessSubmenu ? "opacity-100" : "opacity-0 pointer-events-none"
-                              }`}
-                            >
-                              {businessSubServices.map((sub, i) => (
-                                <Link
-                                  key={i}
-                                  to={sub.path}
-                                  className="block px-5 py-2 text-white/80 hover:text-[var(--primary-color)]"
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      }
-                      return null;
-                    })}
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ) : (
                 <Link
                   to={item.path}
-                  className={`${active === item.path ? "text-[var(--primary-color)]" : "text-white hover:text-white/70"}`}
+                  onClick={handleNavClick(item.path, heroMap[item.path])}
+                  className={`text-sm xl:text-base transition-colors duration-300 ${
+                    location.pathname === item.path
+                      ? "text-[var(--primary-color)] font-medium"
+                      : "text-white"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -420,6 +374,17 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        {navItems.filter((item) => item.id === "contact").map((item) => (
+          <Link
+            key={item.id}
+            to={item.path}
+            onClick={handleNavClick(item.path, heroMap[item.path])}
+            className="px-6 py-2 bg-[var(--primary-color)]/0 border border-[1px] border-[var(--primary-color)] text-[var(--primary-color)] font-medium rounded-full transition-all duration-300"
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </>
   );

@@ -1,9 +1,9 @@
 import React from "react";
-import { FaArrowDown, FaPlay } from "react-icons/fa";
 
-const Branding = () => {
+
+const ItandTechnologyPage = () => {
   return (
-    <section id="about-hero" className="relative w-full bg-black text-white overflow-hidden">
+    <section id="digital-services-page" className="relative w-full bg-black text-white overflow-hidden">
 
       {/* Top spacing */}
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 text-center">
@@ -18,12 +18,12 @@ const Branding = () => {
 
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-         Branding & Content Creation
+            It & Technology
         </h1>
 
         {/* Subtitle */}
         <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, non, nesciunt unde, illum vero cum a labore sequi ad animi quisquam voluptates vitae voluptatum ipsam corrupti voluptate odio distinctio architecto?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?
         </p>
 
         {/* Buttons */}
@@ -49,4 +49,4 @@ const Branding = () => {
   );
 };
 
-export default Branding;
+export default ItandTechnologyPage;

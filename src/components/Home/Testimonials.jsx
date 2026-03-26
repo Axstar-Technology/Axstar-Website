@@ -88,18 +88,26 @@ const Testimonials = () => {
 
 
   return (
-    <section ref={sectionRef} className="relative py-20 px-6 lg:px-20 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-[#000000]/80 py-20 px-6 lg:px-20 overflow-hidden">
 
-      {/* ===== Overlay (above bg image, below content) ===== */}
+     {/* ===== BOTTOM FOG OVERLAY ===== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-[#050b0c]/60 to-[#000000]" />
-      </div>
-      
-      {/* ✅ Background Layer (Behind Everything) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1117]/60 via-[#0b1117]/60 to-black" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              linear-gradient(
+                to top,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.9) 7%,
+                rgba(0,0,0,0.7) 23%,
+                rgba(0,0,0,0.4) 40%,
+                rgba(0,0,0,0.15) 70%,
+                rgba(0,0,0,0) 100%
+              )
+            `,
+          }}
+        />
       </div>
 
       {/* ✅ Content Layer */}

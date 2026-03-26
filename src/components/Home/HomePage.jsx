@@ -11,13 +11,15 @@ import Testimonials from './Testimonials'
 
 
 import ScrollToTopHome from './ScrollToTopHome'
+import CallUs from './CallUs'
+import LatestProjects from './LatestProjects'
 
 
 
 
 const HomePage = () => {
   return (
-    <div id='home'>
+    <div id='home' className='w-full'>
         
         <Hero/>
         <About/>
@@ -29,6 +31,8 @@ const HomePage = () => {
         <Technologies/>
        
         <Testimonials/>
+        <LatestProjects />
+        <CallUs />
         
         <ScrollToTopHome />
     </div>

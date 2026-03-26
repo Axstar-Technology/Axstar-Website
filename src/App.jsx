@@ -11,14 +11,6 @@ import AiDrivenSolutions from "./components/Services/ItandTechServices/AiDrivenS
 import Ecommerce from "./components/Services/ItandTechServices/Ecommerce";
 import DigitalPresence from "./components/Services/ItandTechServices/DigitalPresence";
 /* ===== Digital Services ===== */
-import SocialMediaManagement from "./components/Services/DigitalServices/SocialMediaManagement";
-import Seo from "./components/Services/DigitalServices/Seo";
-import Branding from "./components/Services/DigitalServices/Branding";
-import DMarketingSup from "./components/Services/DigitalServices/DMarketingSup";
-/* ===== IT & Business Consulting ===== */
-import BusinessPlanning from "./components/Services/ItandBusiness/BusinessPlanning";
-import BussinessDocumentation from "./components/Services/ItandBusiness/BussinessDocumentation";
-import DigitalConsulting from "./components/Services/ItandBusiness/DigitalConsulting";
 
 import Navbar from "./components/Navbar";
 import SmoothScroll from "./components/SmoothScroll";
@@ -30,6 +22,9 @@ import ProjectsPage from "./components/Projects/ProjectsPage";
 import ProjectDetails from "./components/Projects/ProjectDetails";
 import WhatsAppPopup from "./components/WhatsAppPopup";
 import CareersPage from "./components/Careers/CareersPage";
+import DigitalServicesPage from "./components/Services/DigitalServices/DigitalServicesPage";
+import ItandBusinessPage from "./components/Services/ItandBusiness/ItandBusinessPage";
+import ItandTechnologyPage from "./components/Services/ItandTechServices/ItandTechnologyPage";
 
 const AppWrapper = () => {
   const scrollRef = useRef();
@@ -49,9 +44,11 @@ const AppWrapper = () => {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
+  // 🔥 Only render loader while loading
+  if (loading) return <Loading />;
+
   return (
     <>
-      {loading && <Loading />}
       <ScrollToTop scrollRef={scrollRef} />
       <SmoothScroll ref={scrollRef}>
         <div
@@ -62,11 +59,11 @@ const AppWrapper = () => {
             bg-center
             bg-fixed
             bg-blend-darken
-            bg-[url('/src/assets/mobile-bg-3.png')]
-            md:bg-[url('/src/assets/hero-bg-16.png')]
+            bg-[url('/src/assets/mobile-bg-4.jpeg')]
+            md:bg-[url('/src/assets/hero-bg-24.png')]
           "
         >
-          <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-full mx-auto">
             <Navbar />
 
             <Routes>
@@ -78,9 +75,9 @@ const AppWrapper = () => {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/project-details" element={<ProjectDetails />} />
               <Route path="/careers" element={<CareersPage />} />
-              
 
               {/* ===== IT & Technology Services ===== */}
+              <Route path="/it&technology" element={<ItandTechnologyPage />} />
               <Route path="/web-development" element={<WebDevelopment />} />
               <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
               <Route path="/ai-driven-solutions" element={<AiDrivenSolutions />} />
@@ -88,16 +85,12 @@ const AppWrapper = () => {
               <Route path="/digital-presence" element={<DigitalPresence />} />
 
               {/* ===== Digital Services ===== */}
-              <Route path="/social-media-management" element={<SocialMediaManagement />} />
-              <Route path="/seo" element={<Seo />} />
-              <Route path="/branding" element={<Branding />} />
-              <Route path="/digital-marketing-support" element={<DMarketingSup />} />
+              <Route path="/digital-services" element={<DigitalServicesPage />} />
 
               {/* ===== IT & Business Consulting ===== */}
-              <Route path="/business-planning" element={<BusinessPlanning />} />
-              <Route path="/business-documentation" element={<BussinessDocumentation />} />
-              <Route path="/digital-consulting" element={<DigitalConsulting />} />
+              <Route path="/it&business" element={<ItandBusinessPage />} />
             </Routes>
+
             <WhatsAppPopup />
             <Footer />
           </div>

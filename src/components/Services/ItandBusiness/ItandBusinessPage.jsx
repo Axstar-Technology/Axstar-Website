@@ -1,9 +1,9 @@
 import React from "react";
-import { FaArrowDown, FaPlay } from "react-icons/fa";
 
-const BusinessPlanning = () => {
+
+const ItandBusinessPage = () => {
   return (
-    <section id="about-hero" className="relative w-full bg-black text-white overflow-hidden">
+    <section id="digital-services-page" className="relative w-full bg-black text-white overflow-hidden">
 
       {/* Top spacing */}
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 text-center">
@@ -18,7 +18,7 @@ const BusinessPlanning = () => {
 
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-Business Planning & Growth Strategy
+            It & Business Page
         </h1>
 
         {/* Subtitle */}
@@ -49,4 +49,4 @@ Business Planning & Growth Strategy
   );
 };
 
-export default BusinessPlanning;
+export default ItandBusinessPage;

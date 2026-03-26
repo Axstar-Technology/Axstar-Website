@@ -2,7 +2,7 @@ import React from "react";
 
 const Mission = () => {
   return (
-    <section className="w-full bg-[#1a1919] py-10 px-6 md:px-16 lg:px-24">
+    <section className="w-full bg-[#1a1919] py-15 px-6 md:px-16 lg:px-24">
       
       
 

@@ -4,22 +4,22 @@ import { useInView } from "react-intersection-observer";
 
 const stats = [
   {
-    value: 200,
+    value: 10,
     suffix: "+",
     title: "PROJECTS DELIVERED",
     desc: "Completed a wide range of successful projects",
   },
   {
-    value: 100,
+    value: 4,
     suffix: "+",
-    title: "HAPPY CLIENTS",
-    desc: "Clients who trust and value our work",
+    title: "COUNTRIES SERVED",
+    desc: "Trusted by clients across multiple countries",
   },
   {
-    value: 15,
-    suffix: "",
+    value: 2,
+    suffix: "+",
     title: "YEARS OF EXPERIENCE",
-    desc: "ears of industry expertise and knowledge",
+    desc: "Years of industry expertise and knowledge",
   },
   {
     value: 95,
@@ -30,7 +30,6 @@ const stats = [
 ];
 
 export default function Stat() {
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -39,15 +38,23 @@ export default function Stat() {
   return (
     <section
       ref={ref}
-      className="w-full bg-[#050b0c] text-white py-20 px-6 md:px-12 lg:px-24"
+  className="
+    relative w-full text-white py-20 px-6 md:px-12 lg:px-24
+
+  "
     >
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#000000]/85 z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         
         {/* LEFT CONTENT */}
         <div className="max-w-xl">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
             We Turn <br />
-             Ideas into <br />
+            Ideas into <br />
             Visual Masterpieces
           </h2>
 
@@ -57,17 +64,15 @@ export default function Stat() {
 
           <a href="/about">
             <button className="border border-[var(--primary-color)] text-[var(--primary-color)] cursor-pointer px-6 py-3 text-sm hover:bg-white hover:border-white hover:text-black transition">
-            Know More About us
-          </button>
+              Know More About us
+            </button>
           </a>
-          
         </div>
 
         {/* STATS GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {stats.map((item, index) => (
-            <div key={index}>
-              
+            <div key={index} >
               <h3 className="text-4xl text-[var(--primary-color)]/60 md:text-5xl font-bold mb-2">
                 {inView ? (
                   <CountUp
@@ -87,7 +92,6 @@ export default function Stat() {
               <p className="text-sm text-gray-500 leading-relaxed max-w-[220px]">
                 {item.desc}
               </p>
-
             </div>
           ))}
         </div>
