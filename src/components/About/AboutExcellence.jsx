@@ -12,23 +12,26 @@ const AboutExcellence = () => {
 
         {/* Heading */}
         <h2 className="text-4xl md:text-6xl text-white mb-8 ">
-           Our Pillars of Excellence
+           
           </h2>
+
+          <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Driven by standards</h2>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16">Our Pillars of Excellence</h2>
 
 
         {/* Cards */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
 
           {/* Card 1 */}
-          <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-green-500/40 to-transparent">
+          <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-[var(--primary-color)]/40 to-transparent">
             <div className="relative h-full rounded-2xl bg-[#0b0b0b] p-8 flex flex-col justify-center items-center text-center overflow-hidden">
 
               {/* Glow */}
-              <div className="absolute inset-0 bg-green-500/10 blur-2xl opacity-40"></div>
+              <div className="absolute inset-0 bg-[var(--primary-color)]/10 blur-2xl opacity-40"></div>
 
               {/* Decorative corners */}
-              <div className="absolute top-0 left-0 w-16 h-16 bg-green-500/20 rounded-br-full"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 bg-green-500/20 rounded-tl-full"></div>
+              <div className="absolute top-0 left-0 w-16 h-16 bg-[var(--primary-color)] rounded-br-full"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-[var(--primary-color)] rounded-tl-full"></div>
 
               <h3 className="text-4xl md:text-5xl font-semibold">Innovative Technology </h3>
               <p className="mt-3 text-sm italic text-gray-400">
@@ -41,25 +44,25 @@ const AboutExcellence = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-yellow-500/40 to-transparent">
+          <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-[var(--primary-color)]/40 to-transparent">
             <div className="relative h-full rounded-2xl bg-[#0b0b0b] p-8 flex flex-col justify-center items-center text-center overflow-hidden">
 
               {/* Glow */}
-              <div className="absolute inset-0 bg-yellow-500/10 blur-2xl opacity-40"></div>
+              <div className="absolute inset-0 bg-[var(--primary-color)]/10 blur-2xl opacity-40"></div>
 
               {/* Decorative pixels */}
               <div className="absolute top-4 right-4 grid grid-cols-2 gap-1">
-                <div className="w-3 h-3 bg-yellow-400"></div>
-                <div className="w-3 h-3 bg-yellow-500"></div>
-                <div className="w-3 h-3 bg-yellow-500"></div>
-                <div className="w-3 h-3 bg-yellow-400"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
               </div>
 
               <div className="absolute bottom-4 left-4 grid grid-cols-2 gap-1">
-                <div className="w-3 h-3 bg-yellow-400"></div>
-                <div className="w-3 h-3 bg-yellow-500"></div>
-                <div className="w-3 h-3 bg-yellow-500"></div>
-                <div className="w-3 h-3 bg-yellow-400"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
+                <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
               </div>
 
               <h3 className="text-4xl md:text-5xl font-semibold">High-Impact Solutions </h3>

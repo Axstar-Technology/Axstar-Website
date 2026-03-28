@@ -15,8 +15,8 @@ const SmoothScroll = forwardRef(({ children }, ref) => {
     const lenis = new Lenis({
       duration: 1,
       smooth: true,
-      wheelMultiplier: 0.17,
-      touchMultiplier: 0.7,
+      wheelMultiplier: 0.50,
+      touchMultiplier: 0.80,
       lerp: 0.12,
       easing: (t) => 1 - Math.pow(1 - t, 4),
     });

@@ -2,86 +2,127 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <section className="w-full bg-black py-30 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <section className="w-full bg-[#000000] py-20 px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Left Content */}
-        <div className="max-w-lg">
-          <p className="text-[var(--primary-color)] text-sm font-semibold tracking-widest uppercase mb-3">
-            Contact
-          </p>
+        {/* Main Layout Grid */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
+          
+          {/* 1. Left Content: Brand & Reach (Fixed width on desktop, full on mobile) */}
+          <div className="w-full lg:w-2/5 flex flex-col justify-center">
+            <div className="space-y-6">
+              <div className="inline-block px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/50">
+                <span className="text-[var(--primary-color)] text-xs font-bold tracking-widest uppercase">
+                  Contact Us
+                </span>
+              </div>
+              
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+                Let’s create <br className="hidden md:block" /> 
+                something epic.
+              </h2>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Get in touch
-          </h2>
+              <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-md">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum labore enim aliquid debitis facilis fugiat, sit atque sed hic autem eaque.
+              </p>
 
-          <p className="text-white leading-relaxed mb-8">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum labore enim aliquid debitis facilis fugiat, sit atque sed hic autem eaque nesciunt consequatur cupiditate numquam nulla neque eveniet dignissimos quisquam!
-          </p>
-
-          <p className="text-white text-sm mb-3">
-            Feel free to get in touch with us via email or phone
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 text-[var(--primary-color)] font-medium">
-            <span>info@email.com</span>
-            <span>+94 77 123 456</span>
+              <div className="pt-8 space-y-4">
+                <div className="flex items-center gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:border-[var(--primary-color)] transition-colors">
+                    <span className="text-[var(--primary-color)]">@</span>
+                  </div>
+                  <span className="text-white font-medium">info@email.com</span>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:border-[var(--primary-color)] transition-colors">
+                    <span className="text-[var(--primary-color)]">#</span>
+                  </div>
+                  <span className="text-white font-medium">+94 77 123 456</span>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* 2. Right Content: The Form Card */}
+          <div className="w-full lg:w-3/5">
+            <div className="relative group">
+              {/* Decorative Gradient Glow (Desktop Only) */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--primary-color)] to-purple-600 rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+              
+              <div className="relative bg-neutral-900 border border-neutral-800 p-6 sm:p-10 rounded-2xl shadow-2xl">
+                <form className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  
+                  {/* First Name */}
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      className="w-full bg-[#050505] border border-neutral-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] transition-all placeholder:text-neutral-600"
+                    />
+                  </div>
+
+                  {/* Last Name */}
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      className="w-full bg-[#050505] border border-neutral-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] transition-all placeholder:text-neutral-600"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="sm:col-span-2 space-y-2">
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      className="w-full bg-[#050505] border border-neutral-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] transition-all placeholder:text-neutral-600"
+                    />
+                  </div>
+
+                  {/* Select Dropdown */}
+                  <div className="sm:col-span-2 space-y-2 relative">
+                    <select className="w-full bg-[#050505] border border-neutral-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] appearance-none cursor-pointer">
+                      <option className="bg-black">What are you interested in?</option>
+                      <option className="bg-black">Web Development</option>
+                      <option className="bg-black">UI/UX Design</option>
+                      <option className="bg-black">Branding</option>
+                    </select>
+                    {/* Custom Arrow */}
+                    <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-500">
+                      ↓
+                    </div>
+                  </div>
+
+                  {/* Message */}
+                  <div className="sm:col-span-2 space-y-2">
+                    <textarea
+                      placeholder="Message"
+                      rows="4"
+                      className="w-full bg-[#050505] border border-neutral-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] transition-all placeholder:text-neutral-600 resize-none"
+                    ></textarea>
+                  </div>
+
+                  {/* Submit Button & Disclaimer */}
+                  <div className="sm:col-span-2 pt-2 flex flex-col md:flex-row items-center gap-6">
+                    <button
+                      type="submit"
+                      className="w-full md:w-auto bg-white text-black hover:bg-[var(--primary-color)] hover:text-white font-bold px-10 py-4 rounded-xl transition-all duration-300 transform active:scale-95"
+                    >
+                      Send Message
+                    </button>
+                    
+                    <p className="text-[11px] text-neutral-500 leading-tight">
+                      By clicking Submit you agree to our 
+                      <span className="text-neutral-300 underline ml-1 cursor-pointer">privacy policy</span>.
+                    </p>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        {/* Right Form */}
-        <div className="bg-neutral-900 rounded-xl shadow-md p-6 md:p-8">
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-            <input
-              type="text"
-              placeholder="First name"
-              className="col-span-1 border text-white border-neutral-700 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
-            />
-
-            <input
-              type="text"
-              placeholder="Last name"
-              className="col-span-1 border text-white border-neutral-700 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
-            />
-
-            <input
-              type="email"
-              placeholder="Email address"
-              className="md:col-span-2 border text-white border-neutral-700 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
-            />
-
-         
-
-
-            <textarea
-              placeholder="Message"
-              rows="4"
-              className="md:col-span-2 border text-white border-neutral-700 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
-            ></textarea>
-
-            <select className="border text-white bg-neutral-950 border-neutral-700 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
-              <option>What are you interested in?</option>
-              <option>Web Development</option>
-              <option>UI/UX Design</option>
-              <option>Branding</option>
-            </select>
-
-            <button
-              type="submit"
-              className="bg-[var(--primary-color)] cursor-pointer text-white rounded-md px-6 py-3 font-medium hover:bg-[var(--primary-color)]/50 transition"
-            >
-              Submit
-            </button>
-
-            <p className="md:col-span-2 text-xs text-white mt-2">
-              By clicking Submit you agree that we process your personal data
-              according to our privacy statement.
-            </p>
-
-          </form>
-        </div>
-
       </div>
     </section>
   );

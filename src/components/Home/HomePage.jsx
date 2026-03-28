@@ -6,13 +6,14 @@ import Services from './Services'
 import WhyChooseUs from './WhyChooseUs'
 import Technologies from './Technologies'
 import Stat from './Stat'
-import Process from './Process'
+
 import Testimonials from './Testimonials'
 
 
 import ScrollToTopHome from './ScrollToTopHome'
 import CallUs from './CallUs'
 import LatestProjects from './LatestProjects'
+import Process2 from './Process2'
 
 
 
@@ -27,7 +28,8 @@ const HomePage = () => {
         <Services/>
         <WhyChooseUs/>
         <Stat/>
-        <Process/>
+        <Process2 />
+        
         <Technologies/>
        
         <Testimonials/>

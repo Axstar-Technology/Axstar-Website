@@ -1,0 +1,29 @@
+import React from 'react'
+
+const ContactOurTeam = () => {
+  return (
+    <div className="w-full bg-transparent py-30 px-2 flex items-center justify-center">
+      <div className="max-w-5xl text-center text-white">
+        
+        {/* Title */}
+        <h2 className="text-2xl text-neutral-200 sm:text-3xl md:text-4xl mb-5 font-bold leading-snug">
+          LET’S Build something THAT WORKS FOR YOU 
+        </h2>
+
+        {/* Description */}
+        <p className="mt-4 text-[1rem] text-neutral-400 leading-relaxed">
+          Your web app should make life easier, not harder. Whether it’s a simple tool or a full-scale platform, we’ll design and build something that feels right for your business and your users.
+        </p>
+
+
+        {/* Button */}
+        <button className="mt-6 px-6 py-3 text-sm sm:text-base font-medium bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/50 cursor-pointer transition-all duration-300 rounded-full">
+         Contact Our Team
+        </button>
+
+      </div>
+    </div>
+  )
+}
+
+export default ContactOurTeam

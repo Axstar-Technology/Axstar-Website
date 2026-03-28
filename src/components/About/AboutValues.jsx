@@ -15,79 +15,104 @@ const AboutValues = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12 }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { opacity: 0, x: -20 },
     visible: {
-      y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } // Custom smooth ease-out
+      x: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
   };
 
   return (
     <section className="py-24 px-6 bg-black text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Background Glow Decor */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--primary-color)]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[var(--primary-color)]/10 rounded-full blur-[120px] pointer-events-none" />
-
         {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20 relative z-10"
+          className="mb-20"
         >
-          <h2 className="text-4xl md:text-6xl text-white mb-8 ">
-            Axstar Core Values
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-lg text-gray-400 max-w-4xl mx-auto italic font-light">
-            <p>
-              <span className="font-bold text-[var(--primary-color)] not-italic mr-2">AX</span> 
-              Our expertise and agility behind the scenes
-            </p>
-            <div className="hidden md:block w-px h-6 bg-gray-800 self-center" />
-            <p>
-              <span className="font-bold text-[var(--primary-color)] not-italic mr-2">STAR</span> 
-              The scalable, ambitious results we deliver
-            </p>
-          </div>
+         
+          <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Values that guide our vision</h2>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16"> Axstar Core Values</h2>
+          <div className="w-full flex justify-center">
+  <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-lg text-gray-400 italic font-light border-l-2 border-[var(--primary-color)] pl-6 max-w-3xl">
+    <p>
+      <span className="font-bold text-[var(--primary-color)] not-italic mr-2">AX</span> 
+      Our expertise and agility behind the scenes
+    </p>
+    <p>
+      <span className="font-bold text-[var(--primary-color)] not-italic mr-2">STAR</span> 
+      The scalable, ambitious results we deliver
+    </p>
+  </div>
+</div>
         </motion.div>
 
-        {/* Values Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
-        >
-          {values.map((val, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="p-8 rounded-3xl border border-white/5 bg-white/[0.03] backdrop-blur-sm hover:bg-white/[0.07] hover:bg-[var(--primary-color)]/30 transition-colors duration-500 group"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-color)]/50 text-white text-3xl font-black mb-6 shadow-lg shadow-[var(--primary-color)]/20 group-hover:shadow-[var(--primary-color)]/40 group-hover:scale-110 transition-all duration-500">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          
+          {/* Left Side: Values List */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
+            {values.map((val, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="group flex gap-8 border-b border-white/10 pb-8 last:border-0"
+              >
+                <span className="text-5xl md:text-6xl font-black text-white/10 group-hover:text-[var(--primary-color)] transition-colors duration-500">
                   {val.letter}
+                </span>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3 tracking-tight group-hover:translate-x-2 transition-transform duration-300">
+                    {val.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed max-w-md">
+                    {val.desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 tracking-tight text-gray-100 group-hover:text-[var(--primary-color)] transition-colors">
-                  {val.title}
-                </h3>
-                <p className="text-gray-400 leading-relaxed font-light">
-                  {val.desc}
-                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Right Side: Image/Visual */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="sticky top-24 hidden lg:block"
+          >
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
+                alt="Axstar Professional Environment" 
+                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
+              />
+              {/* Overlay Decor */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+              <div className="absolute bottom-8 left-8">
+                <div className="text-xs uppercase tracking-[0.4em] text-[var(--primary-color)] mb-2 font-bold">Standard of Excellence</div>
+                <div className="text-2xl font-light tracking-widest">EST. 2026</div>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            </div>
+            
+            {/* Background Glow behind image */}
+            <div className="absolute -z-10 -bottom-12 -right-12 w-64 h-64 bg-[var(--primary-color)]/20 rounded-full blur-[100px]" />
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

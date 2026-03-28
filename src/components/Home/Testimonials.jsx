@@ -88,7 +88,7 @@ const Testimonials = () => {
 
 
   return (
-    <section ref={sectionRef} className="relative bg-[#000000]/80 py-20 px-6 lg:px-20 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-[#000000] py-20 px-6 lg:px-20 overflow-hidden">
 
      {/* ===== BOTTOM FOG OVERLAY ===== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -115,10 +115,13 @@ const Testimonials = () => {
         
         {/* Section Title */}
         <div className="mb-16">
-         
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-100 text-center">
-          What Our Clients Say
-        </h2>
+          <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center text-gray-500">
+      Where client success meets trust
+          </h2>
+    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-16">
+    What Our Clients Say
+    </h2>
+      
           
         </div>
 

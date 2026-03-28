@@ -3,8 +3,7 @@ import AboutHero from './AboutHero'
 
 import WhatWeDo from './WhatWeDo'
 import Difference from './Difference'
-import Vision from './Vision'
-import Mission from './Mission'
+
 import ScrollToTopAbout from './ScrollToTopAbout'
 import AboutWhatWeDo from './AboutWhatWeDo'
 import AboutValues from './AboutValues'
@@ -13,6 +12,7 @@ import OurStory from './OurStory'
 import CultureSection from './CultureSection'
 import FeaturesSection from './FeaturesSection'
 import TeamSection from './TeamSection'
+import VisionMission from './VisionMission'
 
 
 const AboutPage = () => {
@@ -20,8 +20,7 @@ const AboutPage = () => {
     <div>
       <AboutHero/>
       <AboutWhatWeDo />
-      <Vision />
-      <Mission />
+      <VisionMission />
       <AboutValues />
       <AboutExcellence />
       <OurStory />

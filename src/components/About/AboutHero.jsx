@@ -1,51 +1,155 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 
-const AboutHero = () => {
-  // Mock data for the reviewer avatars
-  const reviewers = [
-    { id: 1, url: 'https://i.pravatar.cc/150?u=1' },
-    { id: 2, url: 'https://i.pravatar.cc/150?u=2' },
-    { id: 3, url: 'https://i.pravatar.cc/150?u=3' },
-  ];
+const TechNetworkBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    const particles = [];
+    // Lower count than "millions" to keep the lines crisp and performance high
+    const particleCount = 120; 
+    const connectionDistance = 150; // How close dots need to be to "connect"
+    
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.8;
+        this.speedY = (Math.random() - 0.5) * 0.8;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+      }
+
+      draw() {
+        ctx.fillStyle = '#02ffdd';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const drawLines = () => {
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < connectionDistance) {
+            // Fade lines based on distance
+            const opacity = 1 - distance / connectionDistance;
+            ctx.strokeStyle = `rgba(2, 255, 221, ${opacity * 0.2})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw the "tech" connections first
+      drawLines();
+
+      // Update and draw dots
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   return (
-    <section id='about-hero' className="relative w-full min-h-[80vh] flex flex-col items-center justify-center px-4 py-30 overflow-hidden bg-[#02110e] text-white">
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-40"
+      style={{ zIndex: 1 }}
+    />
+  );
+};
+
+const AboutHero = () => {
+  return (
+    <section 
+      id='about-hero' 
+      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-black text-white"
+    >
       
-      {/* Background Glow Effect */}
-      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[60%] rounded-[100%] bg-[var(--primary-color)]/40 blur-[120px] pointer-events-none" />
+      {/* Deep Background Glows */}
+      <div className="absolute top-1/4 left-1/4 w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[40%] h-[40%] rounded-full bg-[#02ffdd]/10 blur-[150px] pointer-events-none" />
+
+      {/* The Tech Dots Animation */}
+      <TechNetworkBackground />
 
       {/* Content Container */}
-      <div className="relative py-10 z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         
         
 
-        {/* Heading */}
-        <h1 className="h-animate text-neutral-100 text-[2.5rem] sm:text-5xl md:text-[3.3rem] lg:text-[4.1rem] font-medium tracking-w[1rem] leading-tight pb-5">
-          Driving Innovation with  <br className="hidden md:block" />
-          <span className="text-slate-200">Expertise</span>
+        <h1 className="text-white py-10 text-[2.8rem] sm:text-5xl md:text-[4rem] lg:text-[5rem] tracking-tight leading-[1.1] pb-6">
+          Driving Innovation with <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#02ffdd] via-blue-400 to-[#186d60]">
+            Expertise
+          </span>
         </h1>
 
-        {/* Subtext */}
-        <p className="max-w-4xl text-slate-400 text-lg md:text-[1.1rem] leading-relaxed mb-10 px-2">
-          Axstar is dedicated to empowering businesses with innovative technology solutions and expert business consulting. We partner with companies of all sizes to drive digital transformation, enhance productivity, and achieve sustainable growth through strategic guidance and cutting-edge technology.
+        <p className="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
+          Axstar empowers businesses with cutting-edge tech and strategic consulting. 
+          We build the bridges between today's challenges and tomorrow's growth.
         </p>
 
-        {/* CTA Button */}
-        <button className="cursor-pointer px-10 py-2 text-sm rounded-lg
-                bg-gradient-to-r from-[#02ffdd] to-[#02ffdd]
-                text-black transition flex items-center gap-2">
-          Discover Demo
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <button className="group relative px-12 py-4 text-sm font-bold rounded-full overflow-hidden transition-all">
+          <div className="absolute inset-0 bg-[#02ffdd] transition-transform group-hover:scale-105" />
+          <div className="relative cursor-pointer flex items-center gap-2 text-black">
+            Discover 
+            <ArrowDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </div>
         </button>
 
       </div>
-
-      {/* Decorative Stars/Dots */}
-      <div className="absolute top-1/4 left-10 w-1 h-1 bg-white rounded-full opacity-40 animate-pulse" />
-      <div className="absolute top-1/3 right-20 w-1 h-1 bg-white rounded-full opacity-60 animate-pulse delay-700" />
-      <div className="absolute bottom-1/4 left-20 w-1 h-1 bg-white rounded-full opacity-30 animate-pulse delay-1000" />
-      <div className="absolute bottom-1/3 right-10 w-1 h-1 bg-white rounded-full opacity-50" />
     </section>
   );
 };

@@ -4,7 +4,7 @@ import bgImage from "../../assets/ecomImg1.jpg"; // adjust path if needed
 const AboutWhatWeDo = () => {
   return (
     <section
-      className="w-full bg-[black]/0 py-35 flex items-center justify-center bg-cover bg-center relative"
+      className="w-full bg-[black] py-20 flex items-center justify-center bg-cover bg-center relative"
       
     >
       {/* Overlay */}
@@ -13,10 +13,10 @@ const AboutWhatWeDo = () => {
       {/* Content */}
       <div className="relative z-10 max-w-6xl px-6 py-12 text-center flex flex-col items-center">
         
-        {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-         Who We Are
-        </h1>
+       
+
+         <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Who we are inside</h2>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white">Who We Are</h2>
 
         
         

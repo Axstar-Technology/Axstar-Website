@@ -35,7 +35,7 @@ const LatestProjects = () => {
   };
 
   return (
-    <section className="min-h-[70vh] py-12 px-6 bg-[#000000] text-white flex flex-col justify-center overflow-hidden">
+    <section className="relative z-10 min-h-[70vh] py-12 px-6 bg-[#000000] text-white flex flex-col justify-center overflow-hidden">
       <div className="max-w-4xl mx-auto w-full flex flex-col items-center">
         
         {/* Title Section - Slightly smaller margin */}
@@ -46,7 +46,10 @@ const LatestProjects = () => {
 
 
 
-<h2 className="text-3xl md:text-4xl font-bold text-white mb-8 tracking-tight">
+ <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center text-gray-500">
+      Showcasing our latest creations
+          </h2>
+    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-16">
     Our Latest Projects
     </h2>
           

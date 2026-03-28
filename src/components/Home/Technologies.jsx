@@ -41,13 +41,38 @@ const technologies = [
 
 const Technologies = () => {
   return (
-    <section className="w-full py-28 bg-black overflow-hidden">
+    <section className="relative w-full py-28 bg-[black] overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6">
+      {/* ===== TOP FOG OVERLAY ===== */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              linear-gradient(
+                to bottom,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.9) 7%,
+                rgba(0,0,0,0.7) 23%,
+                rgba(0,0,0,0.4) 40%,
+                rgba(0,0,0,0.15) 70%,
+                rgba(0,0,0,0) 100%
+              )
+            `,
+          }}
+        />
+      </div>
 
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-gray-100 text-center">
-          Empowered by Global Standards <br/> & Cutting-Edge Tech
+      
+
+      {/* ✅ FIX: added relative z-10 */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center text-gray-500">
+          Empowered by Global Standards 
+        </h2>
+
+        <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-16">
+          Cutting-Edge Tech
         </h2>
 
         {/* Carousel */}

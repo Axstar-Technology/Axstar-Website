@@ -3,7 +3,7 @@ import logo from "../../assets/c1.png";
 
 const CallUs = () => {
   return (
-    <section className="w-full bg-black text-white py-20 px-4 flex items-center justify-center">
+    <section className="relative z-10 w-full bg-black text-white py-20 px-4 flex items-center justify-center">
 
 
       
@@ -19,7 +19,7 @@ const CallUs = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4">
+        <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-4">
        Ready to Sync Your Success?
         </h2>
 

@@ -149,9 +149,14 @@ export default function ProjectSection() {
       </div>
 
       <div className="relative w-full overflow-hidden pb-20 pt-20">
-       <h2 className="text-3xl md:text-4xl mb-19 font-semibold text-gray-100 text-center">
-          Our Latest Projects
-        </h2>
+       
+
+          <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center text-gray-500">
+      Empowered by Global Standards 
+          </h2>
+    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-16">
+    Our Latest Projects
+    </h2>
 
         <AnimatePresence initial={false} mode="wait">
           <motion.div

@@ -1,17 +1,98 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-
 gsap.registerPlugin(ScrollTrigger);
+
+const ParticleBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
+
+    const particleCount = 1200;
+    const particles = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.z = Math.random() * canvas.width;
+        this.size = 0.5;
+        this.speed = 0.5 + Math.random() * 1.5;
+      }
+      update() {
+        this.z -= this.speed;
+        if (this.z <= 0) {
+          this.reset();
+          this.z = canvas.width;
+        }
+      }
+      draw() {
+        const posX = (this.x - canvas.width / 2) * (canvas.width / this.z) + canvas.width / 2;
+        const posY = (this.y - canvas.height / 2) * (canvas.width / this.z) + canvas.height / 2;
+        const s = this.size * (canvas.width / this.z);
+
+        if (posX > 0 && posX < canvas.width && posY > 0 && posY < canvas.height) {
+          ctx.beginPath();
+          ctx.arc(posX, posY, s, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${1 - this.z / canvas.width})`;
+          ctx.fill();
+        }
+      }
+    }
+
+    const init = () => {
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener("resize", resize);
+    resize();
+    init();
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      // Changed "absolute" to "fixed" so it stays when scrolling
+      className="fixed inset-0 z-0 pointer-events-none bg-transparent"
+    />
+  );
+};
 
 const Hero = () => {
   const container = useRef(null);
 
   useGSAP(
     () => {
-      // TOP SECTION ANIMATION (on load)
       gsap.from(".h-animate", {
         opacity: 0,
         y: 60,
@@ -39,7 +120,6 @@ const Hero = () => {
         delay: 1.5,
       });
 
-      // CARDS ANIMATION (on scroll)
       gsap.from(".card-animate", {
         opacity: 0,
         y: 80,
@@ -61,12 +141,13 @@ const Hero = () => {
     <section
       ref={container}
       id="home-hero"
-      className="relative w-full text-white h-screen flex items-center overflow-hidden"
+      className="relative w-full text-white h-screen flex items-center overflow-visible"
     >
-     
+      {/* ===== FIXED BACKGROUND ANIMATION ===== */}
+      <ParticleBackground />
 
       {/* ===== BOTTOM FOG OVERLAY ===== */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <div
           className="absolute inset-0"
           style={{
@@ -109,7 +190,7 @@ const Hero = () => {
             </a>
 
             <a href="/projects#projects-hero">
-              <button className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-green-800">
+              <button className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-[var(--primary-color)] hover:border-[var(--primary-color)] hover:text-black">
                 View Portfolio
               </button>
             </a>

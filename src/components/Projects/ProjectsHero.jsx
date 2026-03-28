@@ -1,44 +1,150 @@
-import React from "react";
-import { FaArrowDown, FaPlay } from "react-icons/fa";
+import React, { useEffect, useRef } from 'react';
+import { ArrowDown } from 'lucide-react';
+
+const ParticleWarpBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let mouse = { x: -1000, y: -1000 };
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    const handleMouseMove = (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
+    handleResize();
+
+    const particles = [];
+    const particleCount = 120;
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = (Math.random() - 0.5) * canvas.width * 2;
+        this.y = (Math.random() - 0.5) * canvas.height * 2;
+        this.z = Math.random() * canvas.width;
+        this.pz = this.z;
+        this.color = Math.random() > 0.5 ? '#02ffdd' : '#3b82f6';
+        this.size = 1;
+      }
+
+      update() {
+        // Speed of the "warp" effect
+        this.z -= 4;
+        if (this.z < 1) {
+          this.z = canvas.width;
+          this.x = (Math.random() - 0.5) * canvas.width * 2;
+          this.y = (Math.random() - 0.5) * canvas.height * 2;
+          this.pz = this.z;
+        }
+      }
+
+      draw() {
+        // Project 3D coordinates to 2D
+        const sx = (this.x / this.z) * (canvas.width / 2) + canvas.width / 2;
+        const sy = (this.y / this.z) * (canvas.height / 2) + canvas.height / 2;
+
+        const px = (this.x / this.pz) * (canvas.width / 2) + canvas.width / 2;
+        const py = (this.y / this.pz) * (canvas.height / 2) + canvas.height / 2;
+
+        this.pz = this.z;
+
+        // Interaction with mouse
+        const dx = sx - mouse.x;
+        const dy = sy - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const opacity = Math.min(1, 400 / this.z);
+
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.globalAlpha = opacity * 0.4;
+        ctx.lineWidth = dist < 150 ? 2 : 1;
+        ctx.moveTo(px, py);
+        ctx.lineTo(sx, sy);
+        ctx.stroke();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const animate = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; // Slight trail effect
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 1 }}
+    />
+  );
+};
 
 const ProjectsHero = () => {
   return (
-    <section id="projects-hero" className="relative w-full bg-black text-white overflow-hidden">
+    <section 
+      id='about-hero' 
+      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-black text-white"
+    >
+      
+      {/* Background Glows (Same as before) */}
+      <div className="absolute top-1/4 left-1/4 w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[40%] h-[40%] rounded-full bg-[#02ffdd]/10 blur-[150px] pointer-events-none" />
 
-      {/* Top spacing */}
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 text-center">
+      {/* New Particle Warp Background */}
+      <ParticleWarpBackground />
 
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         
-
-        {/* Main heading */}
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-         Our Portfolio
+        <h1 className="text-white py-10 text-[2.8rem] sm:text-5xl md:text-[4rem] lg:text-[5rem] tracking-tight leading-[1.1] pb-6">
+          Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#02ffdd] via-blue-400 to-[#186d60]">Portfolio</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor animi aspernatur consequatur in minima iste harum consequuntur, natus, odio laudantium deserunt consectetur nulla expedita! Quidem blanditiis delectus voluptatibus ut fuga?
+        <p className="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
+          Crafting digital experiences that blend precision engineering with elite aesthetics. Explore our journey through technology and design.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-
-            <a href="#web">
-                <button className="bg-[var(--primary-color)] hover:bg-[var(--primary-color)] cursor-pointer px-4 py-3 rounded-full font-medium transition mx-auto flex items-center gap-3">
-            Explore More
-          </button>
-            </a>
-          
-
-        </div>
-
-       
+        <button className="group relative px-12 py-4 text-sm font-bold rounded-full overflow-hidden transition-all">
+          <div className="absolute inset-0 bg-[#02ffdd] transition-transform group-hover:scale-105" />
+          <div className="relative cursor-pointer flex items-center gap-2 text-black">
+            Discover 
+            <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+          </div>
+        </button>
 
       </div>
-
-      {/* Bottom gradient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1200px] h-[400px] bg-[var(--primary-color)]/30 blur-[180px] rounded-full pointer-events-none"></div>
-
     </section>
   );
 };

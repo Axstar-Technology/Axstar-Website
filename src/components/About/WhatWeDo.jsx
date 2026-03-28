@@ -20,41 +20,38 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white px-6 py-20 lg:py-32">
+    <div className=" bg-[#0a0a0a] text-white px-6 py-16 md:py-24 lg:py-32">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
-        <header className="mb-20 text-center">
-          {/*<h2 className="text-[2rem] uppercase tracking-[0.4em] text-gray-500 mb-4">
-            What We Do
-          </h2>*/}
-
+        <header className="mb-12 md:mb-20 text-center">
            {/* Heading */}
-        <h2 className="text-4xl md:text-6xl text-white mb-8 ">
-          What We Do
-          </h2>
+          <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Solutions we create</h2>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16">What We Do</h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed">
+          <p className="max-w-2xl mx-auto text-gray-400 text-base md:text-lg leading-relaxed">
             At Axstar, we help businesses innovate, grow, and scale through a 
             combination of technology, digital expertise, and strategic guidance.
           </p>
         </header>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
+        {/* Services Grid - Fixed for Responsiveness */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service, index) => (
             <div 
               key={service.id}
-              className="group relative p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-white/20 transition-all duration-500 ease-out"
+              className={`group relative p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-white/20 transition-all duration-500 ease-out 
+                ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`} 
             >
+              {/* Note: The logic above centers the 3rd card on tablets for better visual balance */}
 
-              <h3 className="text-2xl font-medium mb-4 text-center group-hover:text-[var(--primary-color)] transition-colors duration-300">
+              <h3 className="text-xl md:text-2xl font-medium mb-4 text-center group-hover:text-[var(--primary-color)] transition-colors duration-300">
                 {service.title}
               </h3>
               
               <div className="w-12 h-[1px] bg-neutral-700 mx-auto mb-6 group-hover:w-24 transition-all duration-500"></div>
 
-              <p className="text-neutral-400 leading-relaxed text-center font-light">
+              <p className="text-neutral-400 leading-relaxed text-center font-light text-sm md:text-base">
                 {service.description}
               </p>
 
@@ -63,9 +60,6 @@ const WhatWeDo = () => {
             </div>
           ))}
         </div>
-
-      
-
       </div>
     </div>
   );

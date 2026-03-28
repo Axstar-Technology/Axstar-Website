@@ -3,13 +3,13 @@ import { useRef, useState, useEffect } from "react";
 
 import HomePage from "./components/Home/HomePage";
 import AboutPage from "./components/About/AboutPage";
-import ServicesPage from "./components/Services/ServicesPage";
+
 /* ===== IT & Technology Services ===== */
-import WebDevelopment from "./components/Services/ItandTechServices/WebDevelopment";
-import MobileAppDevelopment from "./components/Services/ItandTechServices/MobileAppDevelopment";
-import AiDrivenSolutions from "./components/Services/ItandTechServices/AiDrivenSolutions";
-import Ecommerce from "./components/Services/ItandTechServices/Ecommerce";
-import DigitalPresence from "./components/Services/ItandTechServices/DigitalPresence";
+import WebDevelopment from "./components/Services/EngineeringAndTech/WebDevelopment/WebDevelopment";
+import MobileAppDevelopment from "./components/Services/EngineeringAndTech/MobileAppDevelopment/MobileAppDevelopment";
+
+
+
 /* ===== Digital Services ===== */
 
 import Navbar from "./components/Navbar";
@@ -22,9 +22,15 @@ import ProjectsPage from "./components/Projects/ProjectsPage";
 import ProjectDetails from "./components/Projects/ProjectDetails";
 import WhatsAppPopup from "./components/WhatsAppPopup";
 import CareersPage from "./components/Careers/CareersPage";
-import DigitalServicesPage from "./components/Services/DigitalServices/DigitalServicesPage";
-import ItandBusinessPage from "./components/Services/ItandBusiness/ItandBusinessPage";
-import ItandTechnologyPage from "./components/Services/ItandTechServices/ItandTechnologyPage";
+
+
+
+import AiDrivenSolutions from "./components/Services/EngineeringAndTech/AIandAutomation/AiDrivenSolutions";
+import EngineeringandTechPage from "./components/Services/EngineeringAndTech/EngineeringandTechPage";
+import DigitalGrowthPage from "./components/Services/digitalGrowth/DigitalGrowthPage";
+import BusinessStrategyPage from "./components/Services/BusinessStrategy/BusinessStrategyPage";
+
+
 
 const AppWrapper = () => {
   const scrollRef = useRef();
@@ -70,25 +76,27 @@ const AppWrapper = () => {
               {/* ===== Main Pages ===== */}
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
+              
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/project-details" element={<ProjectDetails />} />
               <Route path="/careers" element={<CareersPage />} />
 
-              {/* ===== IT & Technology Services ===== */}
-              <Route path="/it&technology" element={<ItandTechnologyPage />} />
+              {/* ===== Engineering & Technology Services ===== */}
+              <Route path="/engineering&technology" element={<EngineeringandTechPage />} />
               <Route path="/web-development" element={<WebDevelopment />} />
               <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
               <Route path="/ai-driven-solutions" element={<AiDrivenSolutions />} />
-              <Route path="/ecommerce" element={<Ecommerce />} />
-              <Route path="/digital-presence" element={<DigitalPresence />} />
+             
+            
 
-              {/* ===== Digital Services ===== */}
-              <Route path="/digital-services" element={<DigitalServicesPage />} />
+              {/* ===== Digital Growth & Marketing ===== */}
+              <Route path="/digital-growth&marketing" element={<DigitalGrowthPage />} />
+             
 
-              {/* ===== IT & Business Consulting ===== */}
-              <Route path="/it&business" element={<ItandBusinessPage />} />
+              {/* ===== BusinessStrategy & Consulting ===== */}
+              <Route path="business-strategy&consulting" element={<BusinessStrategyPage />} />
+            
             </Routes>
 
             <WhatsAppPopup />

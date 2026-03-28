@@ -1,10 +1,7 @@
 import React from "react";
 import { FaBrain, FaHeadset, FaLaptopCode, FaUserTie } from "react-icons/fa";
 
-
-
 const WhyChooseUs = () => {
-
   const cards = [
     {
       icon: <FaBrain />,
@@ -18,64 +15,64 @@ const WhyChooseUs = () => {
     },
     {
       icon: <FaUserTie />,
-      title: "Client Focus Approached",
+      title: "Client Focus Approach",
       text: "We prioritize understanding client needs to deliver solutions that align perfectly with their goals.",
     },
     {
       icon: <FaHeadset />,
-      title: "End-to-End 24/7 Customer Support",
+      title: "24/7 Customer Support",
       text: "Complete support throughout the entire process with reliable assistance available whenever you need it.",
     },
   ];
 
   return (
-    <section id="why" className="w-full bg-[#000000] pb-30 pt-25 px-6 md:px-12 lg:px-20">
+    <section id="why" className="relative w-full bg-[#000000] py-24 px-6 md:px-12 lg:px-20 z-10">
+      <div className="max-w-7xl z-10 mx-auto">
+        
+        {/* Minimal Header */}
+        <div className="mb-20 w-full">
+          <p className="text-[0.85rem] uppercase tracking-[0.4em] text-gray-500 mb-4 text-center">
+            Our Edge
+          </p>
+          <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white">
+            The Axstar Advantage
+          </h2>
+        </div>
 
+        <div className="w-full flex justify-center">
+          {/* Changed grid-cols-1 (mobile) 
+              to md:grid-cols-2 (tablet) 
+              to lg:grid-cols-4 (desktop - all in one line) 
+          */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16 w-full">
+            
+            {cards.map((card, index) => (
+              <div
+                key={index}
+                className="group relative flex flex-col items-start transition-all duration-300 pl-6 md:pl-8"
+              >
+                {/* Accent line - Visible on all screens to maintain the aesthetic */}
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-gray-800 group-hover:bg-[var(--primary-color)] transition-colors duration-500" />
 
-      
+                {/* Icon */}
+                <div className="text-[var(--primary-color)] text-2xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+                  {card.icon}
+                </div>
 
-      
-      {/* TITLE */}
-      <h2 className="text-3xl md:text-4xl font-semibold text-gray-100 text-center mb-10">
-        The Axstar Advantage
-      </h2>
+                {/* Content */}
+                <h3 className="text-white text-lg font-medium mb-3 tracking-tight">
+                  {card.title}
+                </h3>
 
-      <div className="max-w-6xl mx-auto">
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="relative rounded-2xl border border-white/20 
-              bg-gradient-to-br from-[var(--primary-color)]/10 via-[var(--primary-color)]/5 to-transparent
-              p-8 transition duration-500
-              backdrop-blur-md group"
-            >
-              
-
-              {/* icon */}
-              <div className="text-[var(--primary-color)] text-4xl mb-6 relative z-10">
-                {card.icon}
+                <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                  {card.text}
+                </p>
               </div>
+            ))}
 
-              {/* title */}
-              <h3 className="text-white text-xl font-semibold mb-3 relative z-10">
-                {card.title}
-              </h3>
-
-              {/* text */}
-              <p className="text-gray-400 text-sm leading-relaxed relative z-10">
-                {card.text}
-              </p>
-            </div>
-          ))}
-
+          </div>
         </div>
       </div>
-
-      
     </section>
   );
 };

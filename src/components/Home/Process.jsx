@@ -81,7 +81,7 @@ const Process = () => {
 
 
   return (
-    <section ref={sectionRef} id="how" className="w-full bg-black py-20 px-4">
+    <section ref={sectionRef} id="how" className="relative z-10 w-full bg-black py-20 px-4">
       <div ref={Animate1Ref} className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="relative flex items-center justify-center mb-16">
