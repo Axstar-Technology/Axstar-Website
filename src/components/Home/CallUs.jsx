@@ -29,7 +29,7 @@ const CallUs = () => {
         </p>
 
         {/* Button */}
-        <button className="bg-white cursor-pointer text-black px-6 py-2.5 sm:px-8 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-[var(--primary-color)] transition duration-300">
+        <button className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] cursor-pointer text-black px-6 py-2.5 sm:px-8 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-[var(--primary-color)] transition duration-300">
           Start a Conversation
         </button>
 

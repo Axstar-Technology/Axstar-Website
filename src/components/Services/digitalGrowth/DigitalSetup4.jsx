@@ -14,7 +14,7 @@ const DigitalSetup4 = () => {
   ];
 
   return (
-    <section id='product-stratagy&digital-transformation' className="bg-[#000000] px-5 text-white pt-10 pb-20 overflow-hidden selection:bg-emerald-500/40">
+    <section id='product-stratagy&digital-transformation' className="bg-[#000000] px-5 text-white pt-30 pb-20 overflow-hidden selection:bg-emerald-500/40">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
@@ -30,12 +30,12 @@ const DigitalSetup4 = () => {
           </div>
 
           <h2 className="text-[0.75rem] md:text-[0.9rem] lg:text-[1rem] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-500 mb-2">
-            Built for Growth
+            Plan for Impact
           </h2>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white mb-6">
             Product Strategy & Digital Transformation
           </h2>
-          <p className="max-w-3xl mx-auto text-slate-500 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
             Growth starts with a solid foundation. We help businesses modernize their approach by identifying gaps in their current digital journey. Whether you are moving from offline to online or looking to optimize an existing product, we provide the roadmap to ensure your technology and marketing are working in perfect harmony.
           </p>
         </motion.header>
@@ -93,7 +93,7 @@ const DigitalSetup4 = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="w-full bg-emerald-500 text-black py-4 md:py-5 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group shadow-lg shadow-emerald-500/10">
+            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 cursor-pointer group shadow-lg shadow-emerald-500/10">
               Talk to Expert 
               <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>

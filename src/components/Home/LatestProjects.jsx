@@ -96,7 +96,7 @@ const LatestProjects = () => {
           {/* Button: All Projects */}
           <a href='/projects'>
                 <button 
-            className="flex cursor-pointer items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-800 bg-zinc-900/50 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-300 group"
+            className="flex cursor-pointer items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-800  text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-300 group"
           >
             All Projects
             <HiOutlineExternalLink className="text-base group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

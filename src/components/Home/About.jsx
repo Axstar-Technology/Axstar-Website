@@ -31,7 +31,7 @@ const About = () => {
 
             <div className="pt-4 flex justify-center lg:justify-start">
               <a href="/about#about-hero" className="inline-block group">
-                <button className="relative cursor-pointer overflow-hidden px-6 md:px-8 py-3 md:py-4 rounded-full border border-[#5dc192] text-[#5dc192] transition-all duration-300 group-hover:bg-[#5dc192] group-hover:text-black font-bold flex items-center gap-3 text-sm md:text-base">
+                <button className="relative cursor-pointer overflow-hidden px-6 md:px-8 py-3 md:py-4 rounded-full border border-[#5dc192] text-[#000000] bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] transition-all duration-300 group-hover:bg-[#5dc192] group-hover:text-black font-bold flex items-center gap-3 text-sm md:text-base">
                   See More About Us
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 

@@ -103,7 +103,7 @@ export default function Stat() {
           </p>
 
           <a href="/about">
-            <button className="border border-[var(--primary-color)] text-[var(--primary-color)] cursor-pointer px-6 py-3 text-sm hover:bg-white hover:border-white hover:text-black transition">
+            <button className="border border-[var(--primary-color)] text-[var(--primary-color)] cursor-pointer px-6 py-3 text-sm hover:bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:border-[var(--primary-color)] hover:text-black transition">
               Know More About us
             </button>
           </a>
@@ -113,7 +113,7 @@ export default function Stat() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {stats.map((item, index) => (
             <div key={index} >
-              <h3 className="text-4xl text-[var(--primary-color)] md:text-5xl font-bold mb-2">
+              <h3 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] md:text-5xl font-bold mb-2">
                 {inView ? (
                   <CountUp
                     end={item.value}

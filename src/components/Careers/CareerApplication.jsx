@@ -24,7 +24,7 @@ const CareerApplication = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center py-30 p-4">
+    <div id="application" className="min-h-screen bg-black flex items-center justify-center py-30 p-4">
       <div className="w-full max-w-4xl bg-[#010807] rounded-2xl shadow-lg p-6 sm:p-8">
         
         {/* Title */}

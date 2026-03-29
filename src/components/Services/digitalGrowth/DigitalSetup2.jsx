@@ -12,7 +12,7 @@ const DigitalSetup2 = () => {
   ];
 
   return (
-    <section id='social-media-management' className="bg-[#000000] text-white pt-10 pb-20 overflow-hidden selection:bg-emerald-500/40">
+    <section id='social-media-management' className="bg-[#000000] px-5 text-white pt-10 pb-20 overflow-hidden selection:bg-emerald-500/40">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
@@ -33,7 +33,7 @@ const DigitalSetup2 = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white mb-6">
             Social Media Management
           </h2>
-          <p className="max-w-3xl mx-auto text-slate-500 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
             In a noisy digital world, your brand needs a voice that resonates. We don’t just post content; we engineer engagement. Our Digital marketing team handles everything from visual storytelling to community building, ensuring your brand stays top-of-mind across all major social platforms. We focus on building a loyal audience that eventually converts into your brand advocates.
           </p>
         </motion.header>
@@ -91,7 +91,7 @@ const DigitalSetup2 = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="w-full bg-emerald-500 text-black py-4 md:py-5 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group shadow-lg shadow-emerald-500/10">
+            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group cursor-pointer shadow-lg shadow-emerald-500/10">
               Talk to Expert 
               <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>

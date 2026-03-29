@@ -3,8 +3,8 @@ import bgImage from "../../assets/ecomImg1.jpg"; // adjust path if needed
 
 const AboutWhatWeDo = () => {
   return (
-    <section
-      className="w-full bg-[black] py-20 flex items-center justify-center bg-cover bg-center relative"
+    <section id="who-we-are-about"
+      className="w-full bg-[black] py-15 flex items-center justify-center bg-cover bg-center relative"
       
     >
       {/* Overlay */}
@@ -21,12 +21,12 @@ const AboutWhatWeDo = () => {
         
         
         {/* Description */}
-        <p className="mt-6 text-xs sm:text-sm md:text-base text-gray-400 max-w-2xl leading-relaxed">
+        <p className="mt-6 text-xs sm:text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-2xl leading-relaxed">
           Axstar is a modern software and technology company dedicated to building smart, scalable digital solutions. We combine expert engineering, innovative technology, and strategic insight to transform complex business challenges into high-performance software that drives measurable growth.
         </p>
 
         {/* Description */}
-        <p className="mt-6 text-xs sm:text-sm md:text-base text-gray-400 max-w-2xl leading-relaxed">
+        <p className="mt-6 text-xs sm:text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-2xl leading-relaxed">
           From custom applications and AI-driven automation to seamless digital experiences, we empower businesses to innovate, optimize, and scale with confidence. At Axstar, we don’t just develop software, we create the digital foundation for your future success.
         </p>
 

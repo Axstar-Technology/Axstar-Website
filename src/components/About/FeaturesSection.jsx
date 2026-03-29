@@ -31,7 +31,7 @@ const FeaturesSection = () => {
             Why Axstar <br/>
             <span className="text-gray-500 font-light">Stands Out</span>
           </h2>
-          <p className="text-gray-500 mt-6 text-sm max-w-xs">
+          <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] mt-6 text-sm max-w-xs">
             Our methodology is built on speed, precision, and client-focused results.
           </p>
         </div>

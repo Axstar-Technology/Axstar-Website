@@ -16,7 +16,7 @@ const DigitalSetup6 = () => {
   ];
 
   return (
-    <section id='digital-presence-setup' className="bg-[#000000] px-5 text-white pt-10 pb-20 overflow-hidden selection:bg-emerald-500/40">
+    <section id='digital-presence-setup' className="bg-[#000000] px-5 text-white pt-30 pb-20 overflow-hidden selection:bg-emerald-500/40">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
@@ -32,12 +32,12 @@ const DigitalSetup6 = () => {
           </div>
 
           <h2 className="text-[0.75rem] md:text-[0.9rem] lg:text-[1rem] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-500 mb-2">
-            Built for Growth
+            Launch Ready Now
           </h2>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white mb-6">
             Digital Presence Setup
           </h2>
-          <p className="max-w-3xl mx-auto text-slate-500 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
             Your digital presence is your first impression — and in most cases, your most important one. We help you build a strong, cohesive foundation across all digital touchpoints so your brand looks professional, trustworthy, and ready to scale from day one. From websites to social platforms, we ensure everything is aligned, optimized, and built for growth.
           </p>
         </motion.header>
@@ -95,7 +95,7 @@ const DigitalSetup6 = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="w-full bg-emerald-500 text-black py-4 md:py-5 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group shadow-lg shadow-emerald-500/10">
+            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 cursor-pointer group shadow-lg shadow-emerald-500/10">
               Talk to Expert 
               <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>

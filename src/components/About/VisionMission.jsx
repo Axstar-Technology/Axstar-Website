@@ -21,7 +21,7 @@ const VisionMission = () => {
                 </span>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-300 mb-4 md:mb-6 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] mb-4 md:mb-6 tracking-tight">
                 Our Mission
               </h2>
               
@@ -41,7 +41,7 @@ const VisionMission = () => {
                 </span>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-300 mb-4 md:mb-6 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] mb-4 md:mb-6 tracking-tight">
                 Our Vision
               </h2>
               

@@ -14,7 +14,7 @@ const DigitalSetup5 = () => {
   ];
 
   return (
-    <section id='data-analytics&performance-optimization' className="bg-[#000000] px-5 text-white pt-10 pb-20 overflow-hidden selection:bg-emerald-500/40">
+    <section id='data-analytics&performance-optimization' className="bg-[#000000] px-5 text-white pt-30 pb-20 overflow-hidden selection:bg-emerald-500/40">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
@@ -30,12 +30,12 @@ const DigitalSetup5 = () => {
           </div>
 
           <h2 className="text-[0.75rem] md:text-[0.9rem] lg:text-[1rem] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-500 mb-2">
-            Built for Growth
+            Insights Driven
           </h2>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white mb-6">
             Data Analytics & Performance Optimization
           </h2>
-          <p className="max-w-3xl mx-auto text-slate-500 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
             We believe what gets measured gets improved. Our analytics services turn raw data into a clear story about your customers' behavior. We set up advanced tracking and custom dashboards so you can see exactly where your budget is going and which channels are delivering the highest return on investment.
           </p>
         </motion.header>
@@ -93,7 +93,7 @@ const DigitalSetup5 = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="w-full bg-emerald-500 text-black py-4 md:py-5 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group shadow-lg shadow-emerald-500/10">
+            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 cursor-pointer group shadow-lg shadow-emerald-500/10">
               Talk to Expert 
               <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>

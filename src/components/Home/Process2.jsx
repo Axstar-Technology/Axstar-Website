@@ -120,7 +120,7 @@ const Process2 = () => {
 
                 {/* Content */}
                 <div className={`pl-16 md:pl-0 md:w-1/2 ${isEven ? "md:pr-20 md:text-right" : "md:pl-20 md:text-left"}`}>
-                  <h3 className="text-white font-bold text-2xl mb-4 group-hover:text-[var(--primary-color)] transition-colors">
+                  <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-bold text-2xl mb-4 group-hover:text-[var(--primary-color)] transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-gray-400 text-base md:text-lg leading-relaxed">
@@ -138,7 +138,7 @@ const Process2 = () => {
   <div className="flex flex-col items-center max-w-3xl">
     <div className="flex items-center gap-3 mb-4">
       <Rocket className="w-5 h-5 text-[var(--primary-color)]" />
-      <h3 className="text-white font-bold text-lg uppercase tracking-widest">
+      <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-bold text-lg uppercase tracking-widest">
         Launch & Support
       </h3>
     </div>

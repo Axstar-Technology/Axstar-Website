@@ -29,7 +29,7 @@ const WhatWeDo = () => {
           <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Solutions we create</h2>
         <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16">What We Do</h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 text-base md:text-lg leading-relaxed">
+          <p className="max-w-2xl mx-auto bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-base md:text-lg leading-relaxed">
             At Axstar, we help businesses innovate, grow, and scale through a 
             combination of technology, digital expertise, and strategic guidance.
           </p>

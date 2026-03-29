@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ArrowDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -171,26 +172,26 @@ const Hero = () => {
         <div className="space-y-6 w-full max-w-7xl mt-12 md:mt-1 text-center mx-auto">
           <h1 className="h-animate text-neutral-100 text-[2.5rem] sm:text-5xl md:text-[3.3rem] lg:text-[4.1rem] font-medium tracking-w[1rem] leading-tight">
             Transforming Ideas Into
-            <span className="bg-gradient-to-r from-[#ffffff] via-[#ffffff] to-[#ffffff] bg-clip-text text-transparent block mt-4 md:mt-6 lg:mt-5">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] block mt-4 md:mt-6 lg:mt-5">
               Scalable Digital Solutions
             </span>
           </h1>
 
-          <p className="p-animate text-sm sm:text-base md:text-[.9rem] text-white leading-relaxed max-w-2xl mx-auto">
+          <p className="p-animate text-sm sm:text-base md:text-[.9rem] text-slate-400 leading-relaxed max-w-2xl mx-auto">
             Axstar drives business growth through smart technology, strategic consulting, and digital transformation. We deliver scalable, high-performance solutions that align technology with your business goals—from strategy to full deployment.
           </p>
 
           <div className="buttons-animate flex flex-wrap justify-center gap-4 pt-4">
             <a href="#about">
-              <button className="cursor-pointer px-10 py-2 text-sm rounded-lg 
-                bg-gradient-to-r from-[#02ffdd] to-[#02ffdd]
-                text-black transition">
-                Discover ↓
+              <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
+                bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
+                text-black transition flex gap-2 items-center">
+                Discover <ArrowDown />
               </button>
             </a>
 
             <a href="/projects#projects-hero">
-              <button className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-[var(--primary-color)] hover:border-[var(--primary-color)] hover:text-black">
+              <button className="cursor-pointer px-10 py-3 text-sm rounded-lg border border-neutral-100 text-green-100 hover:bg-[#ffffff] hover:border-[#ffffff] hover:text-black hover:font-medium font-medium">
                 View Portfolio
               </button>
             </a>

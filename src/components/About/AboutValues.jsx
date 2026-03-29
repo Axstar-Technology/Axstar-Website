@@ -72,9 +72,17 @@ const AboutValues = () => {
                 variants={itemVariants}
                 className="group flex gap-8 border-b border-white/10 pb-8 last:border-0"
               >
-                <span className="text-5xl md:text-6xl font-black text-white/10 group-hover:text-[var(--primary-color)] transition-colors duration-500">
-                  {val.letter}
-                </span>
+                <span
+  className="
+    text-5xl md:text-6xl font-black
+    bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
+    bg-clip-text text-transparent
+    opacity-10 group-hover:opacity-100
+    transition-all duration-500
+  "
+>
+  {val.letter}
+</span>
                 <div>
                   <h3 className="text-2xl font-bold mb-3 tracking-tight group-hover:translate-x-2 transition-transform duration-300">
                     {val.title}
@@ -96,9 +104,9 @@ const AboutValues = () => {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
+                src="https://i.pinimg.com/736x/48/88/12/488812d21deaa3c474aa3e5a6abe4bd6.jpg" 
                 alt="Axstar Professional Environment" 
-                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
+                className="object-cover w-full h-full grayscale-0 hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
               />
               {/* Overlay Decor */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />

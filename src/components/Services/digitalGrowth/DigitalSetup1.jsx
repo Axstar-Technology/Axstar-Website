@@ -70,7 +70,7 @@ const DigitalSetup1 = () => {
   ];
 
   return (
-    <div className="bg-[#000000] text-slate-300 py-24 px-6 md:px-12  selection:bg-emerald-500/30">
+    <div id='setup-1' className="bg-[#000000] text-slate-300 py-24 px-6 md:px-12  selection:bg-emerald-500/30">
       <div className="max-w-5xl mx-auto">
         
         {/* Centered Header Section */}

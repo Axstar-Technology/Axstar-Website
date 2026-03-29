@@ -110,20 +110,20 @@ const CareersHero = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         <h1 className="text-white py-10 text-[2.8rem] sm:text-5xl md:text-[4rem] lg:text-[5rem] tracking-tight leading-[1.1] pb-6">
-          Join with Axstar <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#02ffdd] via-blue-400 to-[#186d60]">Team</span>
+          Join with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]">Axstar Team</span>
         </h1>
 
         <p className="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
           At Axstar Technologies, we don’t just hire—we cultivate talent. Join a team of high-performance specialists shaping the future of IT and Business Consulting. Here, your work becomes a global benchmark.
         </p>
 
-        <button className="group relative px-12 py-4 text-sm font-bold rounded-full overflow-hidden transition-all">
-          <div className="absolute inset-0 bg-[#02ffdd] transition-transform group-hover:scale-105" />
-          <div className="relative cursor-pointer flex items-center gap-2 text-black">
-            Explore Careers 
-            <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-          </div>
-        </button>
+        <a href="#application">
+                      <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
+                        bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
+                        text-[black] transition font-bold flex items-center gap-2">
+                        Discover <ArrowDown strokeWidth={2.5} />
+                      </button>
+                    </a>
       </div>
     </section>
   );

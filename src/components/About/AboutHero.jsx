@@ -131,7 +131,7 @@ const AboutHero = () => {
 
         <h1 className="text-white py-10 text-[2.8rem] sm:text-5xl md:text-[4rem] lg:text-[5rem] tracking-tight leading-[1.1] pb-6">
           Driving Innovation with <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#02ffdd] via-blue-400 to-[#186d60]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]">
             Expertise
           </span>
         </h1>
@@ -141,13 +141,13 @@ const AboutHero = () => {
           We build the bridges between today's challenges and tomorrow's growth.
         </p>
 
-        <button className="group relative px-12 py-4 text-sm font-bold rounded-full overflow-hidden transition-all">
-          <div className="absolute inset-0 bg-[#02ffdd] transition-transform group-hover:scale-105" />
-          <div className="relative cursor-pointer flex items-center gap-2 text-black">
-            Discover 
-            <ArrowDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </div>
-        </button>
+        <a href="#who-we-are-about">
+              <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
+                bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
+                text-[black] transition font-bold flex items-center gap-2">
+                Discover <ArrowDown strokeWidth={2.5} />
+              </button>
+            </a>
 
       </div>
     </section>

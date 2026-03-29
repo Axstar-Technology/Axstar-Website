@@ -164,7 +164,7 @@ const Testimonials = () => {
               </div>
 
               {/* Description */}
-              <p className="text-[var(--primary-color)]/40 text-sm leading-relaxed">
+              <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-sm leading-relaxed">
                 “{item.description}”
               </p>
             </div>

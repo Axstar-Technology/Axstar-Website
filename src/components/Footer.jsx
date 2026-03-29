@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 bg-black text-gray-300 px-6 md:px-12 lg:px-20 pt-16 pb-8">
+    <footer className="relative z-10 bg-black text-gray-300 px-6 md:px-12 lg:px-20 pt-30 pb-8">
 
       {/* Top Section */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -79,19 +79,19 @@ const Footer = () => {
           </h3>
 
           <div className="grid grid-cols-4 gap-3 w-[180px]">
-            <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
+            <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
               <FaFacebook size={18} className="text-white" />
             </div>
 
-            <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
+            <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
               <FaInstagram size={18} className="text-white" />
             </div>
 
-        <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
+        <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
               <FaBehance size={18} className="text-white" />
             </div>
 
-            <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
+            <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
               <FaPinterest size={18} className="text-white" />
             </div>
           </div>

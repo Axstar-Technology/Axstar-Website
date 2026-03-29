@@ -28,13 +28,13 @@ const CultureSection = () => {
             {/* Split Details (Human Values & Shared Growth) - Stack on Mobile, Side-by-side on MD+ */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6 border-t border-neutral-800">
               <div className="space-y-3">
-                <h3 className="text-sm uppercase tracking-widest text-neutral-500 font-medium">Shared Growth</h3>
+                <h3 className="text-sm uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">Shared Growth</h3>
                 <p className="text-neutral-400 font-light leading-relaxed">
                   We work as one team, celebrating successes together, supporting each other through challenges, and fostering a culture of creativity, learning, and excellence.
                 </p>
               </div>
               <div className="space-y-3">
-                <h3 className="text-sm uppercase tracking-widest text-neutral-500 font-medium">Human Values</h3>
+                <h3 className="text-sm uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">Human Values</h3>
                 <p className="text-neutral-400 font-light leading-relaxed">
                   Work-life balance and mutual respect aren’t just ideals—they are the foundation of how we operate every day in a positive, inspiring environment.
                 </p>
@@ -48,7 +48,7 @@ const CultureSection = () => {
               {/* Abstract decorative frame */}
               <div className="absolute inset-0 border border-neutral-800 translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600&auto=format&fit=crop" 
+                src="https://i.pinimg.com/736x/c4/5b/5a/c45b5a825a0f4e7233c4d297882cedd2.jpg" 
                 alt="Axstar culture visual" 
                 className="w-full h-full object-cover relative z-10"
               />

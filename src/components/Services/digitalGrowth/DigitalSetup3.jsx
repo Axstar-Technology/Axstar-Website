@@ -12,7 +12,7 @@ const DigitalSetup3 = () => {
   ];
 
   return (
-    <section id='seo' className="bg-[#000000] text-white px-5 pt-10 pb-20 overflow-hidden selection:bg-emerald-500/40">
+    <section id='seo' className="bg-[#000000] text-white px-5 pt-30 pb-20 overflow-hidden selection:bg-emerald-500/40">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
@@ -28,12 +28,12 @@ const DigitalSetup3 = () => {
           </div>
 
           <h2 className="text-[0.75rem] md:text-[0.9rem] lg:text-[1rem] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-500 mb-2">
-            Built for Growth
+            Rank Higher Now
           </h2>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white mb-6">
             Search Engine Optimization (SEO)
           </h2>
-          <p className="max-w-3xl mx-auto text-slate-500 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed font-light px-2 md:px-0">
             Being on page one isn't a luxury; it’s a necessity. We optimize your digital footprint to ensure that when your customers are looking for a solution, they find you first. By focusing on both the technical health of your site and high-quality content, we build long-term organic authority that reduces your dependence on paid ads.
           </p>
         </motion.header>
@@ -91,7 +91,7 @@ const DigitalSetup3 = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="w-full bg-emerald-500 text-black py-4 md:py-5 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group shadow-lg shadow-emerald-500/10">
+            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 cursor-pointer group shadow-lg shadow-emerald-500/10">
               Talk to Expert 
               <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>

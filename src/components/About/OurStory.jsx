@@ -50,7 +50,7 @@ const OurStory = () => {
             <div className="overflow-hidden bg-zinc-900 aspect-[4/5] rounded-sm">
               <motion.img
                 style={{ y: imageY, scale: imageScale }}
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069" 
+                src="https://i.pinimg.com/736x/f5/40/f6/f540f63cdc4d2d0e7c8f5ba7dd663837.jpg" 
                 alt="Studio"
                 className="w-full h-full object-cover opacity-60 grayscale-0 hover:grayscale-0 transition-all duration-1000"
               />
@@ -104,7 +104,7 @@ const OurStory = () => {
               variants={fadeInVariants}
               className="pt-4 flex items-center gap-4 md:gap-8"
             >
-              <button className="whitespace-nowrap px-6 md:px-8 py-4 bg-[var(--primary-color)] text-black font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-white transition-all duration-300">
+              <button className="whitespace-nowrap px-6 md:px-8 py-4 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] cursor-pointer text-black font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-white transition-all duration-300">
                 Partner With Us
               </button>
               <div className="h-[1px] flex-grow bg-zinc-900"></div>

@@ -41,7 +41,7 @@ const TeamSection = () => {
           <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-color)]/50 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
           <div className="relative bg-black border border-white/10 rounded-xl p-6 md:p-8 text-center">
             <blockquote className="text-lg md:text-2xl font-light tracking-wide italic">
-              " Your Ideas. Our Expertise. <span className="text-[var(--primary-color)] font-medium">Shared Success.</span> "
+              " Your Ideas. Our Expertise. <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">Shared Success.</span> "
             </blockquote>
           </div>
         </div>
@@ -60,7 +60,7 @@ const TeamSection = () => {
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover/card:grayscale-0 transition-all duration-700 scale-100 group-hover/card:scale-110"
+                  className="w-full h-full object-cover  group-hover/card:grayscale-0 transition-all duration-700 scale-100 group-hover/card:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
               </div>
@@ -70,7 +70,7 @@ const TeamSection = () => {
                 <h3 className="text-lg font-medium tracking-tight text-white mb-0.5">
                   {member.name}
                 </h3>
-                <p className="text-xs uppercase tracking-[0.15em] text-gray-500 font-semibold">
+                <p className="text-xs uppercase tracking-[0.15em] bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-semibold">
                   {member.role}
                 </p>
               </div>

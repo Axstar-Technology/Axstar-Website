@@ -389,7 +389,7 @@ export default function Navbar() {
             key={item.id}
             to={item.path}
             onClick={handleNavClick(item.path, heroMap[item.path])}
-            className="px-6 py-2 bg-[var(--primary-color)]/0 border border-[1px] border-[var(--primary-color)] text-[var(--primary-color)] font-medium rounded-full transition-all duration-300"
+            className="px-6 py-2 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] border border-[1px] border-[#005a26] text-white font-medium rounded-full transition-all duration-300"
           >
             {item.label}
           </Link>
