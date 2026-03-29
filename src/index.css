@@ -53,3 +53,6 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
+section {
+  scroll-margin-top: 120px; /* adjust based on navbar height */
+}

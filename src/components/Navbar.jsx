@@ -37,7 +37,7 @@ const engineeringTech = [
  
 ];
 
-const digitalGrowth = [
+const businessStrategy = [
   { label: "Business Model & Growth Strategy", path: "/business-planning" },
   { label: "Digital Transformation Consulting", path: "/business-documentation" },
   { label: "Go-To-Market (GTM) Strategy", path: "/digital-consulting" },
@@ -46,12 +46,12 @@ const digitalGrowth = [
   { label: "Business Process & Documentation", path: "/digital-consulting" },
 ];
 
-const businessStrategy = [
-  { label: "Social Media Management", path: "/social-media-management" },
-  { label: "Search Engine Optimization (SEO)", path: "/seo" },
-  { label: "Product Strategy & Digital Transformation", path: "/branding" },
-  { label: "Data Analytics & Performance Optimization", path: "/digital-marketing-support" },
-  { label: "Digital Presence", path: "/digital-marketing-support" },
+const digitalGrowth = [
+  { label: "Social Media Management", path: "/digital-growth&marketing#social-media-management" },
+  { label: "Search Engine Optimization (SEO)", path: "/digital-growth&marketing#seo" },
+  { label: "Product Strategy & Digital Transformation", path: "/digital-growth&marketing#product-stratagy&digital-transformation" },
+  { label: "Data Analytics & Performance Optimization", path: "/digital-growth&marketing#data-analytics&performance-optimization" },
+  { label: "Digital Presence Setup", path: "/digital-growth&marketing#digital-presence-setup" },
 ];
 
 export default function Navbar() {
@@ -211,14 +211,14 @@ export default function Navbar() {
               {/* Business Consulting */}
               <div>
                 <Link
-                  to="/digital-growth&marketing"
+                  to="/business-strategy&consulting"
                   onClick={handleNavClick("/it&business", heroMap["/it&business"])}
                   className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
                 >
-                  Digital Growth & Marketing <FiChevronRight />
+                  Business Strategy & Consulting  <FiChevronRight />
                 </Link>
                 <div className="pl-4 space-y-1">
-                  {digitalGrowth.map((s, i) => (
+                  {businessStrategy.map((s, i) => (
                     <Link
                       key={i}
                       to={s.path}
@@ -234,14 +234,14 @@ export default function Navbar() {
               {/* Digital Services */}
               <div>
                 <Link
-                  to="/business-strategy&consulting"
+                  to="/digital-growth&marketing#digital-growth-hero"
                   onClick={handleNavClick("/digital-services", heroMap["/digital-services"])}
                   className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
                 >
-                  Business Strategy & Consulting <FiChevronRight />
+                  Digital Growth & Marketing <FiChevronRight />
                 </Link>
                 <div className="pl-4 space-y-1">
-                  {businessStrategy.map((s, i) => (
+                  {digitalGrowth.map((s, i) => (
                     <Link
                       key={i}
                       to={s.path}
@@ -300,7 +300,7 @@ export default function Navbar() {
                   >
                     <div className="max-w-7xl mx-auto px-6 xl:px-12 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-20">
                       <div>
-                        <h3 className="text-xl text-[var(--primary-color)] font-semibold mb-7">
+                        <h3 className="text-[1.1rem] text-[var(--primary-color)] font-semibold mb-7">
                           <Link to="/engineering&technology" className="flex items-center gap-1">
                             Engineering & Technology <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
                           </Link>
@@ -322,12 +322,12 @@ export default function Navbar() {
                       </div>
 
                       <div>
-                        <h3 className="text-xl text-[var(--primary-color)] font-semibold mb-7">
-                          <Link to="/digital-growth&marketing" className="flex items-center gap-1">
-                            Digital Growth & Marketing <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
+                        <h3 className="text-[1.1rem] text-[var(--primary-color)] font-semibold mb-7">
+                          <Link to="/business-strategy&consulting" className="flex items-center gap-1">
+                            Business Strategy & Consulting <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
                           </Link>
                         </h3>
-                        {digitalGrowth.map((s, i) => (
+                        {businessStrategy.map((s, i) => (
                           <Link
                             key={i}
                             to={s.path}
@@ -344,12 +344,12 @@ export default function Navbar() {
                       </div>
 
                       <div>
-                        <h3 className="text-xl text-[var(--primary-color)] font-semibold mb-7">
-                          <Link to="/business-strategy&consulting" className="flex items-center gap-1">
-                          Business Strategy & Consulting <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
+                        <h3 className="text-[1.1rem] text-[var(--primary-color)] font-semibold mb-7">
+                          <Link to="/digital-growth&marketing#digital-growth-hero" className="flex items-center gap-1">
+                          Digital Growth & Marketing <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
                           </Link>
                         </h3>
-                        {businessStrategy.map((s, i) => (
+                        {digitalGrowth.map((s, i) => (
                           <Link
                             key={i}
                             to={s.path}
