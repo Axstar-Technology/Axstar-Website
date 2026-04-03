@@ -3,18 +3,18 @@ import { FaCogs, FaComments, FaLightbulb } from 'react-icons/fa'
 
 const Section6 = () => {
   return (
-    <div className="w-full bg-[black]/0 text-white py-16 px-6 md:px-12">
+    <div className="w-full bg-[black]/0 text-white py-30 mt-7 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-light leading-tight mb-6">
             Why Choose Our <br /> AI Solutions
           </h2>
+ 
+          <div className="w-24 h-[1px] bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] mb-6"></div>
 
-          <div className="w-24 h-[1px] bg-neutral-600 mb-6"></div>
-
-          <p className="text-gray-400 text-sm md:text-base max-w-md">
+          <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-sm md:text-base max-w-md">
             We deliver intelligent, scalable AI solutions that transform how your business operates, makes decisions, and engages with customers. By combining advanced machine learning, automation, and natural language capabilities, we help you unlock efficiency, reduce costs, and create more human-centered digital experiences.
           </p>
         </div>
@@ -32,7 +32,7 @@ const Section6 = () => {
 
             {/* TEXT */}
             <div className="md:order-1">
-              <h4 className="text-white font-medium">
+              <h4 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">
                 Enhanced Decision Making
               </h4>
               <p className="text-sm text-neutral-400 mt-1">
@@ -52,7 +52,7 @@ const Section6 = () => {
 
             {/* TEXT */}
             <div className="md:order-1">
-              <h4 className="text-white font-medium">
+              <h4 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">
                 Streamlined Operations
               </h4>
               <p className="text-sm text-neutral-400 mt-1">
@@ -72,7 +72,7 @@ const Section6 = () => {
 
             {/* TEXT */}
             <div className="md:order-1">
-              <h4 className="text-white font-medium">
+              <h4 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">
                 Human-like Interactions
               </h4>
               <p className="text-sm text-neutral-400 mt-1">

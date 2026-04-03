@@ -1,70 +1,73 @@
-import React from 'react'
+import React from 'react';
 import { FaHeadset, FaLayerGroup, FaMobileAlt, FaPalette } from 'react-icons/fa';
 
 const WebDevWhatWeDo = () => {
-
-     const services = [
+  const services = [
     {
       title: "Custom Mobile App Development",
-      description:
-        "Your business is unique, and your app should reflect that. We build apps from the ground up, tailored to your goals.",
+      description: "Tailored solutions built from the ground up to reflect your unique business goals.",
       icon: <FaMobileAlt />,
     },
     {
       title: "UI/UX Design",
-      description:
-        "An app should feel as good as it looks. We create clean, intuitive designs that make using your app simple and enjoyable.",
+      description: "Clean, intuitive designs crafted to make user interaction simple and enjoyable.",
       icon: <FaPalette />,
     },
     {
       title: "Cross-Platform Development",
-      description:
-        "One app, all devices. Our cross-platform solutions save time and cost while giving users a seamless experience.",
+      description: "Seamless experiences across all devices, optimizing both time and cost.",
       icon: <FaLayerGroup />,
     },
     {
       title: "Quality & Ongoing Support",
-      description:
-        "We don’t just launch and leave. From testing to updates, we make sure your app stays fast, secure, and ready.",
+      description: "Reliable post-launch maintenance to ensure your app remains fast and secure.",
       icon: <FaHeadset />,
     },
   ];
+
   return (
-    <div className="w-full px-14 bg-[#1a1a1a] py-20 rounded-[2rem] px-4 sm:px-6 lg:px-20">
-      {/* Title */}
-    <h2 className="text-3xl text-center md:text-4xl font-bold mb-12">
-     What we Do
+    <section className="w-full bg-[#000000] py-24 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        {/* Centered Heading */}
+        <div className="text-center">
+            
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-3 block">
+           Built with Precision
+          </span>
+    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-[#e9e7e2] mb-16">
+    What We Do
     </h2>
+          <div className="w-12 h-[1px] bg-neutral-700 mx-auto"></div>
+        </div>
 
-      {/* Cards */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map((item, index) => (
-          <div
-            key={index}
-            className="bg-[#0e0e0e] rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300"
-          >
-            {/* Icon */}
-            <div className="text-[var(--primary-color)] text-2xl mb-4">
-              {item.icon}
+        {/* Grid Layout */}
+        <div className="grid gap-px bg-neutral-900 border border-neutral-900 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl">
+          {services.map((item, index) => (
+            <div
+              key={index}
+              className="group bg-[#000000] p-10 flex flex-col transition-all duration-500 hover:bg-[#141414]"
+            >
+              {/* Icon Container - Fixed Height for Alignment */}
+              <div className="text-neutral-500 text-xl mb-8 group-hover:text-white transition-colors duration-300 min-h-[24px]">
+                {item.icon}
+              </div>
+
+              {/* Title - Forced Minimum Height for Alignment */}
+              <h3 className="text-lg font-medium text-neutral-200 mb-4 tracking-wide min-h-[3.5rem] flex items-start">
+                {item.title}
+              </h3>
+
+              {/* Description - Forced Minimum Height for Alignment */}
+              <p className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] leading-relaxed font-light transition-colors duration-300 min-h-[4.5rem]">
+                {item.description}
+              </p>
             </div>
-
-            {/* Title */}
-            <h3 className="text-sm font-semibold text-neutral-300 mb-2">
-              {item.title}
-            </h3>
-
-            {/* Divider */}
-            <div className="w-10 h-[2px] bg-[var(--primary-color)] mb-4"></div>
-
-            {/* Description */}
-            <p className="text-xs text-neutral-400 leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default WebDevWhatWeDo
+export default WebDevWhatWeDo;

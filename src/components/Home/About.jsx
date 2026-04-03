@@ -13,35 +13,29 @@ const About = () => {
           {/* CONTENT SIDE - Appears first on Mobile/Tablet */}
           <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
             <div className="space-y-3 md:space-y-4">
-              
-              <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center lg:text-left text-gray-500">
+
+               
+
+               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]  text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
           Our Approach
-        </h2>
-              <h2 className="text-5xl md:text-7xl leading-tight">
-                What We Do
-              </h2>
+          </span>
+        <h2 className="text-3xl font-light md:text-5xl leading-tight text-[#e9e7e2] mb-5">What We Do</h2>
+              
+              
               <div className="w-16 md:w-20 h-1 bg-[#5dc192] rounded-full mx-auto lg:mx-0"></div>
             </div>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
               At Axstar, we help businesses succeed by combining technology, strategy, and practical solutions. 
               <br className="hidden md:block" /><br className="hidden md:block" />
-              From designing custom software to guiding digital transformation, we deliver services that make your operations <span className="text-white font-medium">smarter, faster, and ready to scale.</span>
+              From designing custom software to guiding digital transformation, we deliver services that make your operations <span className="text-[#e9e7e2] font-medium">smarter, faster, and ready to scale.</span>
             </p>
 
             <div className="pt-4 flex justify-center lg:justify-start">
               <a href="/about#about-hero" className="inline-block group">
-                <button className="relative cursor-pointer overflow-hidden px-6 md:px-8 py-3 md:py-4 rounded-full border border-[#5dc192] text-[#000000] bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] transition-all duration-300 group-hover:bg-[#5dc192] group-hover:text-black font-bold flex items-center gap-3 text-sm md:text-base">
-                  See More About Us
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 md:h-5 md:w-5 transform group-hover:translate-x-1 transition-transform" 
-                    fill="none" viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
+                <button className="px-8 py-4 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-[var(--primary-color)]/50 cursor-pointer transition-all duration-300 rounded-full shadow-lg shadow-[#02b96d]/20">
+            See More About Us
+          </button>
               </a>
             </div>
           </div>
@@ -57,7 +51,7 @@ const About = () => {
                 <img
                   src={aboutImg}
                   alt="About Axstar"
-                  className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[450px] h-auto object-cover rounded-xl shadow-2xl"
+                  className="w-70 md:w-450 lg:w-450 h-auto object-cover rounded-xl shadow-2xl"
                 />
               </div>
 

@@ -28,7 +28,7 @@ const MobileAppDevelopment = () => {
 
      <MobileApDevHero />
 
-     <div className="px-14">
+     <div className="px-0">
       <AfterHero />
       <Section3 />
       <OurStrategic />

@@ -11,21 +11,23 @@ const TeamSection = () => {
   const carouselData = [...team, ...team];
 
   return (
-    <section className="bg-[#0a0a0a] text-white py-20 px-6 overflow-hidden">
+    <section className="bg-[#000000] text-[#e9e7e2] py-20 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-[1rem] uppercase tracking-[0.4em] text-gray-500 mb-4">
+          
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
             The Minds Driving Innovation
-          </h2>
-          <h2 className="text-4xl md:text-6xl text-white mb-8">
+          </span>
+          <h2 className="text-4xl md:text-6xl text-[#e9e7e2] mb-8">
             Meet Our Team
           </h2>
 
           <div className="max-w-3xl mx-auto space-y-6 text-gray-400 leading-relaxed text-lg">
             <p>
-              At <span className="text-white font-medium text-glow">Axstar</span>, innovation is powered by people—talented 
+              At <span className="text-[#e9e7e2] font-medium text-glow">Axstar</span>, innovation is powered by people, talented 
               technologists, strategists, and designers who think differently and deliver 
               results.
             </p>
@@ -45,6 +47,10 @@ const TeamSection = () => {
             </blockquote>
           </div>
         </div>
+
+
+
+        
       </div>
 
       {/* Auto-Playing Carousel Container */}
@@ -67,7 +73,7 @@ const TeamSection = () => {
 
               {/* Text - Clean Stack */}
               <div className="text-left px-2">
-                <h3 className="text-lg font-medium tracking-tight text-white mb-0.5">
+                <h3 className="text-lg font-medium tracking-tight text-[#e9e7e2] mb-0.5">
                   {member.name}
                 </h3>
                 <p className="text-xs uppercase tracking-[0.15em] bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-semibold">

@@ -7,15 +7,20 @@ const Section4 = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section: Centered */}
-        <div className="mb-20 border-b border-zinc-800 pb-12 text-center">
+        <div className="mb-2 border-b border-zinc-800 pb-1 text-center">
           
-          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight mb-6">
-            How We Decode AI <br />
-            for Your Business
-          </h2>
-          <p className="max-w-2xl mx-auto text-zinc-500 text-lg leading-relaxed">
-            We don't just provide tools; we architect the intelligence behind your operations.
-          </p>
+         
+
+          <div className="text-center mb-16">
+          
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
+            Explore the Power of AI with Axstar
+          </span>
+           
+        <h2 className="text-3xl font-light md:text-5xl leading-tight text-[#e9e7e2] mb-1">How We Decode AI <br />
+            for Your Business</h2>
+          
+        </div>
         </div>
 
         {/* Horizontal Process Grid */}
@@ -38,7 +43,7 @@ const Section4 = () => {
               <h3 className="text-white text-2xl font-semibold mb-6">
                 Practical AI Implementation
               </h3>
-              <p className="text-zinc-400 leading-relaxed">
+              <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] leading-relaxed">
                 We focus on solutions that solve real business problems reducing overhead, increasing speed, and eliminating errors.
               </p>
             </div>
@@ -60,7 +65,7 @@ const Section4 = () => {
               <h3 className="text-white text-2xl font-semibold mb-6">
                 Seamless Integration
               </h3>
-              <p className="text-zinc-400 leading-relaxed">
+              <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] leading-relaxed">
                 Our AI solutions are designed to plug directly into your existing infrastructure without disrupting your current workflow.
               </p>
             </div>
@@ -82,7 +87,7 @@ const Section4 = () => {
               <h3 className="text-white text-2xl font-semibold mb-6">
                 Scalable Intelligence
               </h3>
-              <p className="text-zinc-400 leading-relaxed">
+              <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] leading-relaxed">
                 As your business grows, our Machine Learning and Automation models evolve with you, handling more complex tasks over time.
               </p>
             </div>

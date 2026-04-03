@@ -198,13 +198,13 @@ const DigitalGrowthHero = () => {
           We help your business scale by combining creative strategy with data-driven execution. Our goal is to turn your digital presence into a high-performing growth engine
         </p>
 
-        <a href="#setup-1">
-                      <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
-                        bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
-                        text-black transition flex gap-2 items-center">
-                        Discover <ArrowDown />
-                      </button>
-                    </a>
+         <a href="#setup-1">
+                              <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
+                                bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
+                                text-[black] transition font-bold flex items-center gap-2">
+                                Discover <ArrowDown strokeWidth={2.5} />
+                              </button>
+                            </a>
 
       </div>
     </section>

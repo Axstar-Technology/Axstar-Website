@@ -4,11 +4,11 @@ const FeaturesSection = () => {
   const features = [
     {
       title: "Agile Tech Team",
-      description: "Combining startup energy with seasoned expertise to deliver strategic, high-impact solutions."
+      description: "Combining startup energy with seasoned expertise to deliver strategic, high impact solutions."
     },
     {
       title: "Client-Centered",
-      description: "Tailored technology built around your specific goals to ensure measurable, long-term growth."
+      description: "Tailored technology built around your specific goals to ensure measurable, long term growth."
     },
     {
       title: "Full Coverage",
@@ -21,15 +21,19 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="bg-[#050505] text-white py-16 px-6">
+    <section className="bg-[#050505] text-[#e9e7e2] py-16 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Left Side: Sticky Header (Saves vertical space) */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit">
-          <span className="text-[var(--primary-color)] font-mono text-sm tracking-widest uppercase">What sets us apart</span>
-          <h2 className="text-4xl font-bold mt-4 leading-tight">
+          
+
+           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]  text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+          What sets us apart
+          </span>
+          <h2 className="text-5xl font-light mt-4 leading-tight">
             Why Axstar <br/>
-            <span className="text-gray-500 font-light">Stands Out</span>
+            <span className="">Stands Out</span>
           </h2>
           <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] mt-6 text-sm max-w-xs">
             Our methodology is built on speed, precision, and client-focused results.
@@ -45,7 +49,7 @@ const FeaturesSection = () => {
             >
               {/* Condensed Title */}
               <div className="md:w-1/3 shrink-0">
-                <h3 className="text-xl font-medium group-hover:text-[var(--primary-color)] transition-colors">
+                <h3 className="text-xl text-[#e9e7e2] font-medium group-hover:text-[var(--primary-color)] transition-colors">
                   {feature.title}
                 </h3>
               </div>

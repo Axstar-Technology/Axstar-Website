@@ -6,6 +6,11 @@ const projects = [
      {
     id: 1,
     image: "https://i.pinimg.com/736x/cb/d7/8d/cbd78d295e767641b7adc9021dc4bb10.jpg",
+    images: [
+      "https://i.pinimg.com/736x/cb/d7/8d/cbd78d295e767641b7adc9021dc4bb10.jpg",
+      "https://i.pinimg.com/1200x/0b/98/23/0b9823cc17c74d97a62b6d4baa7293e8.jpg",
+      "https://i.pinimg.com/1200x/ba/2b/e5/ba2be5002b8a495e14533ad7c2ea8e6a.jpg"
+    ],
     title: "Web Application For the EFG Company",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?.",
@@ -46,6 +51,11 @@ const projects = [
   {
     id: 2,
     image: "https://i.pinimg.com/1200x/0b/98/23/0b9823cc17c74d97a62b6d4baa7293e8.jpg",
+    images: [
+      "https://i.pinimg.com/736x/cb/d7/8d/cbd78d295e767641b7adc9021dc4bb10.jpg",
+      "https://i.pinimg.com/1200x/0b/98/23/0b9823cc17c74d97a62b6d4baa7293e8.jpg",
+      "https://i.pinimg.com/1200x/ba/2b/e5/ba2be5002b8a495e14533ad7c2ea8e6a.jpg"
+    ],
     title: "Web Application For the XYZ Company",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?.",
@@ -80,6 +90,11 @@ const projects = [
   {
     id: 3,
     image: "https://i.pinimg.com/1200x/ba/2b/e5/ba2be5002b8a495e14533ad7c2ea8e6a.jpg",
+    images: [
+      "https://i.pinimg.com/736x/cb/d7/8d/cbd78d295e767641b7adc9021dc4bb10.jpg",
+      "https://i.pinimg.com/1200x/0b/98/23/0b9823cc17c74d97a62b6d4baa7293e8.jpg",
+      "https://i.pinimg.com/1200x/ba/2b/e5/ba2be5002b8a495e14533ad7c2ea8e6a.jpg"
+    ],
     title: "Website for ABC Company",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?",
@@ -120,12 +135,12 @@ const ProjectShowcase = () => {
   };
 
   return (
-    <section id="portfolio-showcase" className="w-full bg-[#0A0A0A] py-16 px-6 md:px-12 lg:px-20">
+    <section id="portfolio-showcase" className="w-full bg-[#000000] py-30 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-neutral-800 rounded-2xl overflow-hidden shadow-lg flex flex-col"
+            className="bg-[#131313] rounded-2xl overflow-hidden shadow-lg flex flex-col"
           >
             <div className="w-full h-48 overflow-hidden">
               <img
@@ -136,22 +151,22 @@ const ProjectShowcase = () => {
             </div>
 
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-white text-lg font-semibold mb-3">
+              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-lg font-semibold mb-3">
                 {project.title}
               </h3>
 
-              <p className="text-gray-400 text-sm flex-grow">
+              <p className="text-neutral-500 text-sm flex-grow">
                 {project.description}
               </p>
 
               <div className="flex gap-3 justify-center mt-6">
-                <button className="cursor-pointer px-10 py-2 text-sm rounded-lg bg-[var(--primary-color)] text-black">
+                <button className="cursor-pointer px-10 py-2 text-sm rounded-lg bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black">
                   View
                 </button>
 
                 <button
                   onClick={() => handleDetails(project)}
-                  className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-green-800"
+                  className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-neutral-200 hover:text-black hover:border-white"
                 >
                   More Details
                 </button>

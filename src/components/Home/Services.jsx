@@ -220,8 +220,11 @@ const Services = () => {
       <ParticleBackground />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-[1rem] uppercase tracking-[0.4em] text-gray-500">Built for Growth</h2>
-        <h2 className="text-3xl font-light md:text-5xl leading-tight text-white mb-16">Our Core Services</h2>
+        
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
+            Built for Growth
+          </span>
+        <h2 className="text-3xl font-light md:text-5xl leading-tight text-[#e9e7e2] mb-16">Our Core Services</h2>
 
         <div className="relative mx-auto" style={{ width: `${containerWidth}px` }}>
           <div
@@ -253,7 +256,7 @@ const Services = () => {
                   <div className="h-[60px] flex items-center justify-center text-4xl text-emerald-400 mb-6
                     filter drop-shadow-[0_0_8px_rgba(52,211,153,0.4)]">{service.icon}</div>
 
-                  <h3 className="h-[56px] flex items-center justify-center text-center text-xl font-bold text-white mb-4 leading-tight">
+                  <h3 className="h-[56px] flex items-center justify-center text-center text-xl font-bold text-[#e9e7e2] mb-4 leading-tight">
                     {service.title}
                   </h3>
 

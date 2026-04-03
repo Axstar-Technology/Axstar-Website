@@ -170,7 +170,7 @@ const Hero = () => {
       {/* ===== HERO CONTENT ===== */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 flex flex-col justify-center items-center">
         <div className="space-y-6 w-full max-w-7xl mt-12 md:mt-1 text-center mx-auto">
-          <h1 className="h-animate text-neutral-100 text-[2.5rem] sm:text-5xl md:text-[3.3rem] lg:text-[4.1rem] font-medium tracking-w[1rem] leading-tight">
+          <h1 className="h-animate text-[#e9e7e2] text-[2.5rem] sm:text-5xl md:text-[3.3rem] lg:text-[4.1rem] font-medium tracking-w[1rem] leading-tight">
             Transforming Ideas Into
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] block mt-4 md:mt-6 lg:mt-5">
               Scalable Digital Solutions
@@ -178,7 +178,7 @@ const Hero = () => {
           </h1>
 
           <p className="p-animate text-sm sm:text-base md:text-[.9rem] text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Axstar drives business growth through smart technology, strategic consulting, and digital transformation. We deliver scalable, high-performance solutions that align technology with your business goals—from strategy to full deployment.
+            Axstar drives business growth through smart technology, strategic consulting, and digital transformation. We deliver scalable, high-performance solutions that align technology with your business goals from strategy to full deployment.
           </p>
 
           <div className="buttons-animate flex flex-wrap justify-center gap-4 pt-4">
@@ -191,7 +191,7 @@ const Hero = () => {
             </a>
 
             <a href="/projects#projects-hero">
-              <button className="cursor-pointer px-10 py-3 text-sm rounded-lg border border-neutral-100 text-green-100 hover:bg-[#ffffff] hover:border-[#ffffff] hover:text-black hover:font-medium font-medium">
+              <button className="cursor-pointer px-10 py-3 text-sm rounded-lg border border-[#e9e7e2] text-[#e9e7e2] hover:bg-[#ffffff] hover:border-[#e9e7e2] hover:text-black hover:font-medium font-medium">
                 View Portfolio
               </button>
             </a>

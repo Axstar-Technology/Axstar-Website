@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutExcellence = () => {
   return (
-    <section className="relative w-full py-20 px-4 bg-black text-white overflow-hidden">
+    <section className="relative w-full py-20 px-4 bg-black text-[#e9e7e2] overflow-hidden">
 
       {/* Background subtle grid */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:20px_20px]" />
@@ -11,12 +11,17 @@ const AboutExcellence = () => {
       <div className="relative max-w-6xl mx-auto text-center">
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-6xl text-white mb-8 ">
+        <h2 className="text-4xl md:text-6xl text-[#e9e7e2] mb-8 ">
            
           </h2>
 
-          <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Driven by standards</h2>
-        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16">Our Pillars of Excellence</h2>
+        
+
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+           Driven by standards
+          </span>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-[#e9e7e2] mb-16">Our Pillars of Excellence</h2>
 
 
         {/* Cards */}
@@ -65,12 +70,12 @@ const AboutExcellence = () => {
                 <div className="w-3 h-3 bg-[var(--primary-color)]"></div>
               </div>
 
-              <h3 className="text-4xl md:text-5xl font-semibold">High-Impact Solutions </h3>
+              <h3 className="text-4xl md:text-5xl font-semibold">High Impact Solutions </h3>
               <p className="mt-3 text-sm italic text-gray-400">
                 
               </p>
               <p className="mt-2 text-[.9rem] text-gray-500 max-w-xs">
-                Delivering measurable outcomes through smart digital strategies, custom software, and enterprise-grade solutions tailored to your business challenges.
+                Delivering measurable outcomes through smart digital strategies, custom software, and enterprise grade solutions tailored to your business challenges.
               </p>
             </div>
           </div>

@@ -67,11 +67,13 @@ const Technologies = () => {
 
       {/* ✅ FIX: added relative z-10 */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center text-gray-500">
-          Empowered by Global Standards 
-        </h2>
+       
 
-        <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-16">
+         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
+           Empowered by Global Standards 
+          </span>
+
+        <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-[#e9e7e2] mb-16">
           Cutting-Edge Tech
         </h2>
 

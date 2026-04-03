@@ -15,8 +15,12 @@ const AboutWhatWeDo = () => {
         
        
 
-         <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Who we are inside</h2>
-        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white">Who We Are</h2>
+         
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+            Who we are inside
+          </span>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-[#e9e7e2]">Who We Are</h2>
 
         
         

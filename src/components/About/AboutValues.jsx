@@ -1,5 +1,85 @@
-import React from 'react';
+import React, { useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Points, PointMaterial, Stars } from '@react-three/drei';
+import * as THREE from 'three';
+
+// Realistic Star Colors (O, B, A, F, G types)
+const REAL_STAR_COLORS = [
+  new THREE.Color("#9bb0ff"), // Deep Blue
+  new THREE.Color("#aabfff"), // Blue White
+  new THREE.Color("#cad7ff"), // White
+  new THREE.Color("#f8f7ff"), // Soft White
+  new THREE.Color("#fff4ea"), // Yellow White
+];
+
+const StarClusterCore = () => {
+  const clusterRef = useRef();
+  
+  // Reduced star count for a cleaner, less cluttered look
+  const starCount = 2000; 
+
+  const [positions, colors] = useMemo(() => {
+    const pos = new Float32Array(starCount * 3);
+    const cols = new Float32Array(starCount * 3);
+    
+    for (let i = 0; i < starCount; i++) {
+      // --- Uniform Volume Logic ---
+      // We use a spherical distribution that avoids clumping at the center
+      const radius = 12 * Math.sqrt(Math.random()); 
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.sin(phi) * Math.sin(theta);
+      const z = radius * Math.cos(phi);
+
+      pos.set([x, y, z], i * 3);
+
+      // --- Color Logic ---
+      const mixedColor = REAL_STAR_COLORS[Math.floor(Math.random() * REAL_STAR_COLORS.length)];
+      cols.set([mixedColor.r, mixedColor.g, mixedColor.b], i * 3);
+    }
+    return [pos, cols];
+  }, []);
+
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    // Smooth, slow rotation for a "Dark Luxury" feel
+    clusterRef.current.rotation.y = t * 0.03;
+    clusterRef.current.rotation.x = t * 0.01;
+  });
+
+  return (
+    <group ref={clusterRef}>
+      <Points positions={positions} colors={colors}>
+        <PointMaterial
+          transparent
+          vertexColors
+          size={0.05}
+          sizeAttenuation={true}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+          toneMapped={false}
+        />
+      </Points>
+
+      {/* Main Central Star (Nucleus) */}
+      <mesh>
+        <sphereGeometry args={[0.35, 32, 32]} />
+        <meshStandardMaterial 
+          color="#fff5e1" 
+          emissive="#ffcc33" 
+          emissiveIntensity={8} 
+          toneMapped={false} 
+        />
+      </mesh>
+
+      {/* Subtle background stars to add depth without clutter */}
+      <Stars radius={100} depth={50} count={800} factor={4} saturation={0} fade speed={1} />
+    </group>
+  );
+};
 
 const AboutValues = () => {
   const values = [
@@ -8,118 +88,67 @@ const AboutValues = () => {
     { letter: 'S', title: 'Scalability', desc: 'Our solutions are built to grow with your business.' },
     { letter: 'T', title: 'Technology', desc: 'We leverage cutting-edge technologies to drive innovation.' },
     { letter: 'A', title: 'Ambition', desc: 'We push boundaries to achieve extraordinary outcomes.' },
-    { letter: 'R', title: 'Results', desc: 'We deliver measurable impact and long-term success.' },
+    { letter: 'R', title: 'Results', desc: 'We deliver measurable impact and long term success.' },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
-    }
-  };
-
   return (
-    <section className="py-24 px-6 bg-black text-white overflow-hidden">
+    <section className="py-24 px-6 bg-black text-[#e9e7e2] overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-20"
         >
-         
-          <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Values that guide our vision</h2>
-        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16"> Axstar Core Values</h2>
-          <div className="w-full flex justify-center">
-  <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-lg text-gray-400 italic font-light border-l-2 border-[var(--primary-color)] pl-6 max-w-3xl">
-    <p>
-      <span className="font-bold text-[var(--primary-color)] not-italic mr-2">AX</span> 
-      Our expertise and agility behind the scenes
-    </p>
-    <p>
-      <span className="font-bold text-[var(--primary-color)] not-italic mr-2">STAR</span> 
-      The scalable, ambitious results we deliver
-    </p>
-  </div>
-</div>
+        
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+           Values that guide our vision
+          </span>
+          <h2 className="text-3xl font-light text-center md:text-5xl leading-tight mb-16">
+            Axstar Core Values
+          </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
-          {/* Left Side: Values List */}
           <motion.div 
-            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-12"
+            transition={{ staggerChildren: 0.1 }}
+            className="space-y-10"
           >
             {values.map((val, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
-                className="group flex gap-8 border-b border-white/10 pb-8 last:border-0"
+                variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                className="group flex gap-8 border-b border-white/10 pb-2 last:border-0"
               >
-                <span
-  className="
-    text-5xl md:text-6xl font-black
-    bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
-    bg-clip-text text-transparent
-    opacity-10 group-hover:opacity-100
-    transition-all duration-500
-  "
->
-  {val.letter}
-</span>
+                <span className="text-5xl md:text-6xl font-black bg-gradient-to-r from-[#cad7ff] to-[#fff4ea] bg-clip-text text-transparent opacity-10 group-hover:opacity-100 transition-all duration-500">
+                  {val.letter}
+                </span>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 tracking-tight group-hover:translate-x-2 transition-transform duration-300">
+                  <h3 className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-bold mb-3 group-hover:translate-x-2 transition-transform duration-300">
                     {val.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed max-w-md">
-                    {val.desc}
-                  </p>
+                  <p className="text-gray-400 leading-relaxed max-w-md">{val.desc}</p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* Right Side: Image/Visual */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="sticky top-24 hidden lg:block"
-          >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
-              <img 
-                src="https://i.pinimg.com/736x/48/88/12/488812d21deaa3c474aa3e5a6abe4bd6.jpg" 
-                alt="Axstar Professional Environment" 
-                className="object-cover w-full h-full grayscale-0 hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
-              />
-              {/* Overlay Decor */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-8 left-8">
-                <div className="text-xs uppercase tracking-[0.4em] text-[var(--primary-color)] mb-2 font-bold">Standard of Excellence</div>
-                <div className="text-2xl font-light tracking-widest">EST. 2026</div>
-              </div>
+          <div className="sticky top-24 hidden lg:block h-[600px] w-full">
+            <div className="relative w-full h-full rounded-3xl border border-white/5 bg-[#050505] shadow-2xl overflow-hidden">
+              <Canvas camera={{ position: [0, 10, 20], fov: 60 }}>
+                <color attach="background" args={['#000000']} />
+                <ambientLight intensity={0.2} />
+                <pointLight position={[0, 0, 0]} intensity={5} color="#ffcc33" />
+                <StarClusterCore />
+              </Canvas>
             </div>
-            
-            {/* Background Glow behind image */}
-            <div className="absolute -z-10 -bottom-12 -right-12 w-64 h-64 bg-[var(--primary-color)]/20 rounded-full blur-[100px]" />
-          </motion.div>
-
+            {/* Background Glow */}
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-[#cad7ff]/5 rounded-full blur-[120px]" />
+          </div>
         </div>
       </div>
     </section>

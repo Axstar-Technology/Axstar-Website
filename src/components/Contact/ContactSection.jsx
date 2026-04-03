@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <section className="w-full bg-[#000000] py-20 px-4 sm:px-8 md:px-16 lg:px-24">
+    <section id="contact-form" className="w-full bg-[#000000] py-20 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto">
         
         {/* Main Layout Grid */}
@@ -22,7 +22,7 @@ const ContactSection = () => {
                 something epic.
               </h2>
 
-              <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-md">
+              <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-base md:text-lg leading-relaxed max-w-md">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum labore enim aliquid debitis facilis fugiat, sit atque sed hic autem eaque.
               </p>
 
@@ -47,7 +47,7 @@ const ContactSection = () => {
           <div className="w-full lg:w-3/5">
             <div className="relative group">
               {/* Decorative Gradient Glow (Desktop Only) */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--primary-color)] to-purple-600 rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
               
               <div className="relative bg-neutral-900 border border-neutral-800 p-6 sm:p-10 rounded-2xl shadow-2xl">
                 <form className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -106,15 +106,12 @@ const ContactSection = () => {
                   <div className="sm:col-span-2 pt-2 flex flex-col md:flex-row items-center gap-6">
                     <button
                       type="submit"
-                      className="w-full md:w-auto bg-white text-black hover:bg-[var(--primary-color)] hover:text-white font-bold px-10 py-4 rounded-xl transition-all duration-300 transform active:scale-95"
+                      className="w-full md:w-auto bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black hover:bg-[var(--primary-color)] cursor-pointer font-bold px-10 py-4 rounded-xl transition-all duration-300 transform active:scale-95"
                     >
                       Send Message
                     </button>
                     
-                    <p className="text-[11px] text-neutral-500 leading-tight">
-                      By clicking Submit you agree to our 
-                      <span className="text-neutral-300 underline ml-1 cursor-pointer">privacy policy</span>.
-                    </p>
+                  
                   </div>
 
                 </form>

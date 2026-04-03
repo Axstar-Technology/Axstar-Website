@@ -28,7 +28,7 @@ const WebDevelopment = () => {
       
     <WebDevelopmentHero />
 
-<div className="px-14">
+<div className="px-0 lg:px-14">
     <WhatWeOffer />
     <WebDevWhatWeDo />
       <WhyWorkWithUs />

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 
-const DeepFieldDotsBackground = () => {
+const DataFlowBackground = () => {
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
 
@@ -9,10 +9,12 @@ const DeepFieldDotsBackground = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let animationFrameId;
+    let lines = [];
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      init();
     };
 
     const handleMouseMove = (e) => {
@@ -20,89 +22,71 @@ const DeepFieldDotsBackground = () => {
       mouseRef.current.y = e.clientY;
     };
 
+    const init = () => {
+      lines = [];
+      const lineCount = 40; // Number of vertical data streams
+      for (let i = 0; i < lineCount; i++) {
+        lines.push({
+          x: (canvas.width / lineCount) * i,
+          baseX: (canvas.width / lineCount) * i,
+          speed: Math.random() * 2 + 1,
+          offset: Math.random() * 1000,
+          points: []
+        });
+      }
+    };
+
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
     handleResize();
 
-    // Setup Dots
-    const dots = [];
-    
-    // To give the illusion of millions, we use thousands but with different focal depth
-    const dotCount = 1500; 
-
-    for (let i = 0; i < dotCount; i++) {
-      dots.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        // z represents depth (focal distance)
-        z: Math.random() * canvas.width, 
-        baseSize: Math.random() * 1.5 + 0.5,
-        speed: 0.8 + Math.random() * 0.4
-      });
-    }
-
     const animate = () => {
-      // Clear with very slight fade trail (optional, looks smoother)
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      dots.forEach((dot) => {
-        // Move dot "forward" (decreasing z distance)
-        dot.z -= dot.speed;
-        
-        // Reset dot when it gets "behind" the camera
-        if (dot.z <= 0) {
-          dot.z = canvas.width;
-          dot.x = Math.random() * canvas.width;
-          dot.y = Math.random() * canvas.height;
-        }
+      lines.forEach((line) => {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(2, 255, 221, 0.15)`;
+        ctx.lineWidth = 1.5;
 
-        // Project 3D depth (z) to 2D screen coordinates (x, y)
-        // This is a perspective projection
-        const focalLength = canvas.width;
-        const projectedX = (dot.x - canvas.width / 2) * (focalLength / dot.z) + canvas.width / 2;
-        const projectedY = (dot.y - canvas.height / 2) * (focalLength / dot.z) + canvas.height / 2;
-        
-        // Size dot based on its depth (closer is larger)
-        const size = (focalLength / dot.z) * dot.baseSize;
-
-        // Interaction: If dot is within a range of the mouse, draw a faint connection line
-        let alphaConnection = 0;
-        if (mouseRef.current.x > 0) {
-          let dx = mouseRef.current.x - projectedX;
-          let dy = mouseRef.current.y - projectedY;
-          let distance = Math.sqrt(dx * dx + dy * dy);
+        for (let y = 0; y < canvas.height; y += 20) {
+          // Calculate horizontal distortion based on mouse
+          const dx = mouseRef.current.x - line.x;
+          const dy = mouseRef.current.y - y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 120 && dot.z < 500) { // only connect closer dots
-             alphaConnection = (1 - distance / 120) * 0.4;
-             ctx.strokeStyle = `rgba(2, 255, 221, ${alphaConnection})`;
-             ctx.lineWidth = 0.5;
-             ctx.beginPath();
-             ctx.moveTo(projectedX, projectedY);
-             ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
-             ctx.stroke();
+          // The "Magnetic" pull effect
+          let xOffset = Math.sin(y * 0.01 + (Date.now() * 0.002) + line.offset) * 20;
+          if (dist < 250) {
+            const force = (250 - dist) / 250;
+            xOffset += dx * force * 0.5;
+          }
+
+          if (y === 0) {
+            ctx.moveTo(line.x + xOffset, y);
+          } else {
+            ctx.lineTo(line.x + xOffset, y);
           }
         }
+        ctx.stroke();
 
-        // Set Dot Color and opacity (dots fade out as they get super close)
-        const minAlpha = 0.1;
-        const maxAlpha = 0.8;
-        // Fade out dots when they are extremely far or near
-        let alphaDot = minAlpha + (1 - dot.z / focalLength) * (maxAlpha - minAlpha);
+        // Draw a "Data Packet" (glowing dot) traveling down the line
+        const packetY = (Date.now() * 0.1 * line.speed + line.offset) % canvas.height;
+        const packetDx = mouseRef.current.x - line.x;
+        const packetDy = mouseRef.current.y - packetY;
+        const packetDist = Math.sqrt(packetDx * packetDx + packetDy * packetDy);
         
-        // Boost color if connected to mouse
-        if (alphaConnection > 0) {
-            ctx.fillStyle = `rgba(2, 255, 221, ${alphaConnection + 0.2})`;
-        } else {
-            ctx.fillStyle = `rgba(2, 255, 221, ${alphaDot})`;
+        let packetXOffset = Math.sin(packetY * 0.01 + (Date.now() * 0.002) + line.offset) * 20;
+        if (packetDist < 250) {
+            packetXOffset += packetDx * ((250 - packetDist) / 250) * 0.5;
         }
 
-        // Draw Dot
-        if (projectedX > 0 && projectedX < canvas.width && projectedY > 0 && projectedY < canvas.height) {
-            ctx.beginPath();
-            ctx.arc(projectedX, projectedY, size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+        ctx.beginPath();
+        ctx.arc(line.x + packetXOffset, packetY, 2, 0, Math.PI * 2);
+        ctx.fillStyle = '#02ffdd';
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#02ffdd';
+        ctx.fill();
+        ctx.shadowBlur = 0; // Reset for next line
       });
 
       animationFrameId = requestAnimationFrame(animate);
@@ -121,7 +105,6 @@ const DeepFieldDotsBackground = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.4 }}
     />
   );
 };
@@ -133,19 +116,19 @@ const AiDrivenHero = () => {
       className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-black text-white"
     >
       
-      {/* Background Layer 1: Deep Glows */}
+      {/* Background Layer 1: Glows */}
       <div className="absolute top-1/4 left-1/4 w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[150px] pointer-events-none z-0" />
       <div className="absolute bottom-1/4 right-1/4 w-[40%] h-[40%] rounded-full bg-[#02ffdd]/10 blur-[150px] pointer-events-none z-0" />
 
-      {/* Background Layer 2: Deep Field Dots Animation */}
-      <DeepFieldDotsBackground />
+      {/* Background Layer 2: Flowing Data Animation */}
+      <DataFlowBackground />
 
       {/* Content Container (Original Layout) */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         
         <h1 className="text-white py-10 text-[2.8rem] sm:text-5xl md:text-[4rem] lg:text-[5rem] tracking-tight leading-[1.1] pb-6">
           Scaling your operations with intelligent systems <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#02ffdd] via-blue-400 to-[#186d60]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]">
             that work while you sleep. 
           </span>
         </h1>
@@ -154,13 +137,13 @@ const AiDrivenHero = () => {
           At Axstar, we build AI-driven solutions that help businesses work smarter. Using Machine Learning, Automation, NLP, and Computer Vision, we create intuitive tools that boost efficiency and turn data into your most valuable asset.
         </p>
 
-        <button className="group relative px-12 py-4 text-sm font-bold rounded-full overflow-hidden transition-all">
-          <div className="absolute inset-0 bg-[#02ffdd] transition-transform group-hover:scale-105" />
-          <div className="relative cursor-pointer flex items-center gap-2 text-black">
-            Discover 
-            <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-          </div>
-        </button>
+        <a href="#section-1">
+                      <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
+                        bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
+                        text-[black] transition font-bold flex items-center gap-2">
+                        Discover <ArrowDown strokeWidth={2.5} />
+                      </button>
+                    </a>
 
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import aboutPageImg3 from "../../assets/about-img-5.jpg";
 
 const OurStory = () => {
   const containerRef = useRef(null);
@@ -38,7 +39,11 @@ const OurStory = () => {
         >
           
 
-           <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">How it all began</h2>
+           
+
+           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+           How it all began
+          </span>
         <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16">Our Story</h2>
         </motion.div>
 
@@ -50,9 +55,9 @@ const OurStory = () => {
             <div className="overflow-hidden bg-zinc-900 aspect-[4/5] rounded-sm">
               <motion.img
                 style={{ y: imageY, scale: imageScale }}
-                src="https://i.pinimg.com/736x/f5/40/f6/f540f63cdc4d2d0e7c8f5ba7dd663837.jpg" 
+                src={aboutPageImg3}
                 alt="Studio"
-                className="w-full h-full object-cover opacity-60 grayscale-0 hover:grayscale-0 transition-all duration-1000"
+                className="w-full h-full object-cover opacity-80 grayscale-0 hover:grayscale-0 transition-all duration-1000"
               />
             </div>
             {/* Minimal floating accent - Hidden on small mobile to avoid layout shifts */}
@@ -68,8 +73,8 @@ const OurStory = () => {
               variants={fadeInVariants}
               className="space-y-8"
             >
-              <p className="text-xl md:text-2xl lg:text-3xl font-light leading-snug text-zinc-200">
-                At <span className="font-semibold text-white">Axstar</span>, innovation is more than a goal—it’s in our DNA. 
+              <p className="text-xl md:text-2xl lg:text-3xl font-light leading-snug text-[#e9e7e2]">
+                At <span className="font-semibold text-[#e9e7e2]">Axstar</span>, innovation is more than a goal—it’s in our DNA. 
                 We build technology that empowers businesses to grow and thrive.
               </p>
 
@@ -79,7 +84,7 @@ const OurStory = () => {
                   <div className="space-y-3">
                     <h3 className="text-[var(--primary-color)] font-bold uppercase text-[10px] tracking-[0.3em]">The Journey</h3>
                     <p className="text-zinc-400 text-sm leading-relaxed">
-                      From a small team to a dynamic hub of digital innovation, we create intelligent, future-ready solutions.
+                      From a small team to a dynamic hub of digital innovation, we create intelligent, future ready solutions.
                     </p>
                   </div>
                   <div className="space-y-3">
@@ -97,18 +102,21 @@ const OurStory = () => {
             </motion.div>
 
             {/* CTA Section */}
-            <motion.div 
+            <a href="/contact">
+              <motion.div 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInVariants}
               className="pt-4 flex items-center gap-4 md:gap-8"
             >
-              <button className="whitespace-nowrap px-6 md:px-8 py-4 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] cursor-pointer text-black font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-white transition-all duration-300">
+              <button className="whitespace-nowrap px-6 md:px-8 py-4 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] cursor-pointer text-black font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-[#e9e7e2] transition-all duration-300">
                 Partner With Us
               </button>
               <div className="h-[1px] flex-grow bg-zinc-900"></div>
             </motion.div>
+            </a>
+            
           </div>
         </div>
       </div>

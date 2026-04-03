@@ -38,12 +38,12 @@ const engineeringTech = [
 ];
 
 const businessStrategy = [
-  { label: "Business Model & Growth Strategy", path: "/business-planning" },
-  { label: "Digital Transformation Consulting", path: "/business-documentation" },
-  { label: "Go-To-Market (GTM) Strategy", path: "/digital-consulting" },
-  { label: "Data & Technology Consulting", path: "/digital-consulting" },
-  { label: "Startup Advisory", path: "/digital-consulting" },
-  { label: "Business Process & Documentation", path: "/digital-consulting" },
+  { label: "Business Model & Growth Strategy", path: "/business-strategy&consulting#section1" },
+  { label: "Digital Transformation Consulting", path: "/business-strategy&consulting#section2" },
+  { label: "Go-To-Market (GTM) Strategy", path: "/business-strategy&consulting#section3" },
+  { label: "Data & Technology Consulting", path: "/business-strategy&consulting#section4" },
+  { label: "Startup Advisory", path: "/business-strategy&consulting#section5" },
+  { label: "Business Process & Documentation", path: "/business-strategy&consulting#section6" },
 ];
 
 const digitalGrowth = [
@@ -141,7 +141,7 @@ export default function Navbar() {
           <img src={logo} className="w-[3.5rem] sm:w-[4rem]" />
         </Link>
 
-        <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-2xl">
+        <button onClick={() => setMobileMenu(!mobileMenu)} className="text-[#e9e7e2] text-2xl">
           {mobileMenu ? <FiX /> : <FiMenu />}
         </button>
       </nav>
@@ -149,7 +149,7 @@ export default function Navbar() {
       {/* ================= MOBILE MENU ================= */}
       {/* ================= MOBILE MENU ================= */}
 <div
-  className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-black text-white z-40 transition-all duration-300 ${
+  className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-black text-[#e9e7e2] z-40 transition-all duration-300 ${
     mobileMenu ? "translate-x-0" : "-translate-x-full"
   }`}
 >
@@ -164,7 +164,7 @@ export default function Navbar() {
             className={`block py-3 border-b border-white/10 text-base sm:text-lg transition-colors duration-300 ${
               location.pathname === item.path
                 ? "text-[var(--primary-color)] font-medium"
-                : "text-white"
+                : "text-[#e9e7e2]"
             }`}
           >
             {item.label}
@@ -200,30 +200,7 @@ export default function Navbar() {
                       key={i}
                       to={s.path}
                       onClick={handleNavClick(s.path, heroMap[s.path])}
-                      className="block text-white/80 text-base hover:text-[var(--primary-color)] transition-colors duration-300"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Business Consulting */}
-              <div>
-                <Link
-                  to="/business-strategy&consulting"
-                  onClick={handleNavClick("/it&business", heroMap["/it&business"])}
-                  className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
-                >
-                  Business Strategy & Consulting  <FiChevronRight />
-                </Link>
-                <div className="pl-4 space-y-1">
-                  {businessStrategy.map((s, i) => (
-                    <Link
-                      key={i}
-                      to={s.path}
-                      onClick={handleNavClick(s.path, heroMap[s.path])}
-                      className="block text-white/80 text-base hover:text-[var(--primary-color)] transition-colors duration-300"
+                      className="block text-[#e9e7e2] text-base hover:text-[var(--primary-color)] transition-colors duration-300"
                     >
                       {s.label}
                     </Link>
@@ -246,13 +223,38 @@ export default function Navbar() {
                       key={i}
                       to={s.path}
                       onClick={handleNavClick(s.path, heroMap[s.path])}
-                      className="block text-white/80 text-base hover:text-[var(--primary-color)] transition-colors duration-300"
+                      className="block text-[#e9e7e2] text-base hover:text-[var(--primary-color)] transition-colors duration-300"
                     >
                       {s.label}
                     </Link>
                   ))}
                 </div>
               </div>
+
+              {/* Business Consulting */}
+              <div>
+                <Link
+                  to="/business-strategy&consulting#business-strategy-hero"
+                  onClick={handleNavClick("/it&business", heroMap["/it&business"])}
+                  className="flex justify-between items-center text-[var(--primary-color)] font-bold text-lg mb-2"
+                >
+                  Business Strategy & Consulting  <FiChevronRight />
+                </Link>
+                <div className="pl-4 space-y-1">
+                  {businessStrategy.map((s, i) => (
+                    <Link
+                      key={i}
+                      to={s.path}
+                      onClick={handleNavClick(s.path, heroMap[s.path])}
+                      className="block text-[#e9e7e2] text-base hover:text-[var(--primary-color)] transition-colors duration-300"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              
             </div>
           )}
         </div>
@@ -286,7 +288,7 @@ export default function Navbar() {
                       businessStrategy.some((s) => s.path === location.pathname) ||
                       digitalGrowth.some((s) => s.path === location.pathname)
                         ? "text-[var(--primary-color)]"
-                        : "text-white"
+                        : "text-[#e9e7e2]"
                     }`}
                   >
                     {item.label}
@@ -313,7 +315,31 @@ export default function Navbar() {
                             className={`block mb-4 transition-colors duration-300 ${
                               location.pathname === s.path
                                 ? "text-[var(--primary-color)] font-medium"
-                                : "text-neutral-300 hover:text-[var(--primary-color)]"
+                                : "text-[#e9e7e2] hover:text-[var(--primary-color)]"
+                            }`}
+                          >
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+
+
+
+                      <div>
+                        <h3 className="text-[1.1rem] text-[var(--primary-color)] font-semibold mb-7">
+                          <Link to="/digital-growth&marketing#digital-growth-hero" className="flex items-center gap-1">
+                          Digital Growth & Marketing <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
+                          </Link>
+                        </h3>
+                        {digitalGrowth.map((s, i) => (
+                          <Link
+                            key={i}
+                            to={s.path}
+                            onClick={handleNavClick(s.path, heroMap[s.path])}
+                            className={`block mb-4 transition-colors duration-300 ${
+                              location.pathname === s.path
+                                ? "text-[var(--primary-color)] font-medium"
+                                : "text-[#e9e7e2] hover:text-[var(--primary-color)]"
                             }`}
                           >
                             {s.label}
@@ -335,7 +361,7 @@ export default function Navbar() {
                             className={`block mb-4 transition-colors duration-300 ${
                               location.pathname === s.path
                                 ? "text-[var(--primary-color)] font-medium"
-                                : "text-neutral-300 hover:text-[var(--primary-color)]"
+                                : "text-[#e9e7e2] hover:text-[var(--primary-color)]"
                             }`}
                           >
                             {s.label}
@@ -343,27 +369,7 @@ export default function Navbar() {
                         ))}
                       </div>
 
-                      <div>
-                        <h3 className="text-[1.1rem] text-[var(--primary-color)] font-semibold mb-7">
-                          <Link to="/digital-growth&marketing#digital-growth-hero" className="flex items-center gap-1">
-                          Digital Growth & Marketing <FiChevronRight className="text-[1.3rem]" strokeWidth={3} />
-                          </Link>
-                        </h3>
-                        {digitalGrowth.map((s, i) => (
-                          <Link
-                            key={i}
-                            to={s.path}
-                            onClick={handleNavClick(s.path, heroMap[s.path])}
-                            className={`block mb-4 transition-colors duration-300 ${
-                              location.pathname === s.path
-                                ? "text-[var(--primary-color)] font-medium"
-                                : "text-neutral-300 hover:text-[var(--primary-color)]"
-                            }`}
-                          >
-                            {s.label}
-                          </Link>
-                        ))}
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -389,7 +395,7 @@ export default function Navbar() {
             key={item.id}
             to={item.path}
             onClick={handleNavClick(item.path, heroMap[item.path])}
-            className="px-6 py-2 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] border border-[1px] border-[#005a26] text-white font-medium rounded-full transition-all duration-300"
+            className="px-6 py-2 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-[#e9e7e2] font-medium rounded-full transition-all duration-300"
           >
             {item.label}
           </Link>

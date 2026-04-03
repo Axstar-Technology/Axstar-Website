@@ -5,29 +5,33 @@ const WhatWeDo = () => {
     {
       id: "01",
       title: "Engineering & Technology",
-      description: "We build high-performance software, web & mobile applications, AI-driven solutions, and custom platforms that solve complex business challenges."
+      description: "We build high-performance software, web & mobile applications, AI driven solutions, and custom platforms that solve complex business challenges."
     },
     {
       id: "02",
       title: "Digital & Marketing Solutions",
-      description: "From digital transformation strategy to data-driven marketing, we help businesses engage customers and achieve measurable results."
+      description: "From digital transformation strategy to data driven marketing, we help businesses engage customers and achieve measurable results."
     },
     {
       id: "03",
       title: "Business Strategy & Consulting",
-      description: "We provide business model design, startup advisory, and go-to-market strategies to help companies scale sustainably."
+      description: "We provide business model design, startup advisory, and go to market strategies to help companies scale sustainably."
     }
   ];
 
   return (
-    <div className=" bg-[#0a0a0a] text-white px-6 py-16 md:py-24 lg:py-32">
+    <div className=" bg-[#000000] text-[#e9e7e2] px-6 py-16 md:py-24 lg:py-2">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
         <header className="mb-12 md:mb-20 text-center">
            {/* Heading */}
-          <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">Solutions we create</h2>
-        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16">What We Do</h2>
+      
+
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+           Solutions we create
+          </span>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-[#e9e7e2] mb-16">What We Do</h2>
           
           <p className="max-w-2xl mx-auto bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-base md:text-lg leading-relaxed">
             At Axstar, we help businesses innovate, grow, and scale through a 

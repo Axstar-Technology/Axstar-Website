@@ -1,114 +1,68 @@
-import React from 'react'
-import { FiCloud, FiCode, FiFileText, FiPenTool, FiSearch, FiSmartphone, FiTrendingUp, FiZap } from 'react-icons/fi'
+import React from 'react';
+import { 
+  FiCloud, FiCode, FiFileText, FiPenTool, 
+  FiSearch, FiSmartphone, FiTrendingUp, FiZap 
+} from 'react-icons/fi';
 
 const WhatWeOffer = () => {
+  const offers = [
+    { icon: <FiCode />, title: "Fully Custom Coded", desc: "No templates or pre-made builders used.", color: "text-blue-400" },
+    { icon: <FiPenTool />, title: "Unique Premium Designs", desc: "Tailored specifically to match your brand identity.", color: "text-purple-400" },
+    { icon: <FiSmartphone />, title: "100% Mobile Responsive", desc: "Optimized for desktops, tablets, and smartphones.", color: "text-green-400" },
+    { icon: <FiFileText />, title: "Result-Focused Content", desc: "Content tailored to your business goals.", color: "text-yellow-400" },
+    { icon: <FiTrendingUp />, title: "Lead-Driven Strategy", desc: "Built to convert visitors into customers.", color: "text-pink-400" },
+    { icon: <FiSearch />, title: "SEO Optimization", desc: "SEO-ready structure for better search visibility.", color: "text-cyan-400" },
+    { icon: <FiZap />, title: "Fast Support", desc: "Quick response and dedicated communication.", color: "text-orange-400" },
+    { icon: <FiCloud />, title: "Cloud Hosting", desc: "Reliable hosting with security and maintenance.", color: "text-indigo-400" },
+  ];
+
   return (
-    <div className="w-full bg-[#080808]/0 text-white py-30 px-15">
-  <div className="max-w-7xl mx-auto text-center">
+    <section id='what-we-offer' className="relative w-full bg-[#000000] text-white py-24 px-6 overflow-hidden">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)] pointer-events-none" />
 
-   
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-16">
+          
 
-    {/* Title */}
-    <h2 className="text-3xl md:text-4xl font-bold mb-12">
-     What we Offer
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-3 block">
+           Focused on Impact
+          </span>
+    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-[#e9e7e2] mb-16">
+    What We Offer
     </h2>
-
-    {/* Steps Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-30">
-
-      {/* 1 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-blue-400 mb-3">
-          <FiCode />
+          
         </div>
-        <h3 className="text-lg font-semibold mb-2">Fully Custom Coded</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          No templates or pre-made builders used.
-        </p>
-      </div>
 
-      {/* 2 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-purple-400 mb-3">
-          <FiPenTool />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {offers.map((item, index) => (
+            <div 
+              key={index}
+              className="group relative flex flex-col p-8 rounded-2xl bg-[#0e0d0d] border border-white/5 hover:border-white/20 transition-all duration-300 hover:-translate-y-1"
+            >
+              {/* Icon Container */}
+              <div className={`text-3xl ${item.color} mb-6 transition-transform duration-300 group-hover:scale-110`}>
+                {item.icon}
+              </div>
+
+              {/* Text Content - flex-1 ensures alignment */}
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold mb-3 text-white/90">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+
+              {/* Bottom accent line */}
+              <div className={`absolute bottom-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-30 transition-opacity ${item.color}`} />
+            </div>
+          ))}
         </div>
-        <h3 className="text-lg font-semibold mb-2">Unique Premium Designs</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          Tailored specifically to match your brand identity.
-        </p>
       </div>
+    </section>
+  );
+};
 
-      {/* 3 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-green-400 mb-3">
-          <FiSmartphone />
-        </div>
-        <h3 className="text-lg font-semibold mb-2">100% Mobile Responsive</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          Optimized for desktops, tablets, and smartphones.
-        </p>
-      </div>
-
-      {/* 4 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-yellow-400 mb-3">
-          <FiFileText />
-        </div>
-        <h3 className="text-lg font-semibold mb-2">Result-Focused Content</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          Content tailored to your business goals.
-        </p>
-      </div>
-
-      {/* 5 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-pink-400 mb-3">
-          <FiTrendingUp />
-        </div>
-        <h3 className="text-lg font-semibold mb-2">Lead-Driven Strategy</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          Built to convert visitors into customers.
-        </p>
-      </div>
-
-      {/* 6 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-cyan-400 mb-3">
-          <FiSearch />
-        </div>
-        <h3 className="text-lg font-semibold mb-2">SEO Optimization</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          SEO-ready structure for better search visibility.
-        </p>
-      </div>
-
-      {/* 7 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-orange-400 mb-3">
-          <FiZap />
-        </div>
-        <h3 className="text-lg font-semibold mb-2">Fast Support</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          Quick response and dedicated communication.
-        </p>
-      </div>
-
-      {/* 8 */}
-      <div className="flex flex-col items-center text-center">
-        <div className="text-4xl text-indigo-400 mb-3">
-          <FiCloud />
-        </div>
-        <h3 className="text-lg font-semibold mb-2">Cloud Hosting</h3>
-        <p className="text-gray-400 text-sm max-w-xs">
-          Reliable hosting with security and maintenance.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-  )
-}
-
-export default WhatWeOffer
+export default WhatWeOffer;

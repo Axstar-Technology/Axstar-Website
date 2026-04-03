@@ -91,8 +91,12 @@ const Process2 = () => {
         {/* Header */}
         <div className="process-header text-center mb-24">
 
-          <h2 className="text-[1rem] uppercase tracking-[0.4em] text-gray-500">A clear roadmap from concept to reality.</h2>
-        <h2 className="text-3xl font-light md:text-5xl leading-tight text-white mb-16">How We Do It</h2>
+        
+
+           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
+           A clear roadmap from concept to reality
+          </span>
+        <h2 className="text-3xl font-light md:text-5xl leading-tight text-[#e9e7e2] mb-16">How We Do It</h2>
           
         
         </div>
@@ -135,7 +139,7 @@ const Process2 = () => {
 <div className="final-launch flex flex-col items-center text-center mt-12 px-4">
   
 
-  <div className="flex flex-col items-center max-w-3xl">
+  <div className="flex flex-col items-center w-full">
     <div className="flex items-center gap-3 mb-4">
       <Rocket className="w-5 h-5 text-[var(--primary-color)]" />
       <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-bold text-lg uppercase tracking-widest">
@@ -144,9 +148,9 @@ const Process2 = () => {
     </div>
     
     <p className="text-gray-400 text-base md:text-lg leading-relaxed italic">
-      “Your solution is ready to go live! 🚀 <br/>We ensure a 
-      <span className="text-white font-medium"> smooth launch </span> 
-      and continued support for your long-term success.”
+      "Your solution is ready to go live!" 🚀 <br/>We ensure a 
+      <span className="text-[#e9e7e2] font-medium"> smooth launch </span> 
+      and continued support for your long term success.
     </p>
   </div>
 </div>

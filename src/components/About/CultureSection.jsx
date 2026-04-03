@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutPageImg2 from "../../assets/about-img-4.png";
 
 const CultureSection = () => {
   return (
@@ -11,8 +12,12 @@ const CultureSection = () => {
 
       
 
-           <h2 className="text-[1rem] text-center uppercase tracking-[0.4em] text-gray-500">The way we think and act</h2>
-        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-white mb-16"> Our Culture</h2>
+           
+
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+           The way we think and act
+          </span>
+        <h2 className="text-3xl font-light text-center md:text-5xl leading-tight text-[#e9e7e2] mb-16"> Our Culture</h2>
         </header>
 
         {/* 2. Main Content Split: Text Left | Image Right */}
@@ -21,7 +26,7 @@ const CultureSection = () => {
           {/* Text Content */}
           <div className="space-y-10">
             {/* Top Focus Text */}
-            <p className="text-2xl md:text-3xl text-white font-extralight leading-tight max-w-xl">
+            <p className="text-2xl md:text-3xl text-[#e9e7e2] font-extralight leading-tight max-w-xl">
               "At Axstar, we believe that <span className="text-neutral-500">great technology</span> is built by great people. Our culture is rooted in collaboration, innovation, and respect."
             </p>
 
@@ -36,7 +41,7 @@ const CultureSection = () => {
               <div className="space-y-3">
                 <h3 className="text-sm uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-medium">Human Values</h3>
                 <p className="text-neutral-400 font-light leading-relaxed">
-                  Work-life balance and mutual respect aren’t just ideals—they are the foundation of how we operate every day in a positive, inspiring environment.
+                  Work-life balance and mutual respect aren’t just ideals they are the foundation of how we operate every day in a positive, inspiring environment.
                 </p>
               </div>
             </div>
@@ -48,9 +53,9 @@ const CultureSection = () => {
               {/* Abstract decorative frame */}
               <div className="absolute inset-0 border border-neutral-800 translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
               <img 
-                src="https://i.pinimg.com/736x/c4/5b/5a/c45b5a825a0f4e7233c4d297882cedd2.jpg" 
+                src={aboutPageImg2}
                 alt="Axstar culture visual" 
-                className="w-full h-full object-cover relative z-10"
+                className="w-full h-full opacity-70 object-cover relative z-10"
               />
             </div>
           </div>

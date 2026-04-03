@@ -46,10 +46,12 @@ const LatestProjects = () => {
 
 
 
- <h2 className="text-[1rem] uppercase tracking-[0.4em] text-center text-gray-500">
-      Showcasing our latest creations
-          </h2>
-    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white mb-16">
+ 
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
+           Showcasing our latest creations
+          </span>
+    <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-[#e9e7e2] mb-16">
     Our Latest Projects
     </h2>
           
@@ -96,7 +98,7 @@ const LatestProjects = () => {
           {/* Button: All Projects */}
           <a href='/projects'>
                 <button 
-            className="flex cursor-pointer items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-800  text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-300 group"
+            className="flex cursor-pointer items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-800  text-sm text-zinc-400 hover:text-[#e9e7e2] hover:bg-zinc-800 transition-all duration-300 group"
           >
             All Projects
             <HiOutlineExternalLink className="text-base group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -107,21 +109,21 @@ const LatestProjects = () => {
           {/* Right Side: Counter + Nav */}
           <div className="flex items-center gap-6">
             <div className="hidden sm:flex items-baseline gap-1.5">
-              <span className="text-xl font-medium text-white">0{currentIndex + 1}</span>
+              <span className="text-xl font-medium text-[#e9e7e2]">0{currentIndex + 1}</span>
               <span className="text-zinc-600 text-[10px] font-mono tracking-tighter uppercase">/ 0{projects.length}</span>
             </div>
 
             <div className="flex gap-2">
               <button
                 onClick={prevSlide}
-                className="p-3 cursor-pointer rounded-full border border-zinc-800 bg-zinc-900 hover:bg-white hover:text-black transition-colors active:scale-95 duration-200"
+                className="p-3 cursor-pointer rounded-full border border-zinc-800 bg-zinc-900 hover:bg-[#e9e7e2] hover:text-black transition-colors active:scale-95 duration-200"
                 aria-label="Previous"
               >
                 <HiArrowLeft size={18} />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-3 cursor-pointer rounded-full border border-zinc-800 bg-zinc-900 hover:bg-white hover:text-black transition-colors active:scale-95 duration-200"
+                className="p-3 cursor-pointer rounded-full border border-zinc-800 bg-zinc-900 hover:bg-[#e9e7e2] hover:text-black transition-colors active:scale-95 duration-200"
                 aria-label="Next"
               >
                 <HiArrowRight size={18} />

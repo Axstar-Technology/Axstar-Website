@@ -124,7 +124,7 @@ const ContactHero = () => {
         <p className="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, consequatur? Voluptatem qui commodi architecto itaque facere dolorum minus, molestias nesciunt animi consectetur vero ducimus odit voluptas expedita dolores facilis sit.
         </p>
- <a href="#portfolio-showcase">
+ <a href="#contact-form">
                       <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
                         bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
                         text-[black] transition font-bold flex items-center gap-2">

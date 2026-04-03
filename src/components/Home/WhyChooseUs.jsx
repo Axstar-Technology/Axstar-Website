@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
     {
       icon: <FaBrain />,
       title: "Strategic Thinking",
-      text: "Strategic planning and smart decision-making to build solutions that support long-term business growth.",
+      text: "Strategic planning and smart decision making to build solutions that support long term business growth.",
     },
     {
       icon: <FaLaptopCode />,
@@ -31,10 +31,12 @@ const WhyChooseUs = () => {
         
         {/* Minimal Header */}
         <div className="mb-20 w-full">
-          <p className="text-[0.85rem] uppercase tracking-[0.4em] text-gray-500 mb-4 text-center">
+          
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-4 block">
             Our Edge
-          </p>
-          <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-white">
+          </span>
+          <h2 className="text-3xl text-center font-light md:text-5xl leading-tight text-[#e9e7e2]">
             The Axstar Advantage
           </h2>
         </div>
@@ -60,7 +62,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-white text-lg font-medium mb-3 tracking-tight">
+                <h3 className="text-[#e9e7e2] text-lg font-medium mb-3 tracking-tight">
                   {card.title}
                 </h3>
 

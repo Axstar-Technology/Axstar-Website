@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, Sparkles, Zap } from 'lucide-react';
+import digitalImg3 from "../../../assets/digital-2.png";
 
 const DigitalSetup4 = () => {
   const deliverables = [
@@ -29,9 +30,11 @@ const DigitalSetup4 = () => {
             <Zap size={14} className="text-emerald-500 fill-emerald-500" />
           </div>
 
-          <h2 className="text-[0.75rem] md:text-[0.9rem] lg:text-[1rem] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-500 mb-2">
+          
+
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
             Plan for Impact
-          </h2>
+          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white mb-6">
             Product Strategy & Digital Transformation
           </h2>
@@ -85,7 +88,7 @@ const DigitalSetup4 = () => {
               <motion.img 
                 whileHover={{ scale: 1.08 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                src="https://i.pinimg.com/1200x/e4/9d/17/e49d17bf30536edd4df163f7fd57cb35.jpg" 
+                src={digitalImg3}
                 alt="Digital Strategy Visual"
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
               />
@@ -93,10 +96,12 @@ const DigitalSetup4 = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 cursor-pointer group shadow-lg shadow-emerald-500/10">
-              Talk to Expert 
-              <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
+                        <a href='/contact'>
+                            <button className="w-full md:w-[50%] md:mx-auto lg:w-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black py-4 md:py-4 rounded-[1.5rem] md:rounded-[2rem] font-bold uppercase text-base md:text-[1.1rem] tracking-[.1em] flex items-center justify-center gap-3 hover:bg-white transition-all duration-500 group cursor-pointer shadow-lg shadow-emerald-500/10">
+                          Talk to Expert 
+                          <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </button>
+                        </a>
           </motion.div>
 
         </div>

@@ -75,13 +75,17 @@ const DigitalSetup1 = () => {
         
         {/* Centered Header Section */}
         <header className="text-center mb-32">
-           <h2 className="text-[1rem] uppercase tracking-[0.4em] text-gray-500">Built for Growth</h2>
+          
+
+           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-center text-[1rem] font-medium tracking-[0.4em] uppercase mb-2 block">
+            Built for Growth
+          </span>
         <h2 className="text-3xl font-light md:text-5xl leading-tight text-white mb-5">Our Expertise</h2>
           
-          <p className="text-lg md:text-[1.1rem] mb-5 text-slate-400 max-w-5xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-[1.1rem] mb-5 bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-5xl mx-auto leading-relaxed">
             At Axstar, we bridge the gap between technical infrastructure and market dominance. We don’t just provide digital marketing; we engineer growth ecosystems designed for scale. By integrating deep software expertise with performance-driven marketing, we empower brands to navigate the digital landscape with precision. From high-level Product Strategy and Digital Transformation to the granular execution of Technical SEO and Data Analytics, our approach is built on a foundation of measurable results. 
           </p>
-           <p className="text-lg md:text-[1.1rem] text-slate-400 max-w-5xl mx-auto leading-relaxed">
+           <p className="text-lg md:text-[1.1rem] bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-5xl mx-auto leading-relaxed">
             We leverage Social Media Management and Performance Marketing to build community and capture intent, turning raw data into actionable insights that optimize every stage of the user journey. We are not just your service provider; we are your strategic partner in building a future-proof digital presence.
           </p>
           

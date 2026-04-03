@@ -92,7 +92,7 @@ export default function Stat() {
         
         {/* LEFT CONTENT */}
         <div className="max-w-xl">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6 ">
+          <h2 className="text-3xl text-[#e9e7e2] md:text-4xl lg:text-5xl font-semibold leading-tight mb-6 ">
             We Turn <br />
             Ideas into <br />
             Visual Masterpieces

@@ -114,14 +114,14 @@ const CareersHero = () => {
         </h1>
 
         <p className="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
-          At Axstar Technologies, we don’t just hire—we cultivate talent. Join a team of high-performance specialists shaping the future of IT and Business Consulting. Here, your work becomes a global benchmark.
+          At Axstar Technologies, we don’t just hire, we cultivate talent. Join a team of high-performance specialists shaping the future of IT and Business Consulting. Here, your work becomes a global benchmark.
         </p>
 
         <a href="#application">
                       <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
                         bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60]
                         text-[black] transition font-bold flex items-center gap-2">
-                        Discover <ArrowDown strokeWidth={2.5} />
+                        Join With Us <ArrowDown strokeWidth={2.5} />
                       </button>
                     </a>
       </div>
