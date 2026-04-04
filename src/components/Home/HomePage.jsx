@@ -24,18 +24,14 @@ const HomePage = () => {
         
         <Hero/>
         <About/>
-     
         <Services/>
         <WhyChooseUs/>
         <Stat/>
         <Process2 />
-        
-        <Technologies/>
-       
+        <Technologies/>      
         <Testimonials/>
         <LatestProjects />
         <CallUs />
-        
         <ScrollToTopHome />
     </div>
   )

@@ -2,8 +2,6 @@ import React from 'react'
 import AboutHero from './AboutHero'
 
 import WhatWeDo from './WhatWeDo'
-import Difference from './Difference'
-
 import ScrollToTopAbout from './ScrollToTopAbout'
 import AboutWhatWeDo from './AboutWhatWeDo'
 import AboutValues from './AboutValues'

@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../assets/ecomImg1.jpg"; // adjust path if needed
+
 
 const AboutWhatWeDo = () => {
   return (

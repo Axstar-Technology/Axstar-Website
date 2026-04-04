@@ -148,9 +148,9 @@ const Process2 = () => {
     </div>
     
     <p className="text-gray-400 text-base md:text-lg leading-relaxed italic">
-      "Your solution is ready to go live!" 🚀 <br/>We ensure a 
+      Your solution is ready to go live! 🚀 <br/>"We ensure a 
       <span className="text-[#e9e7e2] font-medium"> smooth launch </span> 
-      and continued support for your long term success.
+      and continued support for your long term success."
     </p>
   </div>
 </div>

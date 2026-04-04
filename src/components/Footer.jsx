@@ -1,12 +1,12 @@
 import React from "react";
 import {
   FaInstagram,
-  FaDribbble,
-  FaBehance,
-  FaSearch,
   FaFacebook,
-  FaPinterest
+  FaWhatsapp,
+  FaLinkedin
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 
 const Footer = () => {
   return (
@@ -78,7 +78,7 @@ const Footer = () => {
             SOCIALS
           </h3>
 
-          <div className="grid grid-cols-4 gap-3 w-[180px]">
+          <div className="grid grid-cols-5 gap-8 w-[220px]">
             <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
               <FaFacebook size={18} className="text-white" />
             </div>
@@ -88,14 +88,22 @@ const Footer = () => {
             </div>
 
         <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
-              <FaBehance size={18} className="text-white" />
+              <FaWhatsapp size={18} className="text-white" />
             </div>
 
             <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
-              <FaPinterest size={18} className="text-white" />
+              <FaLinkedin size={18} className="text-white" />
             </div>
+
+             <div className="bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
+              <FaXTwitter size={18} className="text-white" />
+            </div>
+
+         
           </div>
         </div>
+
+        
 
       </div>
 
