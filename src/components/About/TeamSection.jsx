@@ -1,18 +1,47 @@
 import React from 'react';
+import pic1 from '../../assets/team/tharaka.png';
+import pic2 from '../../assets/team/madushan2.png';
+import pic3 from '../../assets/team/kaushalya14.png';
+import pic4 from '../../assets/team/gimshan2.png';
+import pic5 from '../../assets/team/malith1.png';
+import pic6 from '../../assets/team/luxshan1.jpeg';
+import pic7 from '../../assets/team/sewmini1.jpeg';
+import pic8 from '../../assets/team/ranjana11.png';
+import pic9 from '../../assets/team/devindi1.jpeg';
+import pic10 from '../../assets/team/kavishka1.jpeg';
+import pic11 from '../../assets/team/dananjana1.png';
+import pic12 from '../../assets/team/dasan.png';
+import pic13 from '../../assets/team/tharindu.png';
+import { IoPersonRemoveSharp } from 'react-icons/io5';
+import { EqualCompare } from 'three';
 
 const TeamSection = () => {
   const team = [
-    { name: "Alex Rivera", role: "Lead Developer", image: "/path-to-photo-1.jpg" },
-    { name: "Sarah Chen", role: "UI/UX Designer", image: "/path-to-photo-2.jpg" },
-    { name: "Marcus Thorne", role: "AI Strategist", image: "/path-to-photo-3.jpg" },
-    { name: "Elena Rossi", role: "Cloud Architect", image: "/path-to-photo-4.jpg" },
+    { name: "Tharaka Gamage", role: "CEO & Founder", image: pic1 },
+    { name: "Madhushan Nanayakkara", role: "Managing Partner (Business Operations)", image: pic2 },
+    { name: "Sewmini Senarathna", role: "Project Manager ", image: pic7 },
+    { name: "Gimshan Menaka", role: "UI/UX Designer", image: pic4 },
+     { name: "Kaushalya Udayashan", role: "Software Engineer", image: pic3 },
+     { name: "Devindi Nanayakkara", role: "Business Development Associate", image: pic9 },
+    { name: "Malith Dias", role: "Senior Engineer", image: pic5 },
+     
+    { name: "Luxshan Thavaraja", role: "Lead Engineer", image: pic6 },
+    
+   { name: "Ranjana Gayathri", role: "Marketing Lead", image: pic8 },
+    
+    { name: "Kavishka Janindu Nimsara", role: "Social Media Manager", image: pic10 },
+    
+    
+    { name: "Dasan Chethana", role: "Web Developer", image: pic12 },
+    { name: "Dhananjana Sarachchandra", role: "Digital Marketing & Growth Executive", image: pic11 },
+    { name: "Tharindu Dilshan", role: "Mobile Developer", image: pic13 },
   ];
 
   const carouselData = [...team, ...team];
 
   return (
-    <section className="bg-[#000000] text-[#e9e7e2] py-20 px-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#000000] text-[#e9e7e2] py-20 overflow-hidden">
+      <div className="max-w-full mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -54,40 +83,48 @@ const TeamSection = () => {
       </div>
 
       {/* Auto-Playing Carousel Container */}
-      <div className="relative flex overflow-hidden group">
-        <div className="flex animate-marquee whitespace-nowrap pause-on-hover">
-          {carouselData.map((member, index) => (
-            <div 
-              key={index} 
-              className="w-[250px] md:w-[300px] mx-4 flex-shrink-0 group/card"
-            >
-              {/* Square Photo Container (1:1 Ratio) */}
-              <div className="relative aspect-square overflow-hidden rounded-lg bg-white/5 mb-6">
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-full h-full object-cover  group-hover/card:grayscale-0 transition-all duration-700 scale-100 group-hover/card:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
-              </div>
-
-              {/* Text - Clean Stack */}
-              <div className="text-left px-2">
-                <h3 className="text-lg font-medium tracking-tight text-[#e9e7e2] mb-0.5">
-                  {member.name}
-                </h3>
-                <p className="text-xs uppercase tracking-[0.15em] bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-semibold">
-                  {member.role}
-                </p>
-              </div>
-            </div>
-          ))}
+<div className="relative flex overflow-hidden group py-10">
+  <div className="flex animate-marquee whitespace-nowrap pause-on-hover">
+    {carouselData.map((member, index) => (
+      <div 
+        key={index} 
+        className="w-[220px] md:w-[280px] mx-6 flex-shrink-0 group/card"
+      >
+        {/* Editorial Photo Container (4:5 Ratio for more vertical space) */}
+        <div className="relative aspect-[4/5] overflow-hidden mb-8 transition-all duration-700">
+          {/* Subtle Corner Accents instead of full borders */}
+          <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[var(--primary-color)] z-20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[var(--primary-color)] z-20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+          
+          <img 
+            src={member.image} 
+            alt={member.name}
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 group-hover/card:scale-105"
+          />
+          
+          {/* Soft Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity duration-700" />
         </div>
 
-        {/* Edge Fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent"></div>
+        {/* Text Area - Designed for long roles */}
+        <div className="text-left relative pl-2 border-l border-white/10 group-hover/card:border-[var(--primary-color)] transition-colors duration-500">
+          <h3 className="text-xl md:text-[1.1rem] font-light tracking-tight text-[#e9e7e2] mb-2 whitespace-normal leading-tight">
+            {member.name}
+          </h3>
+          
+          {/* Role: Uses whitespace-normal and leading-relaxed to handle long titles perfectly */}
+          <p className="text-[10px] md:text-[.7rem] uppercase tracking-[0.2em] leading-relaxed whitespace-normal bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] font-bold">
+            {member.role}
+          </p>
+        </div>
       </div>
+    ))}
+  </div>
+
+  {/* Cinematic Edge Fades */}
+  <div className="hidden pointer-events-none absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#000000] to-transparent z-10"></div>
+  <div className="hidden pointer-events-none absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#000000] to-transparent z-10"></div>
+</div>
 
       <style jsx>{`
         .text-glow {
@@ -100,7 +137,7 @@ const TeamSection = () => {
         }
 
         .animate-marquee {
-          animation: marquee 40s linear infinite;
+          animation: marquee 80s linear infinite;
         }
 
         .pause-on-hover:hover {
@@ -112,3 +149,10 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+
+/*mobile
+web
+socual
+ui,ux
+Ecom
+soci*/

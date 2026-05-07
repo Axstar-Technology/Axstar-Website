@@ -7,6 +7,7 @@ import BusinessSection4 from './BusinessSection4'
 import BusinessSection5 from './BusinessSection5'
 import BusinessSection6 from './BusinessSection6'
 import { useLocation } from 'react-router-dom'
+import ScrollToTopBusinessStrategy from './ScrollToTopBusinessStrategy'
 
 const BusinessStrategyPage = () => {
 
@@ -39,6 +40,7 @@ const BusinessStrategyPage = () => {
         <BusinessSection4 />
         <BusinessSection5 />
         <BusinessSection6 />
+        <ScrollToTopBusinessStrategy />
     </div>
   )
 }

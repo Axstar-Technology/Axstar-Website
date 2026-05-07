@@ -29,6 +29,7 @@ import AiDrivenSolutions from "./components/Services/EngineeringAndTech/AIandAut
 import EngineeringandTechPage from "./components/Services/EngineeringAndTech/EngineeringandTechPage";
 import DigitalGrowthPage from "./components/Services/digitalGrowth/DigitalGrowthPage";
 import BusinessStrategyPage from "./components/Services/BusinessStrategy/BusinessStrategyPage";
+import EcommercePage from "./components/Services/EngineeringAndTech/Ecommerce/EcommercePage";
 
 
 
@@ -66,7 +67,7 @@ const AppWrapper = () => {
             bg-fixed
             bg-blend-darken
             bg-[url('/src/assets/mobile-bg-4.jpeg')]
-            md:bg-[url('/src/assets/hero-bg-24.png')]
+            md:bg-[url('/src/assets/hero-bg-23.png')]
           "
         >
           <div className="max-w-full mx-auto">
@@ -87,6 +88,7 @@ const AppWrapper = () => {
               <Route path="/web-development" element={<WebDevelopment />} />
               <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
               <Route path="/ai-driven-solutions" element={<AiDrivenSolutions />} />
+              <Route path="/e-commerce-platforms&solutions" element={<EcommercePage />} />
              
             
 

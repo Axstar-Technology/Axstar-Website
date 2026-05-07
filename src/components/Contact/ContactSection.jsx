@@ -17,7 +17,7 @@ const ContactSection = () => {
                 </span>
               </div>
               
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
                 Let’s create <br className="hidden md:block" /> 
                 something epic.
               </h2>

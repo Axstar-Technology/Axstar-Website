@@ -112,7 +112,7 @@ const DataFlowBackground = () => {
 const AiDrivenHero = () => {
   return (
     <section 
-      id='about-hero' 
+      id='aidriven-hero' 
       className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-black text-white"
     >
       

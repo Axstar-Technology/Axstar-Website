@@ -28,12 +28,12 @@ const engineeringTech = [
   { label: "Web Development", path: "/web-development" },
  
   { label: "Mobile App Development", path: "/mobile-app-development" },
-  { label: "Product MVP Development", path: "/mobile-app-development" },
-  { label: "UI/UX Design", path: "/mobile-app-development" },
-  { label: "Custom Software Development ", path: "/mobile-app-development" },
+  { label: "Product MVP Development", path: "/engineering&technology#product-mvp" },
+  { label: "UI/UX Design", path: "/engineering&technology#ui-ux" },
+  { label: "Custom Software Development ", path: "/engineering&technology#custom-software" },
   { label: "AI & Automation Solutions", path: "/ai-driven-solutions" },
-  { label: "API Development & Integration ", path: "/digital-presence" },
-  { label: "E-commerce Platforms & Solutions ", path: "/ecommerce" },
+  { label: "API Development & Integration ", path: "/engineering&technology#api-dev" },
+  { label: "E-commerce Platforms & Solutions ", path: "/e-commerce-platforms&solutions" },
  
 ];
 
@@ -265,7 +265,7 @@ export default function Navbar() {
 
       {/* ================= DESKTOP NAVBAR ================= */}
       <nav
-        className={`hidden lg:flex fixed top-5 rounded-[2.5rem] border border-[1px] border-neutral-700 left-1/2 -translate-x-1/2 w-[90%] px-6 xl:px-10 py-3 justify-between items-center z-50 transition-all duration-300 ${
+        className={`hidden lg:flex fixed top-5 rounded-[2.5rem] border border-none left-1/2 -translate-x-1/2 w-[90%] px-6 xl:px-10 py-3 justify-between items-center z-50 transition-all duration-300 ${
           scrolled || openServices
             ? "bg-white/10 backdrop-blur-xl shadow-lg"
             : "bg-white/10 backdrop-blur-xl shadow-lg"
@@ -295,8 +295,9 @@ export default function Navbar() {
                     <FiChevronDown className={`transition-transform duration-300 ${openServices ? "rotate-180" : ""}`} />
                   </button>
 
+                      {/**dropdown -desktop */}
                   <div
-                    className={`fixed left-0 rounded-[2rem] top-[67px] w-full bg-gradient-to-br from-[#010505] to-[#00251f] backdrop-blur-xl transition-all duration-300 ${
+                    className={`fixed left-0 rounded-[2rem] top-[75px] w-full bg-gradient-to-br from-[#010505] to-[#00251f] backdrop-blur-xl transition-all duration-300 ${
                       openServices ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
                     }`}
                   >
@@ -395,7 +396,7 @@ export default function Navbar() {
             key={item.id}
             to={item.path}
             onClick={handleNavClick(item.path, heroMap[item.path])}
-            className="px-6 py-2 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-[#e9e7e2] font-medium rounded-full transition-all duration-300"
+            className="px-6 py-3 border border-neutral-500 bg-neutral-900/50 text-[var(--primary-color)] text-xs font-bold tracking-widest uppercase font-medium rounded-full transition-all duration-300"
           >
             {item.label}
           </Link>

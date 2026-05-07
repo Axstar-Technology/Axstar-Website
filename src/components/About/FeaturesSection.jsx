@@ -21,7 +21,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="bg-[#050505] text-[#e9e7e2] py-16 px-6">
+    <section className="bg-[#000000] text-[#e9e7e2] py-35 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Left Side: Sticky Header (Saves vertical space) */}

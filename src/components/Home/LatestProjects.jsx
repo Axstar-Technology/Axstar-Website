@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiArrowLeft, HiArrowRight, HiOutlineExternalLink } from 'react-icons/hi';
+import projectMockup1 from '../../assets/portfolio-images/website1-sixnity/homepage-project-section/mockup1.png';
+import projectMockup2 from '../../assets/portfolio-images/website2-ceylonSpace/homepage-project-section/mockUp2.png';
+import projectMockup3 from '../../assets/portfolio-images/website-kuoni/homepage-section/mockup.png';
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A fully responsive online store with product listings, cart functionality, and secure checkout integration, optimized for performance and user experience.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+    title: "Sixnity Product Landing Page",
+    description: "Sixnity is a modern fitness platform for workout tracking and progress monitoring, built with a responsive, component-based architecture and a clean dark UI for a smooth, scalable, and engaging experience.",
+    image: projectMockup1,
   },
   {
     id: 2,
-    title: "Business Landing Page",
-    description: "Modern and conversion-focused landing page designed for startups, featuring smooth animations, responsive layouts, and clear call-to-action sections.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+    title: "Website For ceylonspaceholidays",
+    description: "Ceylon Space Holidays is a responsive travel website showcasing curated Sri Lankan tours, designed with smooth navigation, structured booking flow, and easy content management.",
+    image: projectMockup2,
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description: "Personal portfolio website showcasing projects, skills, and contact details with a sleek UI and fully responsive design across all devices.",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1200",
+    title: "Website for Kuoni Holydays",
+    description: "This travel booking website presents global destinations and holiday packages through a modern, responsive interface with smooth navigation, clear booking flow, and a scalable, component-based structure.",
+    image: projectMockup3,
   },
 ];
 

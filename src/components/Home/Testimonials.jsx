@@ -5,9 +5,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Assets
-import person1 from "../../assets/person1.jpg";
-import person2 from "../../assets/person2.jpg";
-import person3 from "../../assets/person3.jpg";
+import img1 from '../../assets/testimonials/daniel2.png';
+import img2 from '../../assets/testimonials/hendry2.png';
+import img3 from '../../assets/testimonials/marco1.jpeg';
+import img4 from '../../assets/testimonials/michael2.png';
+import img5 from '../../assets/testimonials/nalin.jpeg';
+import img6 from '../../assets/testimonials/sarah1.jpeg';
+import img7 from '../../assets/testimonials/thenuka.jpeg';
+import img8 from '../../assets/testimonials/andrew.jpeg';
+import img9 from '../../assets/testimonials/kevin.png';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,63 +22,63 @@ const testimonials = [
   {
     name: "Kevin Marshall",
     role: "Founder (SaaS Startup)",
-    image: person1,
+    image: img9,
     rating: 4.8,
     description: "Great experience working with Axstar. They understood our vision and built an MVP that perfectly matched our initial product goals.",
   },
   {
     name: "Nalin Prasanga",
     role: "Business Owner- Green Wild Safari Resort",
-    image: person2,
+    image: img5,
     rating: 4,
     description: "The team Axstar delivered a fast, modern website that significantly improved our online presence. Their attention to detail, responsive communication, and ability to understand our requirements made the entire process smooth and efficient",
   },
   {
     name: "Sarah Johnson",
     role: "Marketing Manager – Day dream LLC",
-    image: person3,
+    image: img6,
     rating: 5,
     description: "After working with Axstar, our website started ranking better on search engines, and we received more consistent inquiries from potential customers",
   },
   {
     name: "Marco Rossi",
     role: "Casa di lapasa Pizza",
-    image: person3,
+    image: img3,
     rating: 4.5,
     description: "Axstar created a modern website and digital menu that perfectly matches our restaurant’s style. Our customers love how easy it is to use",
   },
   {
     name: "Hendry Earns",
     role: "Founder, StartupX",
-    image: person3,
+    image: img2,
     rating: 5,
     description: "Great experience working with the team. The UI/UX design was modern, smooth, and exactly what we needed for our startup.",
   },
   {
     name: "Daniel Carter",
     role: "Founder (E-commerce Brand)",
-    image: person3,
+    image: img1,
     rating: 5,
     description: "Working with Axstar was a great experience. Their team delivered a fast, reliable solution that helped streamline our e-commerce operations.",
   },
   {
-    name: "Thenuka",
+    name: "Thenuka Nanayakkara",
     role: "Managing Director, Bird Paradise Inn",
-    image: person3,
+    image: img7,
     rating: 4.7,
     description: "Axstar delivered a modern, user-friendly website that perfectly represents our hotel. It has made it much easier for guests to explore our services and make inquiries.",
   },
   {
     name: "Michael Reeves",
     role: "Business Consultant",
-    image: person3,
+    image: img4,
     rating: 5,
     description: "What impressed me most about Axstar was their structured, data-driven approach to business consulting. They analyzed our processes, identified key gaps, and provided clear strategies that delivered measurable improvements within a short time.",
   },
   {
     name: "Andrew Collins",
     role: "Director EFG",
-    image: person3,
+    image: img8,
     rating: 4.8,
     description: "The level of detail and strategic thinking Axstar brought to our business was impressive. Their data-driven consulting approach and consistent communication led to noticeable performance improvements early on.",
   },
@@ -146,57 +153,90 @@ const Testimonials = () => {
         </div>
 
         {/* Carousel Wrapper */}
-        <div 
-          className="flex whitespace-nowrap overflow-visible"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {/* Added will-change-transform for browser optimization */}
-          <div 
-            ref={scrollRef} 
-            className="flex gap-6 will-change-transform"
-            style={{ display: 'inline-flex' }} 
-          >
-            {duplicatedTestimonials.map((item, index) => (
-              <div
-                key={index}
-                className="w-[350px] md:w-[450px] shrink-0 border border-white/10 bg-[black] backdrop-blur-2xl rounded-3xl p-8 md:p-10 transition-colors duration-500 hover:border-white/20 hover:bg-[#000000]"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-14 h-14 rounded-full object-cover border border-white/20"
-                    loading="lazy"
-                  />
-                  <div className="text-left">
-                    <h4 className="text-[#e9e7e2] font-medium tracking-wide">{item.name}</h4>
-                    <p className="text-xs text-gray-500 uppercase tracking-widest">{item.role}</p>
+<div 
+  className="relative w-full overflow-hidden py-10"
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+>
+  {/* Scrolling Container */}
+  <div 
+    ref={scrollRef} 
+    className="flex gap-4 md:gap-8 will-change-transform"
+    style={{ display: 'inline-flex' }} 
+  >
+    {duplicatedTestimonials.map((item, index) => (
+      <div
+        key={index}
+        className="
+          /* Width Logic: 280px on mobile, 350px on tablets, 400px on desktops */
+          w-[280px] sm:w-[350px] md:w-[400px] 
+          shrink-0 
+          relative
+          group
+          overflow-hidden
+          rounded-2xl 
+          p-6 md:p-8 
+          bg-neutral-950/50
+          backdrop-blur-xl 
+          border border-white/5 
+          transition-all duration-500 
+          hover:border-white/20 
+          hover:bg-neutral-900/40
+        "
+      >
+        {/* Subtle Gradient Glow on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div className="flex mt-1 space-x-1 text-yellow-500 text-xs">
-                  {[1, 2, 3, 4, 5].map((star) => {
-                    if (item.rating >= star) return <FaStar key={star} />;
-                    if (item.rating >= star - 0.5) return <FaStarHalfAlt key={star} />;
-                    return <FaRegStar key={star} />;
-                  })}
-                </div>
-                  </div>
-                </div>
+        <div className="relative z-10">
+          <div className="flex items-start gap-4 mb-6">
+  
+  {/* Avatar (LOCKED SIZE - NO SHRINK) */}
+  <div className="w-[52px] h-[52px] md:w-[68px] md:h-[68px] lg:w-[76px] lg:h-[76px] flex-shrink-0">
+    <img
+      src={item.image}
+      alt={item.name}
+      className="w-full h-full object-cover rounded-full border border-white/10"
+      loading="lazy"
+    />
+  </div>
 
-                
+  {/* Text Block */}
+  <div className="text-left min-w-0">
+    <h4 className="text-zinc-100 font-semibold tracking-tight text-sm md:text-base line-clamp-1">
+      {item.name}
+    </h4>
 
-                <p className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-[1rem] leading-relaxed italic font-light whitespace-normal opacity-90">
-                  “{item.description}”
-                </p>
-              </div>
-            ))}
-          </div>
+    <p className="text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-bold line-clamp-3 md:line-clamp-2 lg:line-clamp-2">
+      {item.role}
+    </p>
+
+    {/* Rating */}
+    <div className="flex mt-1.5 space-x-0.5 text-emerald-500/80 text-[10px]">
+      {[1, 2, 3, 4, 5].map((star) => {
+        if (item.rating >= star) return <FaStar key={star} />;
+        if (item.rating >= star - 0.5) return <FaStarHalfAlt key={star} />;
+        return <FaRegStar key={star} />;
+      })}
+    </div>
+  </div>
+
+</div>
+
+          <p className="relative text-zinc-300 text-sm md:text-base leading-relaxed italic font-light whitespace-normal">
+            <span className="text-2xl text-[#02b96d] leading-none absolute -top-2 -left-1 opacity-50">“</span>
+            {item.description}
+            <span className="text-2xl text-[#02b96d] leading-none inline-block align-bottom opacity-50">”</span>
+          </p>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
 
       {/* Edge Fades */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
+      <div className="hidden  absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
+      <div className="hidden  absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
     </section>
   );
 };

@@ -7,6 +7,7 @@ import WhatWeOffer from "./WhatWeOffer";
 import WebDevWhatWeDo from "./WebDevWhatWeDo";
 import WhyWorkWithUs from "./WhyWorkWithUs";
 import ContactOurTeam from "./ContactOurTeam";
+import ScrollToTopWebDev from "./ScrollToTopWebDev";
 
 
 const WebDevelopment = () => {
@@ -33,7 +34,11 @@ const WebDevelopment = () => {
     <WebDevWhatWeDo />
       <WhyWorkWithUs />
       <ContactOurTeam />
+
+      
 </div>
+
+<ScrollToTopWebDev />
 
 
 

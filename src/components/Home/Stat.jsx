@@ -1,6 +1,8 @@
+import { ArrowRight } from "lucide-react";
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 const stats = [
   {
@@ -85,7 +87,7 @@ export default function Stat() {
       </div>
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#000000]/40 z-0"></div>
+      <div className="absolute inset-0 bg-[#000000] z-0"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -102,11 +104,21 @@ export default function Stat() {
             We transform your ideas into stunning visual experiences. From concept to creation, our designs combine creativity, strategy, and innovation to craft visuals that captivate, communicate, and leave a lasting impression.
           </p>
 
-          <a href="/about">
-            <button className="border border-[var(--primary-color)] text-[var(--primary-color)] cursor-pointer px-6 py-3 text-sm hover:bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] hover:border-[var(--primary-color)] hover:text-black transition">
-              Know More About us
-            </button>
-          </a>
+           <Link to="/web-development">
+                                          <button className="group cursor-pointer relative hover:text-transparent inline-flex items-center gap-4 px-10 py-4 overflow-hidden rounded-full border border-[var(--primary-color)] text-[var(--primary-color)] transition-all duration-300 hover:border-[var(--primary-color)]">
+                                        <span className="relative z-10 text-xs font-bold uppercase tracking-widest">Explore More</span>
+                                        <ArrowRight 
+                                          size={16} 
+                                          className="relative z-10 transition-transform duration-500 group-hover:translate-x-2" 
+                                        />
+                                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] transition-transform duration-500 ease-in-out"></div>
+                                        <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-black text-xs font-bold uppercase tracking-widest">
+                                          Explore More
+                                          
+                                        </span>
+                                        
+                                      </button>
+                                      </Link>
         </div>
 
         {/* STATS GRID */}

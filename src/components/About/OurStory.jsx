@@ -52,7 +52,7 @@ const OurStory = () => {
           
           {/* Left Side: Animated Image */}
           <div className="lg:col-span-5 xl:col-span-6 relative">
-            <div className="overflow-hidden bg-zinc-900 aspect-[4/5] rounded-sm">
+            <div className="overflow-hidden bg-black aspect-[4/5] rounded-sm">
               <motion.img
                 style={{ y: imageY, scale: imageScale }}
                 src={aboutPageImg3}

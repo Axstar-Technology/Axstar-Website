@@ -101,7 +101,7 @@ const DigitalMatrixBackground = () => {
 
 const CareersHero = () => {
   return (
-    <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-black text-white">
+    <section id='career-hero' className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-black text-white">
       {/* Background Glows - Preserved */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
       

@@ -7,6 +7,7 @@ import DigitalSetup3 from './DigitalSetup3'
 import DigitalSetup4 from './DigitalSetup4'
 import DigitalSetup5 from './DigitalSetup5'
 import DigitalSetup6 from './DigitalSetup6'
+import ScrollToTopDigitalGrowth from './ScrollToTopDigitalGrowth'
 
 const DigitalGrowthPage = () => {
 
@@ -33,6 +34,8 @@ const DigitalGrowthPage = () => {
           <DigitalSetup5 />
           <DigitalSetup6 />
         </div>
+
+        <ScrollToTopDigitalGrowth />
 
     </div>
   )

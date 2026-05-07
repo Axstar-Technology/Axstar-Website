@@ -12,10 +12,14 @@ html {
   /* Hide scrollbar but still allow scrolling */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;    /* Firefox */
-}
+} 
 
 html::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+} 
+
+html{
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,17 +46,17 @@ body {
 }
 
 /* ================= Scrollbar Hide Class ================= */
-/* For elements where you want to hide scrollbar but keep scrollable */
+/* For elements where you want to hide scrollbar but keep scrollable
 .scrollbar-hide {
-  overflow: auto;           /* allow scrolling */
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none;    /* Firefox */
+  overflow: auto;           /* allow scrolling 
+  -ms-overflow-style: none; /* IE/Edge 
+  scrollbar-width: none;    /* Firefox 
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera 
 }
 
 section {
-  scroll-margin-top: 30px; /* adjust based on navbar height */
-}
+  scroll-margin-top: 30px; /* adjust based on navbar height 
+} */

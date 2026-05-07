@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
   FaChartLine, FaCheckCircle, FaClock, FaUser, 
   FaArrowLeft, FaExternalLinkAlt, FaChevronLeft, FaChevronRight 
@@ -191,12 +191,18 @@ const ProjectDetails = () => {
               </div>
 
               <div className="pt-6 space-y-6">
-                <button
-                  onClick={() => window.open(project.liveDemo, "_blank")}
-                  className="w-full cursor-pointer flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black font-bold text-xs uppercase tracking-widest transition-all active:scale-95"
-                >
-                  Visit Live Site <FaExternalLinkAlt className="text-[10px]" />
-                </button>
+               <a 
+  href={project.websiteLink} 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <button
+    className="w-full mb-5 cursor-pointer flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-black font-bold text-xs uppercase tracking-widest transition-all active:scale-95"
+  >
+    Visit Live Site <FaExternalLinkAlt className="text-[10px]" />
+  </button>
+</a>
+                
                 
                 <div className="flex items-center gap-5 p-5 rounded-2xl bg-black/40 border border-white/5">
                   <div className="relative">

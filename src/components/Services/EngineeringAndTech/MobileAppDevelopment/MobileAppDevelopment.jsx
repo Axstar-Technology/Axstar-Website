@@ -8,6 +8,7 @@ import WhatWeDoMobileDev from "./WhatWeDoMobileDev";
 import WhyChoose from "./WhyChoose";
 import Exxplore from "./Exxplore";
 import Boost from "./Boost";
+import ScrollToTopMobileAppDev from "./ScrollToTopMobileAppDev";
 
 
 
@@ -37,6 +38,8 @@ const MobileAppDevelopment = () => {
       <WhyChoose />
       
       <Boost />
+
+      <ScrollToTopMobileAppDev />
      </div>
 
 

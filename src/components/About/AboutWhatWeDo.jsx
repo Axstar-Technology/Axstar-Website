@@ -11,7 +11,7 @@ const AboutWhatWeDo = () => {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl px-6 py-12 text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-full px-6 py-12 text-center flex flex-col items-center">
         
        
 
@@ -25,12 +25,12 @@ const AboutWhatWeDo = () => {
         
         
         {/* Description */}
-        <p className="mt-6 text-xs sm:text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-2xl leading-relaxed">
+        <p className="mt-6 text-xs sm:text-sm md:text-[1.6rem] bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-5xl leading-relaxed">
           Axstar is a modern software and technology company dedicated to building smart, scalable digital solutions. We combine expert engineering, innovative technology, and strategic insight to transform complex business challenges into high-performance software that drives measurable growth.
         </p>
 
         {/* Description */}
-        <p className="mt-6 text-xs sm:text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-2xl leading-relaxed">
+        <p className="mt-6 text-xs sm:text-sm md:text-[1.6rem] bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] max-w-5xl leading-relaxed">
           From custom applications and AI-driven automation to seamless digital experiences, we empower businesses to innovate, optimize, and scale with confidence. At Axstar, we don’t just develop software, we create the digital foundation for your future success.
         </p>
 

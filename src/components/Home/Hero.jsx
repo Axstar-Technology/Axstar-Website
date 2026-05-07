@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -177,7 +177,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="p-animate text-sm sm:text-base md:text-[.9rem] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="p-animate text-sm sm:text-base md:text-[.9rem] text-slate-100 leading-relaxed max-w-2xl mx-auto">
             Axstar drives business growth through smart technology, strategic consulting, and digital transformation. We deliver scalable, high-performance solutions that align technology with your business goals from strategy to full deployment.
           </p>
 
@@ -191,8 +191,12 @@ const Hero = () => {
             </a>
 
             <a href="/projects#projects-hero">
-              <button className="cursor-pointer px-10 py-3 text-sm rounded-lg border border-[#e9e7e2] text-[#e9e7e2] hover:bg-[#ffffff] hover:border-[#e9e7e2] hover:text-black hover:font-medium font-medium">
-                View Portfolio
+             
+
+              <button className="cursor-pointer font-medium px-10 py-3 text-sm rounded-lg 
+                bg-[#afafaf]
+                text-black transition flex gap-2 items-center">
+                View Portfolio <ArrowRight />
               </button>
             </a>
           </div>

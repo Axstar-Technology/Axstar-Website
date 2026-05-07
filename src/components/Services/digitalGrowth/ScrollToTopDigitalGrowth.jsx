@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
-const ScrollToTopServices = () => {
+const ScrollToTopDigitalGrowth = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -23,7 +23,7 @@ const ScrollToTopServices = () => {
   }, []);
 
   const scrollToTop = () => {
-    document.getElementById("services-hero").scrollIntoView({
+    document.getElementById("digital-growth-hero").scrollIntoView({
       behavior: "smooth",
     });
   };
@@ -31,10 +31,10 @@ const ScrollToTopServices = () => {
   return (
     <>
       {isVisible && (
-  <div className="hidden md:flex fixed right-6 bottom-6 flex-col items-center z-50">
+  <div className="fixed right-6 bottom-6 flex-col items-center z-50">
     <button
       onClick={scrollToTop}
-      className="cursor-pointer bg-[var(--primary-color)] text-white p-3 rounded-full shadow-lg hover:bg-[var(--primary-color)]/50 transition-all duration-300"
+      className="cursor-pointer bg-gradient-to-r from-[var(--primary-color)] via-[#02b96d] to-[#186d60] text-white p-3 rounded-full shadow-lg hover:bg-[var(--primary-color)]/50 transition-all duration-300"
     >
       <FaArrowUp />
     </button>
@@ -44,4 +44,4 @@ const ScrollToTopServices = () => {
   );
 };
 
-export default ScrollToTopServices;
+export default ScrollToTopDigitalGrowth;
